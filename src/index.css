@@ -1,0 +1,17 @@
+@import "../public/assets/css/all.min.css";
+@import "../public/assets/css/animate.css";
+@import "../public/assets/css/bootstrap.min.css";
+@import "../public/assets/css/color.css";
+@import "../public/assets/css/magnific-popup.css";
+@import "../public/assets/css/main.css";
+@import "../public/assets/css/meanmenu.css";
+@import "../public/assets/css/nice-select.css";
+@import "../public/assets/css/swiper-bundle.min.css";
+
+* {
+    cursor: none !important;
+}
+
+a, button, [role="button"], .theme-btn {
+    cursor: none !important;
+}
