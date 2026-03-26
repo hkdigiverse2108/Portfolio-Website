@@ -1,8 +1,11 @@
+import { PageNotFound } from "../Components/Common";
 import { ROUTES } from "../Constant";
-import { Home } from "../Pages";
+import { About, Contact, Faq, Home } from "../Pages";
 
 export const PageRoutes = [
   { path: ROUTES.HOME, element: <Home /> },
-
-  // { path: "*", element: <PageNotFound /> },
+  { path: ROUTES.ABOUT, element: <About /> },
+  { path: ROUTES.CONTACT, element: <Contact /> },
+  { path: ROUTES.FAQ, element: <Faq /> },
+  { path: "*", element: <PageNotFound /> },
 ];
