@@ -30,18 +30,18 @@ export const navItems: MenuItem[] = [
         submenu: [
             {
                 label: "Our Services",
-                link: "/",
+                link: ROUTES.SERVICE,
                 submenu: [
-                    { label: "Service", link: "/" },
-                    { label: "Service Details", link: "/" },
+                    { label: "Service", link: ROUTES.SERVICE },
+                    { label: "Service Details", link: ROUTES.SERVICE_DETAIL },
                 ],
             },
             {
                 label: "Our Portfolio",
-                link: "/",
+                link: ROUTES.PORTFOLIO,
                 submenu: [
-                    { label: "Portfolio", link: "/" },
-                    { label: "Portfolio Details", link: "/" },
+                    { label: "Portfolio", link: ROUTES.PORTFOLIO },
+                    { label: "Portfolio Details", link: ROUTES.PORTFOLIO_DETAIL },
                 ],
             },
             { label: "Faq", link: ROUTES.FAQ },
@@ -52,9 +52,9 @@ export const navItems: MenuItem[] = [
         label: "Blog",
         link: ROUTES.BLOG,
         submenu: [
-            { label: "Blog Grid", link: "/" },
-            { label: "Blog Classic", link: "/" },
-            { label: "Blog Details", link: "/" },
+            { label: "Blog Grid", link: ROUTES.BLOG },
+            { label: "Blog Classic", link: ROUTES.BLOG_CLASSIC },
+            { label: "Blog Details", link: ROUTES.BLOG_DETAIL },
         ],
     },
     {

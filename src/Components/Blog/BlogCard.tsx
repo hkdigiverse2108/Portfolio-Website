@@ -2,14 +2,15 @@ import { type BlogPost } from "../../Data/Blog";
 
 interface BlogCardProps {
   post: BlogPost;
+  className?: string;
 }
 
-const BlogCard = ({ post }: BlogCardProps) => {
+const BlogCard = ({ post, className = "" }: BlogCardProps) => {
   return (
     <div className="col-lg-4 col-md-6">
-      <div className="news-item wow fadeInUp" data-wow-delay={post.delay}>
+      <div className={`news-item wow fadeInUp ${className}`} data-wow-delay={post.delay}>
         <div className="thumb">
-          <img src={post.image} alt="blog post thumbnail" />
+          <img src={post.image} alt="img" />
         </div>
         <div className="content">
           <ul className="news-meta">
@@ -19,9 +20,11 @@ const BlogCard = ({ post }: BlogCardProps) => {
           <h4>
             <a href={post.link}>{post.title}</a>
           </h4>
-          <div className="news-btns">
-            <i className="fa-solid fa-arrow-right"></i>
-            <a href={post.link}>Read More</a>
+          <div className="news-btn">
+            <a href={post.link} className="icon">
+              <i className="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href={post.link} className="link-btn">Read More</a>
           </div>
         </div>
       </div>
