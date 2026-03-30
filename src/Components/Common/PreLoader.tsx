@@ -1,7 +1,23 @@
+import { useEffect, useState } from "react";
 
-const PreLoader = () => {
+const PreLoader = ({ isLoading = true }: { isLoading?: boolean }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isRemoved, setIsRemoved] = useState(false);
+
+  useEffect(() => {
+    if (!isLoading) {
+      setIsLoaded(true);
+      const timer = setTimeout(() => {
+        setIsRemoved(true);
+      }, 1000); // 1s matches the 0.3s + 0.7s transition in CSS
+      return () => clearTimeout(timer);
+    }
+  }, [isLoading]);
+
+  if (isRemoved) return null;
+
   return (
-     <div id="preloader" className="preloader">
+     <div id="preloader" className={`preloader ${isLoaded ? 'loaded' : ''}`}>
         <div className="animation-preloader">
             <div className="spinner">
             </div>

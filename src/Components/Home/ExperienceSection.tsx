@@ -1,4 +1,19 @@
+import { CountItem } from "../Common";
 
+const clientItems = [
+    { id: 1, icon: "assets/img/client/1.svg", count: 98, text: "Figma" },
+    { id: 2, icon: "assets/img/client/2.svg", count: 90, text: "Photoshop" },
+    { id: 3, icon: "assets/img/client/3.svg", count: 79, text: "Illustrator" },
+    { id: 4, icon: "assets/img/client/4.svg", count: 88, text: "Sketch" },
+    { id: 5, icon: "assets/img/client/5.svg", count: 93, text: "Adobe_Xd" },
+];
+
+const experienceItems = [
+    { id: 1, year: "2024", title: "Senior Designer", company: "Behance", delay: ".2s" },
+    { id: 2, year: "2024", title: "UX Design case study", company: "Behance", delay: ".4s" },
+    { id: 3, year: "2024", title: "Product Designer v/s Product Manage", company: "Product Hunt", delay: ".6s" },
+    { id: 4, year: "2024", title: "Xiomi in Product Design (UI/UX)", company: "Pinterest", delay: ".8s" },
+];
 const ExperienceSection = () => {
   return (
     <section className="experience-section section-padding section-bg fix">
@@ -8,59 +23,28 @@ const ExperienceSection = () => {
                 <h2 className="wow fadeInUp" data-wow-delay=".2s">My Work Experience</h2>
             </div>
             <div className="experience-wrapper">
-                <div className="experience-items wow fadeInUp" data-wow-delay=".2s">
-                    <span>2024</span>
-                    <h4>Senior Designer</h4>
-                    <h6>Behance</h6>
-                </div>
-                <div className="experience-items wow fadeInUp" data-wow-delay=".4s">
-                    <span>2024</span>
-                    <h4>UX Design case study</h4>
-                    <h6>Behance</h6>
-                </div>
-                <div className="experience-items wow fadeInUp" data-wow-delay=".6s">
-                    <span>2024</span>
-                    <h4>Product Designer v/s Product Manage</h4>
-                    <h6>Product Hunt</h6>
-                </div>
-                <div className="experience-items wow fadeInUp" data-wow-delay=".8s">
-                    <span>2024</span>
-                    <h4>Xiomi in Product Design (UI/UX)</h4>
-                    <h6>Pinterest</h6>
-                </div>
+                {experienceItems.map((item) => (
+                    <div className="experience-items wow fadeInUp" data-wow-delay={item.delay} key={item.id}>
+                        <span>{item.year}</span>
+                        <h4>{item.title}</h4>
+                        <h6>{item.company}</h6>
+                    </div>
+                ))}
             </div>
             <div className="client-wrapper">
                 <div className="client-items">
-                    <div className="client-item">
-                        <div className="icon">
-                            <img src="assets/img/client/1.svg" alt="img"/>
+                    {clientItems.map((item) => (
+                        <div className="client-item" key={item.id}>
+                            <div className="icon">
+                                <img src={item.icon} alt={item.text} />
+                            </div>
+                            <h4 className="number">
+                                <span className="count">
+                                    <CountItem end={item.count} />
+                                </span>% <span className="text">{item.text}</span>
+                            </h4>
                         </div>
-                        <h4 className="number"><span className="count">98</span>% <span className="text">Figma</span></h4>
-                    </div>
-                    <div className="client-item">
-                        <div className="icon">
-                            <img src="assets/img/client/2.svg" alt="img"/>
-                        </div>
-                        <h4 className="number"><span className="count">90</span>% <span className="text">Photoshop</span></h4>
-                    </div>
-                    <div className="client-item">
-                        <div className="icon">
-                            <img src="assets/img/client/3.svg" alt="img"/>
-                        </div>
-                        <h4 className="number"><span className="count">79</span>% <span className="text">Illustrator</span></h4>
-                    </div>
-                    <div className="client-item">
-                        <div className="icon">
-                            <img src="assets/img/client/4.svg" alt="img"/>
-                        </div>
-                        <h4 className="number"><span className="count">88</span>% <span className="text">Sketch</span></h4>
-                    </div>
-                    <div className="client-item">
-                        <div className="icon">
-                            <img src="assets/img/client/5.svg" alt="img"/>
-                        </div>
-                        <h4 className="number"><span className="count">93</span>% <span className="text">Adobe_Xd</span></h4>
-                    </div>
+                    ))}
                 </div>
             </div>
         </div>
