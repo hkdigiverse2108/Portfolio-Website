@@ -21,7 +21,7 @@ const BlogCard = ({ post, className = "", delay }: BlogCardProps) => {
     }
   }
 
-  const link = ROUTES.BLOG;
+  const link = post._id ? ROUTES.BLOG_DETAIL.replace(":id", post._id) : ROUTES.BLOG;
   const animationDelay = delay || "";
 
   return (

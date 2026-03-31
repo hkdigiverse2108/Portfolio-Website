@@ -48,13 +48,13 @@ const HeroSection = ({ data, socialMediaLinks }: { data?: HeroSectionBase; socia
   return (
     <section className="hero-section hero-1 fix">
       <div className="arrow-right-shape">
-        <img src="assets/img/hero/bg-1.png" alt="img" />
+        <img src="/assets/img/hero/bg-1.png" alt="img" />
       </div>
       <div className="arrow-shape float-bob-y">
-        <img src="assets/img/hero/angle-arrow.png" alt="img" />
+        <img src="/assets/img/hero/angle-arrow.png" alt="img" />
       </div>
       <div className="arrow-up">
-        <img src="assets/img/hero/arrow.png" alt="img" />
+        <img src="/assets/img/hero/arrow.png" alt="img" />
       </div>
       <div className="hero-info">
         {activeLinks?.map((item, index) => (
@@ -74,7 +74,7 @@ const HeroSection = ({ data, socialMediaLinks }: { data?: HeroSectionBase; socia
           <div className="col-lg-10">
             <div className="hero-content">
               <span className="text-2">
-                <img src="assets/img/shape/star-2.png" alt="img" />
+                <img src="/assets/img/shape/star-2.png" alt="img" />
                 Hey There!
               </span>
               <h1>

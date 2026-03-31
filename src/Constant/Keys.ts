@@ -31,5 +31,12 @@ export const KEYS = {
   },
   BLOG: {
     GET: "GET_BLOG",
+    GET_DETAILS: "GET_BLOG_DETAILS",
+  },
+  CONTACT: {
+    POST: "POST_CONTACT",
+  },
+  SETTING: {
+    GET: "GET_SETTING",
   },
 };

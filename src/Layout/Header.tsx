@@ -43,11 +43,11 @@ const Header = () => {
             <div className="header-main">
               <div className="logo">
                 <a href={ROUTES.HOME} className="header-logo">
-                  <img src="assets/img/logo/Logo-black.svg" alt="logo-img" />
+                  <img src="/assets/img/logo/Logo-black.svg" alt="logo-img" />
                 </a>
                 <div className="logo-2">
                   <a href={ROUTES.HOME}>
-                    <img src="assets/img/logo/Logo-black.svg" alt="" />
+                    <img src="/assets/img/logo/Logo-black.svg" alt="" />
                   </a>
                 </div>
               </div>
@@ -106,7 +106,7 @@ const Header = () => {
               <div className="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
                 <div className="offcanvas__logo">
                   <a href={ROUTES.HOME}>
-                    <img src="assets/img/logo/Logo-black.svg" alt="logo-img" />
+                    <img src="/assets/img/logo/Logo-black.svg" alt="logo-img" />
                   </a>
                 </div>
                 <div className="offcanvas__close" onClick={closeSidebar}>

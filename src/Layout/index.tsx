@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Footer from "./Footer";
 import Header from "./Header";
-import { VideoModal } from "../Components/Common";
+import { VideoModal, ScrollToTop, BackToTopBtn } from "../Components/Common";
 
 const Layout = () => {
   return (
@@ -12,6 +12,8 @@ const Layout = () => {
       </main>
       <Footer />
       <VideoModal />
+      <ScrollToTop />
+      <BackToTopBtn />
     </>
   );
 };

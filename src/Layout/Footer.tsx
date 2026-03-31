@@ -4,7 +4,7 @@ const Footer = () => {
   return (
         <footer className="footer-section fix fix">
        <div className="bg-shape">
-        <img src="assets/img/footer/bg-shape.png" alt="img"/>
+        <img src="/assets/img/footer/bg-shape.png" alt="img"/>
        </div>
        <div className="mycustom-marque">
               <div className="scrolling-wrap style-2">
@@ -31,7 +31,7 @@ const Footer = () => {
                     <div className="col-lg-8">
                         <div className="footer-item">
                             <a href={ROUTES.HOME} className="footer-logo wow fadeInUp" data-wow-delay=".3s">
-                                <img src="assets/img/logo/Logo-black.svg" alt="img"/>
+                                <img src="/assets/img/logo/Logo-black.svg" alt="img"/>
                             </a>
                             <ul className="footer-list-items wow fadeInUp" data-wow-delay=".5s">
                                 <li>

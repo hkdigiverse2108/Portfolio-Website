@@ -1,8 +1,9 @@
 import { KEYS } from "../Constant";
 import { URL_KEYS } from "../Constant/Url";
-import type { AppQueryOptions, HeroSectionApiResponse, UserApiResponse, WorkCountApiResponse, OurServiceApiResponse, PortfolioApiResponse, WorkExperienceApiResponse, SkillApiResponse, AwardsApiResponse, TestimonialDescriptionApiResponse, TestimonialApiResponse, BlogApiResponse } from "../Types";
+import type { AppQueryOptions, HeroSectionApiResponse, UserApiResponse, WorkCountApiResponse, OurServiceApiResponse, PortfolioApiResponse, WorkExperienceApiResponse, SkillApiResponse, AwardsApiResponse, TestimonialDescriptionApiResponse, TestimonialApiResponse, BlogApiResponse, BlogDetailApiResponse, SettingApiResponse } from "../Types";
 import { Get } from "./Methods";
 import { useQueries } from "./ReactQuery";
+import { buildQueryParams } from "../Utils/common";
 
 export const Queries = {
   // ************ User ***********
@@ -36,5 +37,14 @@ export const Queries = {
   useGetTestimonial: (options?: AppQueryOptions<TestimonialApiResponse>) => useQueries<TestimonialApiResponse>([KEYS.TESTIMONIAL.GET], () => Get(URL_KEYS.TESTIMONIAL.GET), options),
 
   // ************ Blog ***********
-  useGetBlog: (options?: AppQueryOptions<BlogApiResponse>) => useQueries<BlogApiResponse>([KEYS.BLOG.GET], () => Get(URL_KEYS.BLOG.GET), options),
+  useGetBlog: (params?: { page?: number; limit?: number; activeFilter?: boolean }, options?: AppQueryOptions<BlogApiResponse>) => {
+    const url = `${URL_KEYS.BLOG.GET}${buildQueryParams(params)}`;
+    return useQueries<BlogApiResponse>([KEYS.BLOG.GET, params], () => Get(url), options);
+  },
+  useGetBlogDetails: (id?: string, options?: AppQueryOptions<BlogDetailApiResponse>) =>
+    useQueries<BlogDetailApiResponse>([KEYS.BLOG.GET_DETAILS, id], () => Get(`${URL_KEYS.BLOG.GET_DETAILS}/${id}`), { enabled: !!id, ...options }),
+
+  // ************ Setting ***********
+  useGetSetting: (options?: AppQueryOptions<SettingApiResponse>) => useQueries<SettingApiResponse>([KEYS.SETTING.GET], () => Get(URL_KEYS.SETTING.GET), options),
 };
+

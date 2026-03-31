@@ -41,17 +41,17 @@ const Faq = () => {
             <BreadCrumb title="Faq" pageName="Faq" />
             <section className="faq-section faq-1 section-padding fix section-bg">
                 <div className="arrow-shape float-bob-y">
-                    <img src="assets/img/shape/angle-arrow-2.png" alt="img" />
+                    <img src="/assets/img/shape/angle-arrow-2.png" alt="img" />
                 </div>
                 <div className="star-shape float-bob-x">
-                    <img src="assets/img/shape/star-6.png" alt="img" />
+                    <img src="/assets/img/shape/star-6.png" alt="img" />
                 </div>
                 <div className="container">
                     <div className="row">
                         <div className="col-xl-5 col-lg-6">
                             <div className="section-title">
                                 <span className="style-2 wow fadeInUp">
-                                    <img src="assets/img/shape/star-2.png" alt="img" />
+                                    <img src="/assets/img/shape/star-2.png" alt="img" />
                                     Find Your Answer
                                 </span>
                                 <h2 className="wow fadeInUp" data-wow-delay=".2s">Read Most Frequent Questions</h2>
@@ -108,7 +108,7 @@ const Faq = () => {
                     <div className="section-title-area">
                         <div className="section-title">
                             <span className="style-2 wow fadeInUp">
-                                <img src="assets/img/shape/star-2.png" alt="img" />
+                                <img src="/assets/img/shape/star-2.png" alt="img" />
                                 Testimonial
                             </span>
                             <h2 className="wow fadeInUp" data-wow-delay=".2s">Peoples Say’s About Me</h2>
@@ -156,7 +156,7 @@ const Faq = () => {
                                             </div>
                                         </div>
                                         <div className="qoute">
-                                            <img src="assets/img/icon/24.svg" alt="img" />
+                                            <img src="/assets/img/icon/24.svg" alt="img" />
                                         </div>
                                     </div>
                                     <p>{item.content}</p>

@@ -11,7 +11,7 @@ const ServiceDetails = () => {
                             <div className="service-details-post">
                                 <div className="single-service-post">
                                     <div className="service-thumb">
-                                        <img src="assets/img/service/01.png" alt="img" />
+                                        <img src="/assets/img/service/01.png" alt="img" />
                                     </div>
                                     <div className="post-content">
                                         <h2 className="mb-3">Web Design</h2>
@@ -36,7 +36,7 @@ const ServiceDetails = () => {
 
                                             <div className="post-item">
                                                 <div className="icon">
-                                                    <img src="assets/img/icon/arrow-circle-right.svg" alt="icon" />
+                                                    <img src="/assets/img/icon/arrow-circle-right.svg" alt="icon" />
                                                 </div>
                                                 <div className="content">
                                                     <h6>Discovery & Research:</h6>
@@ -48,7 +48,7 @@ const ServiceDetails = () => {
                                             </div>
                                             <div className="post-item">
                                                 <div className="icon">
-                                                    <img src="assets/img/icon/arrow-circle-right.svg" alt="icon" />
+                                                    <img src="/assets/img/icon/arrow-circle-right.svg" alt="icon" />
                                                 </div>
                                                 <div className="content">
                                                     <h6>Wireframing & Prototyping:</h6>
@@ -59,7 +59,7 @@ const ServiceDetails = () => {
                                             </div>
                                             <div className="post-item">
                                                 <div className="icon">
-                                                    <img src="assets/img/icon/arrow-circle-right.svg" alt="icon" />
+                                                    <img src="/assets/img/icon/arrow-circle-right.svg" alt="icon" />
                                                 </div>
                                                 <div className="content">
                                                     <h6>Custom Design:</h6>
@@ -71,7 +71,7 @@ const ServiceDetails = () => {
                                             </div>
                                             <div className="post-item">
                                                 <div className="icon">
-                                                    <img src="assets/img/icon/arrow-circle-right.svg" alt="icon" />
+                                                    <img src="/assets/img/icon/arrow-circle-right.svg" alt="icon" />
                                                 </div>
                                                 <div className="content">
                                                     <h6>SEO Optimization:</h6>
@@ -82,7 +82,7 @@ const ServiceDetails = () => {
                                             </div>
                                             <div className="post-item">
                                                 <div className="icon">
-                                                    <img src="assets/img/icon/arrow-circle-right.svg" alt="icon" />
+                                                    <img src="/assets/img/icon/arrow-circle-right.svg" alt="icon" />
                                                 </div>
                                                 <div className="content">
                                                     <h6>Testing & Launch:</h6>
@@ -93,7 +93,7 @@ const ServiceDetails = () => {
                                             </div>
                                             <div className="post-item mb-3">
                                                 <div className="icon">
-                                                    <img src="assets/img/icon/arrow-circle-right.svg" alt="icon" />
+                                                    <img src="/assets/img/icon/arrow-circle-right.svg" alt="icon" />
                                                 </div>
                                                 <div className="content">
                                                     <h6>Ongoing Support & Maintenance:</h6>
@@ -106,12 +106,12 @@ const ServiceDetails = () => {
                                         <div className="row g-4 mt-4 mb-4">
                                             <div className="col-lg-6">
                                                 <div className="post-thumb">
-                                                    <img src="assets/img/service/02.png" alt="img" />
+                                                    <img src="/assets/img/service/02.png" alt="img" />
                                                 </div>
                                             </div>
                                             <div className="col-lg-6">
                                                 <div className="post-thumb">
-                                                    <img src="assets/img/service/3.jpg" alt="img" />
+                                                    <img src="/assets/img/service/3.jpg" alt="img" />
                                                 </div>
                                             </div>
                                         </div>
@@ -123,14 +123,14 @@ const ServiceDetails = () => {
                                             galley type scrambled.</p>
                                         <div className="highlight-text">
                                             <div className="qoute-shape">
-                                                <img src="assets/img/service/5.png" alt="shape" />
+                                                <img src="/assets/img/service/5.png" alt="shape" />
                                             </div>
                                             <div className="content">
                                                 <h6>Our team of UI/UX experts conducts a thorough evaluation o the submitted
                                                     element, analyzing its usability, functionality, visual design, and overall
                                                     user experience.</h6>
                                                 <div className="info">
-                                                    <img src="assets/img/service/4.png" alt="img" />
+                                                    <img src="/assets/img/service/4.png" alt="img" />
                                                     <h5>Tushar Raja</h5>
                                                 </div>
                                             </div>
@@ -142,7 +142,7 @@ const ServiceDetails = () => {
                                         <div className="post-list mt-3">
                                             <div className="post-item">
                                                 <div className="icon">
-                                                    <img src="assets/img/icon/arrow-circle-right.svg" alt="icon" />
+                                                    <img src="/assets/img/icon/arrow-circle-right.svg" alt="icon" />
                                                 </div>
                                                 <div className="content">
                                                     <h6>Tailored Designs:</h6>
@@ -151,7 +151,7 @@ const ServiceDetails = () => {
                                             </div>
                                             <div className="post-item">
                                                 <div className="icon">
-                                                    <img src="assets/img/icon/arrow-circle-right.svg" alt="icon" />
+                                                    <img src="/assets/img/icon/arrow-circle-right.svg" alt="icon" />
                                                 </div>
                                                 <div className="content">
                                                     <h6>Tailored Designs:</h6>
@@ -161,7 +161,7 @@ const ServiceDetails = () => {
                                             </div>
                                             <div className="post-item mb-0">
                                                 <div className="icon">
-                                                    <img src="assets/img/icon/arrow-circle-right.svg" alt="icon" />
+                                                    <img src="/assets/img/icon/arrow-circle-right.svg" alt="icon" />
                                                 </div>
                                                 <div className="content">
                                                     <h6>Mobile-First Design:</h6>
@@ -187,19 +187,19 @@ const ServiceDetails = () => {
                                     <div className="service-list">
                                         <ul>
                                             <li><a href="service-details.html">Moblie App Design</a> <img
-                                                src="assets/img/icon/43.svg" alt="icon" /></li>
-                                            <li><a href="service-details.html">Web Design</a> <img src="assets/img/icon/43.svg"
+                                                src="/assets/img/icon/43.svg" alt="icon" /></li>
+                                            <li><a href="service-details.html">Web Design</a> <img src="/assets/img/icon/43.svg"
                                                 alt="icon" /></li>
                                             <li><a href="service-details.html">UI/UX Design</a> <img
-                                                src="assets/img/icon/43.svg" alt="icon" /></li>
+                                                src="/assets/img/icon/43.svg" alt="icon" /></li>
                                             <li><a href="service-details.html">UI/UX Design</a> <img
-                                                src="assets/img/icon/43.svg" alt="icon" /></li>
+                                                src="/assets/img/icon/43.svg" alt="icon" /></li>
                                             <li><a href="service-details.html">Visual Design</a> <img
-                                                src="assets/img/icon/43.svg" alt="icon" /></li>
+                                                src="/assets/img/icon/43.svg" alt="icon" /></li>
                                             <li><a href="service-details.html">Project Design</a> <img
-                                                src="assets/img/icon/43.svg" alt="icon" /></li>
+                                                src="/assets/img/icon/43.svg" alt="icon" /></li>
                                             <li><a href="service-details.html">Barnd Design</a> <img
-                                                src="assets/img/icon/43.svg" alt="icon" /></li>
+                                                src="/assets/img/icon/43.svg" alt="icon" /></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -219,10 +219,10 @@ const ServiceDetails = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="info-sidebar-widget" style={{ backgroundImage: "url(assets/img/shape/bg.png)" }}>
+                                <div className="info-sidebar-widget" style={{ backgroundImage: "url(/assets/img/shape/bg.png)" }}>
                                     <div className="info-widget">
                                         <div className="logo">
-                                            <a href="index.html"><img src="assets/img/logo/Logo-black.svg" alt="logo" /></a>
+                                            <a href="index.html"><img src="/assets/img/logo/Logo-black.svg" alt="logo" /></a>
                                         </div>
                                         <div className="content">
                                             <h3>Don't Hesitate to Contact Me</h3>

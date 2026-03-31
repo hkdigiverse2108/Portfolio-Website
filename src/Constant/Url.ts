@@ -31,5 +31,12 @@ export const URL_KEYS = {
   },
   BLOG: {
     GET: "blog/all",
+    GET_DETAILS: "blog",
+  },
+  CONTACT: {
+    POST: "contact-us/add",
+  },
+  SETTING: {
+    GET: "setting/get",
   },
 };

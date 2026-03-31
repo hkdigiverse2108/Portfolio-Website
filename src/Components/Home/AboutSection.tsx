@@ -21,7 +21,7 @@ const AboutSection = ({ description, workCountData }: AboutSectionProps) => {
         <div className="section-title-area">
           <div className="section-title">
             <span className="wow fadeInUp">
-              <img src="assets/img/shape/star-2.png" alt="img" />
+              <img src="/assets/img/shape/star-2.png" alt="img" />
               We Are We
             </span>
             <h2 className="wow fadeInUp" data-wow-delay=".2s">

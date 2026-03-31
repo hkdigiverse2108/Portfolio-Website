@@ -8,17 +8,17 @@ const AwardsSection: React.FC<AwardsSectionProps> = ({ awardsData }) => {
   return (
       <section className="awards-section section-padding fix">
         <div className="top-shape">
-            <img src="assets/img/shape/new-shape.png" alt="img"/>
+            <img src="/assets/img/shape/new-shape.png" alt="img"/>
         </div>
         <div className="star-shape float-bob-x">
-            <img src="assets/img/shape/star.png" alt="img"/>
+            <img src="/assets/img/shape/star.png" alt="img"/>
         </div>
         <div className="container">
             <div className="awards-wrapper">
                 <div className="row g-4">
                     <div className="col-md-6">
                         <div className="section-title mb-0">
-                            <span className="wow fadeInUp"><img src="assets/img/shape/star-2.png" alt="img"/>Awards</span>
+                            <span className="wow fadeInUp"><img src="/assets/img/shape/star-2.png" alt="img"/>Awards</span>
                             <h2 className="wow fadeInUp" data-wow-delay=".2s"><span>Awards</span> & Recognition</h2>
                         </div>
                     </div>

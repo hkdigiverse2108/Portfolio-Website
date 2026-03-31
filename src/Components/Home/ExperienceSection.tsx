@@ -12,9 +12,9 @@ const ExperienceSection = ({ workExperienceData, skillData }: ExperienceSectionP
       <div className="container">
         <div className="section-title  text-center">
           <span className="wow fadeInUp">
-            <img src="assets/img/shape/star-2.png" alt="img" />
+            <img src="/assets/img/shape/star-2.png" alt="img" />
             My Experience
-            <img src="assets/img/shape/star-2.png" alt="img" />
+            <img src="/assets/img/shape/star-2.png" alt="img" />
           </span>
           <h2 className="wow fadeInUp" data-wow-delay=".2s">
             My Work Experience

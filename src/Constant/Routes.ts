@@ -7,7 +7,7 @@ export const ROUTES = {
   SERVICE_DETAIL : "/service-detail",
   BLOG : "/blog",
   BLOG_CLASSIC : "/blog-classic",
-  BLOG_DETAIL : "/blog-detail",
+  BLOG_DETAIL : "/blog-detail/:id",
   NOT_FOUND : "/404",
   FAQ : "/faq",
   PORTFOLIO : "/portfolio",

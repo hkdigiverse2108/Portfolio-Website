@@ -9,12 +9,12 @@ const ServiceSection = ({ ourServiceData }: ServiceSectionProps) => {
     return (
         <section className="service-section service-1 section-padding section-bg fix">
             <div className="random-shape float-bob-y">
-                <img src="assets/img/shape/random-shape.png" alt="img" />
+                <img src="/assets/img/shape/random-shape.png" alt="img" />
             </div>
             <div className="container">
                 <h2 className="sub-title">OUR SERVICE</h2>
                 <div className="section-title text-center">
-                    <span className="wow fadeInUp"><img src="assets/img/shape/star-2.png" alt="img" />Our Service<img src="assets/img/shape/star-2.png" alt="img" /></span>
+                    <span className="wow fadeInUp"><img src="/assets/img/shape/star-2.png" alt="img" />Our Service<img src="/assets/img/shape/star-2.png" alt="img" /></span>
                     <h2 className="wow fadeInUp" data-wow-delay=".2s">The Ease-<span>Service</span> Process</h2>
                 </div>
                 <div className="service-wrapper">

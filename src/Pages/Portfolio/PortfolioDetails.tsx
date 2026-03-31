@@ -10,7 +10,7 @@ const PortfolioDetails = () => {
                 <div className="row">
                     <div className="col-12">
                         <div className="project-details-images">
-                            <img src="assets/img/project/21.png" alt="img"/>
+                            <img src="/assets/img/project/21.png" alt="img"/>
                         </div>
                     </div>
                 </div>
@@ -27,13 +27,13 @@ const PortfolioDetails = () => {
                                 your home.</p>
                             <h3 className="mt-2">Research & User Insights</h3>
                             <ul className="list-item">
-                                <li><img src="assets/img/icon/arrow-circle-right.svg" alt="icon"/>
+                                <li><img src="/assets/img/icon/arrow-circle-right.svg" alt="icon"/>
                                     <h6>User Research:</h6> Surveys, competitor analysis, and pain points
                                 </li>
-                                <li><img src="assets/img/icon/arrow-circle-right.svg" alt="icon"/>
+                                <li><img src="/assets/img/icon/arrow-circle-right.svg" alt="icon"/>
                                     <h6>Target Audience:</h6> Restaurant owners, foodies, busy professionals
                                 </li>
-                                <li><img src="assets/img/icon/arrow-circle-right.svg" alt="icon"/>
+                                <li><img src="/assets/img/icon/arrow-circle-right.svg" alt="icon"/>
                                     <h6>User Personas:</h6> Example personas with goals & frustrations
                                 </li>
                             </ul>
@@ -46,28 +46,28 @@ const PortfolioDetails = () => {
                             </p>
                             <h3 className="mt-4">Problem Statement</h3>
                             <ul className="list-item">
-                                <li><img src="assets/img/icon/arrow-circle-right.svg" alt="icon"/> Challenges in existing
+                                <li><img src="/assets/img/icon/arrow-circle-right.svg" alt="icon"/> Challenges in existing
                                     food delivery/restaurant websites</li>
-                                <li><img src="assets/img/icon/arrow-circle-right.svg" alt="icon"/> Need for better user
+                                <li><img src="/assets/img/icon/arrow-circle-right.svg" alt="icon"/> Need for better user
                                     experience, faster ordering, and modern UI</li>
                             </ul>
                             <h3>Final Outcome & Impac:</h3>
                             <ul className="list-item">
-                                <li><img src="assets/img/icon/arrow-circle-right.svg" alt="icon"/>
+                                <li><img src="/assets/img/icon/arrow-circle-right.svg" alt="icon"/>
                                     <h6>Before vs. After UI Comparison:</h6> Showcasing improvements
                                 </li>
-                                <li><img src="assets/img/icon/arrow-circle-right.svg" alt="icon"/> Need for better user
+                                <li><img src="/assets/img/icon/arrow-circle-right.svg" alt="icon"/> Need for better user
                                     experience, faster ordering, and modern UI</li>
                             </ul>
                             <div className="row">
                                 <div className="col-md-6">
                                     <div className="project-thumb">
-                                        <img src="assets/img/project/22.png" alt="img"/>
+                                        <img src="/assets/img/project/22.png" alt="img"/>
                                     </div>
                                 </div>
                                 <div className="col-md-6">
                                     <div className="project-thumb">
-                                        <img src="assets/img/project/23.png" alt="img"/>
+                                        <img src="/assets/img/project/23.png" alt="img"/>
                                     </div>
                                 </div>
                             </div>
@@ -115,10 +115,10 @@ const PortfolioDetails = () => {
                                     </ul>
                                 </div>
                             </div>
-                            <div className="info-sidebar-widget" style={{backgroundImage: "url(assets/img/shape/bg.png)"}}>
+                            <div className="info-sidebar-widget" style={{backgroundImage: "url(/assets/img/shape/bg.png)"}}>
                                 <div className="info-widget">
                                     <div className="logo">
-                                        <a href="index.html"><img src="assets/img/logo/Logo-black.svg" alt="logo"/></a>
+                                        <a href="index.html"><img src="/assets/img/logo/Logo-black.svg" alt="logo"/></a>
                                     </div>
                                     <div className="content">
                                         <h3>Don't Hesitate to Contact Me</h3>

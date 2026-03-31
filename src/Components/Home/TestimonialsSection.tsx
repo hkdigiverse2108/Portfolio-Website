@@ -15,14 +15,14 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ testimonialDe
   return (
     <section className="testimonials-section testimonials-1 section-padding section-bg-2 fix">
       <div className="random-shape float-bob-x">
-        <img src="assets/img/shape/random-shape.png" alt="img" />
+        <img src="/assets/img/shape/random-shape.png" alt="img" />
       </div>
       <div className="container">
         <div className="row g-4">
           <div className="col-lg-6">
             <div className="section-title">
               <span className="wow fadeInUp">
-                <img src="assets/img/shape/star-2.png" alt="img" />
+                <img src="/assets/img/shape/star-2.png" alt="img" />
                 Testimonials
               </span>
               {/* <h2 className="wow fadeInUp" data-wow-delay=".2s">Our clients awesome <span>Testimonials</span></h2> */}
@@ -85,7 +85,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ testimonialDe
                       </div>
                       <div className="testi-content">
                         <div className="icon">
-                          <img src="assets/img/icon/42.svg" alt="img" />
+                          <img src="/assets/img/icon/42.svg" alt="img" />
                         </div>
                         <p>{item.description}</p>
                       </div>

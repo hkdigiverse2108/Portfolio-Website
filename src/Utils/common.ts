@@ -5,3 +5,15 @@ export const splitLastWord = (text?: string): { firstPart: string; lastWord: str
     const lastWord = words.pop() || "";
     return { firstPart: words.join(" "), lastWord };
 };
+
+export const buildQueryParams = (params?: Record<string, string | number | boolean | undefined | null>): string => {
+    if (!params) return "";
+    const queryParams = new URLSearchParams();
+    Object.entries(params).forEach(([key, value]) => {
+        if (value !== undefined && value !== null && value !== "") {
+            queryParams.append(key, value.toString());
+        }
+    });
+    const queryString = queryParams.toString();
+    return queryString ? `?${queryString}` : "";
+};

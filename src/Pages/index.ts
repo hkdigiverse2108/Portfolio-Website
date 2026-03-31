@@ -7,5 +7,4 @@ export { default as PortfolioDetails } from "./Portfolio/PortfolioDetails";
 export { default as Service } from "./Service"; 
 export { default as ServiceDetails } from "./Service/ServiceDetails";
 export { default as Blog } from "./Blog";
-export { default as BlogClassic } from "./Blog/BlogClassic";
 export { default as BlogDetails } from "./Blog/BlogDetails";

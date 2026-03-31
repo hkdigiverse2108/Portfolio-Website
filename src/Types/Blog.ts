@@ -24,3 +24,7 @@ export interface BlogData extends PageStatus {
 export interface BlogApiResponse extends MessageStatus {
   data: BlogData;
 }
+
+export interface BlogDetailApiResponse extends MessageStatus {
+  data: BlogBase;
+}

@@ -9,13 +9,13 @@ const BreadCrumb = ({ title, pageName }: BreadCrumbProps) => {
   return (
     <section 
       className="breadcrumb-wrapper fix bg-cover" 
-      style={{ backgroundImage: "url(assets/img/breadcrumb/bg.jpg)" }}
+      style={{ backgroundImage: "url(/assets/img/breadcrumb/bg.jpg)" }}
     >
       <div className="star-shape float-bob-x">
-        <img src="assets/img/shape/star.png" alt="img" />
+        <img src="/assets/img/shape/star.png" alt="img" />
       </div>
       <div className="arrow-shape">
-        <img src="assets/img/breadcrumb/arrow.png" alt="img" />
+        <img src="/assets/img/breadcrumb/arrow.png" alt="img" />
       </div>
       <div className="container">
         <div className="row">

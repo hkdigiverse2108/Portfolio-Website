@@ -11,7 +11,7 @@ const Portfolio = () => {
                     <div className="col-xl-7 col-md-6">
                         <div className="project-items-2 mt-0 wow fadeInUp" data-wow-delay=".2s">
                             <div className="images">
-                                <img src="assets/img/project/01.png" alt="img"/>
+                                <img src="/assets/img/project/01.png" alt="img"/>
                             </div>
                             <div className="content">
                                 <div className="text">
@@ -28,7 +28,7 @@ const Portfolio = () => {
                     <div className="col-xl-5 col-md-6">
                         <div className="project-items-2 mt-md-0 wow fadeInUp" data-wow-delay=".4s">
                             <div className="images">
-                                <img src="assets/img/project/02.png" alt="img"/>
+                                <img src="/assets/img/project/02.png" alt="img"/>
                             </div>
                             <div className="content">
                                 <div className="text">
@@ -44,7 +44,7 @@ const Portfolio = () => {
                     <div className="col-xl-5 col-md-6">
                         <div className="project-items-2 wow fadeInUp" data-wow-delay=".6s">
                             <div className="images">
-                                <img src="assets/img/project/03.png" alt="img"/>
+                                <img src="/assets/img/project/03.png" alt="img"/>
                             </div>
                             <div className="content">
                                 <div className="text">
@@ -60,7 +60,7 @@ const Portfolio = () => {
                     <div className="col-xl-7 col-md-6">
                         <div className="project-items-2 wow fadeInUp" data-wow-delay=".8s">
                             <div className="images">
-                                <img src="assets/img/project/04.png" alt="img"/>
+                                <img src="/assets/img/project/04.png" alt="img"/>
                             </div>
                             <div className="content">
                                 <div className="text">
@@ -76,7 +76,7 @@ const Portfolio = () => {
                     <div className="col-md-6">
                         <div className="project-items-2 wow fadeInUp" data-wow-delay="1s">
                             <div className="images">
-                                <img src="assets/img/project/05.png" alt="img"/>
+                                <img src="/assets/img/project/05.png" alt="img"/>
                             </div>
                             <div className="content">
                                 <div className="text">
@@ -92,7 +92,7 @@ const Portfolio = () => {
                     <div className="col-md-6">
                         <div className="project-items-2 wow fadeInUp" data-wow-delay="1.2s">
                             <div className="images">
-                                <img src="assets/img/project/06.png" alt="img"/>
+                                <img src="/assets/img/project/06.png" alt="img"/>
                             </div>
                             <div className="content">
                                 <div className="text">

@@ -4,4 +4,6 @@ export { default as BackToTopBtn } from "./BackToTopBtn";
 export { default as BreadCrumb } from "./BreadCrumb";
 export { default as PageNotFound } from "./PageNotFound";
 export { default as VideoModal } from "./VideoModal";
+export { default as ScrollToTop } from "./ScrollToTop";
 export { CountItem } from "./CountItem";
+export { default as ContactForm } from "./ContactForm";

@@ -11,7 +11,7 @@ const ProjectSection = ({ portfolioData }: ProjectSectionProps) => {
         <div className="container">
             <div className="section-title-area">
                 <div className="section-title">
-                    <span className="wow fadeInUp"><img src="assets/img/shape/star-2.png" alt="img"/>Project</span>
+                    <span className="wow fadeInUp"><img src="/assets/img/shape/star-2.png" alt="img"/>Project</span>
                     <h2 className="wow fadeInUp" data-wow-delay=".2s">My Featured <span>Protfoilo</span></h2>
                 </div>
                 <a href={ROUTES.PORTFOLIO} className="theme-btn wow fadeInUp" data-wow-delay=".4s">
