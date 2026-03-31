@@ -1,35 +1,11 @@
-const serviceData = [
-    {
-        id: "01",
-        title: "Moblie App Design",
-        description: <>We’re a team of strategic working globally with largest brands, <br/> progress only you to play things safe.</>,
-        link: "service-details.html",
-        delay: ".2s"
-    },
-    {
-        id: "02",
-        title: "Web Design",
-        description: <>We’re a team of strategic working globally with largest brands, <br/> progress only you to play things safe.</>,
-        link: "service-details.html",
-        delay: ".4s"
-    },
-    {
-        id: "03",
-        title: "UI/UX Design",
-        description: <>We’re a team of strategic working globally with largest brands, <br/> progress only you to play things safe.</>,
-        link: "service-details.html",
-        delay: ".6s"
-    },
-    {
-        id: "04",
-        title: "Visual Design",
-        description: <>We’re a team of strategic working globally with largest brands, <br/> progress only you to play things safe.</>,
-        link: "service-details.html",
-        delay: ".8s"
-    }
-];
+import { ROUTES } from "../../Constant";
+import type { OurServiceBase } from "../../Types";
 
-const ServiceSection = () => {
+interface ServiceSectionProps {
+    ourServiceData?: OurServiceBase[];
+}
+
+const ServiceSection = ({ ourServiceData }: ServiceSectionProps) => {
     return (
         <section className="service-section service-1 section-padding section-bg fix">
             <div className="random-shape float-bob-y">
@@ -42,18 +18,18 @@ const ServiceSection = () => {
                     <h2 className="wow fadeInUp" data-wow-delay=".2s">The Ease-<span>Service</span> Process</h2>
                 </div>
                 <div className="service-wrapper">
-                    {serviceData.map((service, index) => (
-                        <div key={index} className={`services-item ${index === serviceData.length - 1 ? 'mb-0' : ''} wow fadeInUp`} data-wow-delay={service.delay}>
+                    {ourServiceData?.map((service, index) => (
+                        <div key={service._id || index} className={`services-item ${index === ourServiceData.length - 1 ? 'mb-0' : ''} wow fadeInUp`} data-wow-delay={`.${(index + 1) * 2}s`}>
                             <div className="head">
-                                <span>{service.id}</span>
-                                <h4><a href={service.link}>{service.title}</a></h4>
+                                <span>{String(index + 1).padStart(2, '0')}</span>
+                                <h4><a href={ROUTES.SERVICE}>{service.title}</a></h4>
                             </div>
                             <div className="text">
-                                <p>{service.description}</p>
+                                <p>{service.shortDescription}</p>
                             </div>
                             <div className="link-btn">
                                 <i className="fa-solid fa-arrow-right"></i>
-                                <a href={service.link}>Read More</a>
+                                <a href={ROUTES.SERVICE}>Read More</a>
                             </div>
                         </div>
                     ))}

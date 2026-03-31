@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { navItems } from "../Data";
+import { ROUTES } from "../Constant";
 
 const Header = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -41,11 +42,11 @@ const Header = () => {
           <div className="mega-menu-wrapper">
             <div className="header-main">
               <div className="logo">
-                <a href="index.html" className="header-logo">
+                <a href={ROUTES.HOME} className="header-logo">
                   <img src="assets/img/logo/Logo-black.svg" alt="logo-img" />
                 </a>
                 <div className="logo-2">
-                  <a href="index.html">
+                  <a href={ROUTES.HOME}>
                     <img src="assets/img/logo/Logo-black.svg" alt="" />
                   </a>
                 </div>
@@ -83,7 +84,7 @@ const Header = () => {
                 </div>
               </div>
               <div className="header-right d-flex justify-content-end align-items-center">
-                <a href="contact.html" className="theme-btn"> Hire Me
+                <a href={ROUTES.CONTACT} className="theme-btn"> Hire Me
                   <i className="fa-sharp fa-regular fa-arrow-right"></i>
                 </a>
                 <div className="header__hamburger d-xl-none my-auto" onClick={toggleSidebar}>
@@ -104,7 +105,7 @@ const Header = () => {
             <div className="offcanvas__content">
               <div className="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
                 <div className="offcanvas__logo">
-                  <a href="index.html">
+                  <a href={ROUTES.HOME}>
                     <img src="assets/img/logo/Logo-black.svg" alt="logo-img" />
                   </a>
                 </div>
@@ -200,7 +201,7 @@ const Header = () => {
                   </li>
                 </ul>
                 <div className="header-button mt-4 text-center">
-                  <a href="contact.html" className="theme-btn">
+                  <a href={ROUTES.CONTACT} className="theme-btn">
                     Consultation <i className="fa-solid fa-arrow-right"></i>
                   </a>
                 </div>

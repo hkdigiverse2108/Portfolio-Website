@@ -1,7 +1,12 @@
-import { blogPosts } from "../../Data/Blog";
+import { ROUTES } from "../../Constant";
 import { BlogCard } from "../Blog";
+import type { BlogBase } from "../../Types";
 
-const BlogSection = () => {
+interface BlogSectionProps {
+  data?: BlogBase[];
+}
+
+const BlogSection: React.FC<BlogSectionProps> = ({ data }) => {
   return (
     <section className="news-section news-1 section-padding section-bg fix">
       <div className="container">
@@ -16,12 +21,16 @@ const BlogSection = () => {
           </h2>
         </div>
         <div className="row">
-          {blogPosts.map((post) => (
-            <BlogCard key={post.id} post={post} />
+          {data?.map((post, index) => (
+            <BlogCard 
+              key={post._id} 
+              post={post}
+              delay={`.${2 + index * 2}s`}
+            />
           ))}
         </div>
         <div className="news-button text-center">
-          <a href="news-details.html" className="theme-btn">
+          <a href={ROUTES.BLOG} className="theme-btn">
             View All Blog <i className="fa-solid fa-arrow-right"></i>
           </a>
         </div>

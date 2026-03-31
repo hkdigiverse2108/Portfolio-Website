@@ -8,4 +8,28 @@ export const KEYS = {
   WORK_COUNT: {
     GET: "GET_WORK_COUNT",
   },
+  OUR_SERVICE: {
+    GET: "GET_OUR_SERVICE",
+  },
+  PORTFOLIO: {
+    GET: "GET_PORTFOLIO",
+  },
+  WORK_EXPERIENCE: {
+    GET: "GET_WORK_EXPERIENCE",
+  },
+  SKILL: {
+    GET: "GET_SKILL",
+  },
+  AWARDS: {
+    GET: "GET_AWARDS",
+  },
+  TESTIMONIAL_DESCRIPTION: {
+    GET: "GET_TESTIMONIAL_DESCRIPTION",
+  },
+  TESTIMONIAL: {
+    GET: "GET_TESTIMONIAL",
+  },
+  BLOG: {
+    GET: "GET_BLOG",
+  },
 };

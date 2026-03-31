@@ -1,14 +1,21 @@
-import { BreadCrumb } from '../../Components/Common'
-import { AwardsSection, ServiceSection } from '../../Components/Home'
+import { Queries } from "../../Api";
+import { BreadCrumb, PreLoader } from "../../Components/Common";
+import { AwardsSection, ServiceSection } from "../../Components/Home";
 
 const Service = () => {
-    return (
-        <>
-            <BreadCrumb title="Service" pageName="Service" />
-            <ServiceSection />
-            <AwardsSection/>
-        </>
-    )
-}
+  const { data: ourServiceData, isLoading: ourServiceLoading } = Queries.useGetOurService();
 
-export default Service
+  const isLoading = ourServiceLoading;
+
+  return (
+    <>
+      <PreLoader isLoading={isLoading} />
+
+      <BreadCrumb title="Service" pageName="Service" />
+      <ServiceSection ourServiceData={ourServiceData?.data?.ourService_data} />
+      <AwardsSection />
+    </>
+  );
+};
+
+export default Service;

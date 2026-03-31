@@ -1,3 +1,4 @@
+import { ROUTES } from "../../Constant"
 import BreadCrumb from "./BreadCrumb"
 
 const PageNotFound = () => {
@@ -17,8 +18,8 @@ const PageNotFound = () => {
                         our Latest Posts</p>
                 </div>
                 <div className="error-btn">
-                    <a href="index.html" className="theme-btn">Back To Home <i className="fa-solid fa-arrow-right"></i></a>
-                    <a href="contact.html" className="theme-btn style-2">Contact Me <i
+                    <a href={ROUTES.HOME} className="theme-btn">Back To Home <i className="fa-solid fa-arrow-right"></i></a>
+                    <a href={ROUTES.CONTACT} className="theme-btn style-2">Contact Me <i
                             className="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>

@@ -1,5 +1,6 @@
 import { CountItem } from "../Common";
 import type { WorkCountBase } from "../../Types";
+import { ROUTES } from "../../Constant";
 
 interface AboutSectionProps {
   description?: string;
@@ -31,7 +32,7 @@ const AboutSection = ({ description, workCountData }: AboutSectionProps) => {
           <div className="content">
             {/* <p>We’re a team of strategic working globally with largest brands, We believe that progress only you to play things safe.</p> */}
             <p>{description}</p>
-            <a href="about.html" className="theme-btn">
+            <a href={ROUTES.ABOUT} className="theme-btn">
               More About ME
               <i className="fa-solid fa-arrow-right"></i>
             </a>

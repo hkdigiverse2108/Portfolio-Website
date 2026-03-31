@@ -1,3 +1,4 @@
+import { ROUTES } from "../Constant"
 
 const Footer = () => {
   return (
@@ -29,24 +30,24 @@ const Footer = () => {
                 <div className="row justify-content-center">
                     <div className="col-lg-8">
                         <div className="footer-item">
-                            <a href="index.html" className="footer-logo wow fadeInUp" data-wow-delay=".3s">
+                            <a href={ROUTES.HOME} className="footer-logo wow fadeInUp" data-wow-delay=".3s">
                                 <img src="assets/img/logo/Logo-black.svg" alt="img"/>
                             </a>
                             <ul className="footer-list-items wow fadeInUp" data-wow-delay=".5s">
                                 <li>
-                                    <a href="about.html">ABOUT ME</a>
+                                    <a href={ROUTES.ABOUT}>ABOUT ME</a>
                                 </li>
                                 <li>
-                                    <a href="service-details.html">SERVICES</a>
+                                    <a href={ROUTES.SERVICE}>SERVICES</a>
                                 </li>
                                 <li>
-                                    <a href="portfolio-details.html">PORTFOLIO</a>
+                                    <a href={ROUTES.PORTFOLIO}>PORTFOLIO</a>
                                 </li>
                                 <li>
-                                    <a href="news-details.html">BLOG</a>
+                                    <a href={ROUTES.BLOG}>BLOG</a>
                                 </li>
                                 <li>
-                                    <a href="contact.html">CONTACT US</a>
+                                    <a href={ROUTES.CONTACT}>CONTACT US</a>
                                 </li>
                             </ul>
                             <ul className="social-icon wow fadeInUp" data-wow-delay=".3s">
@@ -74,10 +75,10 @@ const Footer = () => {
                     </p>
                     <ul className="footer-list wow fadeInUp" data-wow-delay=".5s">
                         <li>
-                            <a href="contact.html">Terms & Conditions</a>
+                            <a href={ROUTES.CONTACT}>Terms & Conditions</a>
                         </li>
                         <li>
-                            <a href="contact.html">Privacy Policy</a>
+                            <a href={ROUTES.CONTACT}>Privacy Policy</a>
                         </li>
                     </ul>
                 </div>

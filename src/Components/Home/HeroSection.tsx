@@ -1,9 +1,9 @@
 import { useEffect, useRef, useMemo } from "react";
 import { useDispatch } from "react-redux";
 import Typed from "typed.js";
-import { VideoModal } from "../Common";
 import { openVideoModal } from "../../Store/Slice/videoSlice";
 import type { HeroSectionBase, SocialMediaLink } from "../../Types";
+import { splitLastWord } from "../../Utils";
 
 const HeroSection = ({ data, socialMediaLinks }: { data?: HeroSectionBase; socialMediaLinks?: SocialMediaLink[] }) => {
   const el = useRef(null);
@@ -11,9 +11,7 @@ const HeroSection = ({ data, socialMediaLinks }: { data?: HeroSectionBase; socia
 
   const activeLinks = socialMediaLinks?.filter((item) => item.isActive == true);
 
-  const words = data?.title?.split(" ") || [];
-  const lastName = words.pop() || "";
-  const firstName = words.join(" ") || "";
+  const { firstPart: firstName, lastWord: lastName } = splitLastWord(data?.title);
   // console.log("title", data?.title);
   // console.log("firstName", firstName, "lastName", lastName);
 
@@ -27,7 +25,6 @@ const HeroSection = ({ data, socialMediaLinks }: { data?: HeroSectionBase; socia
       }) || []
     );
   }, [data?.subTitles]);
-
 
   useEffect(() => {
     if (!el.current || strings.length === 0) return;
@@ -89,10 +86,10 @@ const HeroSection = ({ data, socialMediaLinks }: { data?: HeroSectionBase; socia
                 {/* <p>We’re a team of strategic working globally with largest brands, We believe that progress only you to play things safe.</p> */}
                 <p>{data?.description}</p>
                 <div className="hero-btn-wrapper">
-                  <a href="contact.html" className="theme-btn">
+                  {/* <a href="contact.html" className="theme-btn">
                     Download CV
                     <i className="fa-solid fa-arrow-right"></i>
-                  </a>
+                  </a> */}
                   <a className="video-btn video-popup border-0 bg-transparent" onClick={() => dispatch(openVideoModal(data?.link || ""))}>
                     <span className="icon">
                       <i className="fa-solid fa-play"></i>
@@ -106,7 +103,6 @@ const HeroSection = ({ data, socialMediaLinks }: { data?: HeroSectionBase; socia
           </div>
         </div>
       </div>
-      <VideoModal />
     </section>
   );
 };
