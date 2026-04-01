@@ -41,44 +41,10 @@ const PortfolioDetails = () => {
                 <div className="project-details-content">
                   <span>{portfolioData.subTitle}</span>
                   <h2>{portfolioData.title}</h2>
-                  <p className="mb-3">{portfolioData.description}</p>
-
-                  {/* Research & User Insights - Keep as placeholder or map if available */}
-                  <h3 className="mt-2">Research & User Insights</h3>
-                  <ul className="list-item">
-                    <li>
-                      <img src="/assets/img/icon/arrow-circle-right.svg" alt="icon" />
-                      <h6>User Research:</h6> Surveys, competitor analysis, and pain points
-                    </li>
-                    <li>
-                      <img src="/assets/img/icon/arrow-circle-right.svg" alt="icon" />
-                      <h6>Target Audience:</h6> Restaurant owners, foodies, busy professionals
-                    </li>
-                    <li>
-                      <img src="/assets/img/icon/arrow-circle-right.svg" alt="icon" />
-                      <h6>User Personas:</h6> Example personas with goals & frustrations
-                    </li>
-                  </ul>
-                  <p>At [Your Restaurant Name], we believe food is more than just a meal—it’s an experience. Whether you’re craving comfort food or gourmet dishes, we serve up quality and flavor. With a commitment to fresh ingredients and exceptional service, we aim to provide you with an unforgettable dining experience, both at our restaurant and from the comfort of your home.</p>
-                  <h3 className="mt-4">Problem Statement</h3>
-                  <ul className="list-item">
-                    <li>
-                      <img src="/assets/img/icon/arrow-circle-right.svg" alt="icon" /> Challenges in existing food delivery/restaurant websites
-                    </li>
-                    <li>
-                      <img src="/assets/img/icon/arrow-circle-right.svg" alt="icon" /> Need for better user experience, faster ordering, and modern UI
-                    </li>
-                  </ul>
-                  <h3>Final Outcome & Impac:</h3>
-                  <ul className="list-item">
-                    <li>
-                      <img src="/assets/img/icon/arrow-circle-right.svg" alt="icon" />
-                      <h6>Before vs. After UI Comparison:</h6> Showcasing improvements
-                    </li>
-                    <li>
-                      <img src="/assets/img/icon/arrow-circle-right.svg" alt="icon" /> Need for better user experience, faster ordering, and modern UI
-                    </li>
-                  </ul>
+                  <div
+                    className="dynamic-blog-content mt-3"
+                    dangerouslySetInnerHTML={{ __html: portfolioData?.description || "" }}
+                  ></div>
 
                   <div className="row g-4">
                     {portfolioData.images &&

@@ -43,52 +43,10 @@ const BlogDetails = () => {
                       </li>
                     </ul>
                     <h3 className="ext">{blog?.title}</h3>
-                    {/* <p>{blog?.description}</p> */}
-                    {/* <div dangerouslySetInnerHTML={{ __html: blog?.description || "" }}></div> */}
-                    <div className="news-list mt-3">
-                      <h4 className="mb-3">Key Principles of UCD:</h4>
-                      <div className="news-item">
-                        <div className="icon">
-                          <img src="/assets/img/icon/arrow-circle-right.svg" alt="icon" />
-                        </div>
-                        <div className="content">
-                          <h6>User Research:</h6>
-                          <p>Understanding user behaviors and pain points.</p>
-                        </div>
-                      </div>
-                      <div className="news-item">
-                        <div className="icon">
-                          <img src="/assets/img/icon/arrow-circle-right.svg" alt="icon" />
-                        </div>
-                        <div className="content">
-                          <h6>Iterative Process:</h6>
-                          <p>Designing, testing, and refining continuously..</p>
-                        </div>
-                      </div>
-                      <div className="news-item">
-                        <div className="icon">
-                          <img src="/assets/img/icon/arrow-circle-right.svg" alt="icon" />
-                        </div>
-                        <div className="content">
-                          <h6>Usability & Accessibility:</h6>
-                          <p>Ensuring products are easy to use for everyone.</p>
-                        </div>
-                      </div>
-                      <div className="news-item mb-0">
-                        <div className="icon">
-                          <img src="/assets/img/icon/arrow-circle-right.svg" alt="icon" />
-                        </div>
-                        <div className="content">
-                          <h6>User Feedback:</h6>
-                          <p>Gathering insights to improve the experience.</p>
-                        </div>
-                      </div>
-                    </div>
-                    <h3 className="mt-3">Why is User-Centered Design Important?</h3>
-                    <h4 className="mt-3">1. Improves Usability</h4>
-                    <p className="mt-3">When designs prioritize users, navigation becomes intuitive, reducing confusion and frustration. A seamless experience leads to higher engagement and lower bounce rates.</p>
-                    <h4 className="mt-3">2. Enhances User Satisfaction</h4>
-                    <p className="mt-3">Users feel valued when products are tailored to their needs. A smooth, enjoyable experience increases customer loyalty and brand trust.</p>
+                    <div
+                      className="dynamic-blog-content mt-3"
+                      dangerouslySetInnerHTML={{ __html: blog?.description || "" }}
+                    ></div>
                     {blog?.tagLine && (
                       <div className="highlight-text">
                         <div className="qoute-shape">

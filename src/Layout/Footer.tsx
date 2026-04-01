@@ -1,5 +1,6 @@
 import { ROUTES } from "../Constant";
 import { Queries } from "../Api";
+import { HKLink } from "../Data";
 
 const Footer = () => {
   const { data: userRes } = Queries.useGetUser();
@@ -71,10 +72,10 @@ const Footer = () => {
         </div>
         <div className="footer-bottom">
           <div className="footer-bottom-wrapper">
-            <p data-aos="fade-up" data-aos-delay="300">
-              Copyright © {new Date().getFullYear()} <span>HK DigiVerse LLP</span>
+            <p>
+              Copyright © {new Date().getFullYear()} <span onClick={() => window.open(HKLink, "_blank")}>HK DigiVerse LLP</span>
             </p>
-            <ul className="footer-list" data-aos="fade-up" data-aos-delay="400">
+            <ul className="footer-list">
               <li>
                 <a href={ROUTES.TERMS_CONDITION}>Terms & Conditions</a>
               </li>

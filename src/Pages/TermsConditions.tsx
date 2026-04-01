@@ -38,7 +38,7 @@ const TermsConditions = () => {
               <div className="terms-content" data-aos="fade-up">
                 {termsData?.description ? (
                   <div 
-                    className="description-text"
+                    className="dynamic-blog-content"
                     dangerouslySetInnerHTML={{ __html: termsData.description }}
                   />
                 ) : (

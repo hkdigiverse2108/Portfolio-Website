@@ -38,7 +38,7 @@ const PrivacyPolicy = () => {
               <div className="privacy-content" data-aos="fade-up">
                 {privacyData?.description ? (
                   <div 
-                    className="description-text"
+                    className="dynamic-blog-content"
                     dangerouslySetInnerHTML={{ __html: privacyData.description }}
                   />
                 ) : (

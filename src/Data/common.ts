@@ -1,0 +1,1 @@
+export const HKLink = "https://www.hkdigiverse.com/"
