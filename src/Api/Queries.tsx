@@ -1,6 +1,6 @@
 import { KEYS } from "../Constant";
 import { URL_KEYS } from "../Constant/Url";
-import type { AppQueryOptions, HeroSectionApiResponse, UserApiResponse, WorkCountApiResponse, OurServiceApiResponse, OurServiceDetailApiResponse, PortfolioApiResponse, PortfolioDetailApiResponse, WorkExperienceApiResponse, SkillApiResponse, AwardsApiResponse, TestimonialDescriptionApiResponse, TestimonialApiResponse, BlogApiResponse, BlogDetailApiResponse, SettingApiResponse } from "../Types";
+import type { AppQueryOptions, HeroSectionApiResponse, UserApiResponse, WorkCountApiResponse, OurServiceApiResponse, OurServiceDetailApiResponse, PortfolioApiResponse, PortfolioDetailApiResponse, WorkExperienceApiResponse, SkillApiResponse, AwardsApiResponse, TestimonialDescriptionApiResponse, TestimonialApiResponse, BlogApiResponse, BlogDetailApiResponse, SettingApiResponse, TermsConditionsApiResponse, PrivacyPolicyApiResponse } from "../Types";
 import { Get } from "./Methods";
 import { useQueries } from "./ReactQuery";
 import { buildQueryParams } from "../Utils/common";
@@ -56,5 +56,11 @@ export const Queries = {
 
   // ************ Setting ***********
   useGetSetting: (options?: AppQueryOptions<SettingApiResponse>) => useQueries<SettingApiResponse>([KEYS.SETTING.GET], () => Get(URL_KEYS.SETTING.GET), options),
+
+  // ************ Terms & Conditions ***********
+  useGetTermsConditions: (options?: AppQueryOptions<TermsConditionsApiResponse>) => useQueries<TermsConditionsApiResponse>([KEYS.TERMS_CONDITIONS.GET], () => Get(URL_KEYS.TERMS_CONDITIONS.GET), options),
+
+  // ************ Privacy Policy ***********
+  useGetPrivacyPolicy: (options?: AppQueryOptions<PrivacyPolicyApiResponse>) => useQueries<PrivacyPolicyApiResponse>([KEYS.PRIVACY_POLICY.GET], () => Get(URL_KEYS.PRIVACY_POLICY.GET), options),
 };
 

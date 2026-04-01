@@ -41,4 +41,10 @@ export const URL_KEYS = {
   SETTING: {
     GET: "setting/get",
   },
+  TERMS_CONDITIONS: {
+    GET: "terms-conditions/get",
+  },
+  PRIVACY_POLICY: {
+    GET: "privacy-policy/get",
+  },
 };

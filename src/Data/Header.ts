@@ -2,7 +2,7 @@ import { ROUTES } from "../Constant";
 
 interface MenuItem {
   label: string;
-  link: string | null;
+  link: string;
   active?: boolean;
   submenu?: MenuItem[];
   borderNone?: boolean;
@@ -26,7 +26,7 @@ export const navItems: MenuItem[] = [
   },
   {
     label: "Pages",
-    link: null,
+    link: ROUTES.SERVICE,
     submenu: [
       {
         label: "Our Services",

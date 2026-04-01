@@ -76,10 +76,10 @@ const Footer = () => {
             </p>
             <ul className="footer-list wow fadeInUp" data-wow-delay=".5s">
               <li>
-                <a href={ROUTES.CONTACT}>Terms & Conditions</a>
+                <a href={ROUTES.TERMS_CONDITION}>Terms & Conditions</a>
               </li>
               <li>
-                <a href={ROUTES.CONTACT}>Privacy Policy</a>
+                <a href={ROUTES.PRIVACY_POLICY}>Privacy Policy</a>
               </li>
             </ul>
           </div>

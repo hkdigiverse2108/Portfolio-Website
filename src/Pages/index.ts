@@ -7,3 +7,5 @@ export { default as Service } from "./Service";
 export { default as ServiceDetails } from "./Service/ServiceDetails";
 export { default as Blog } from "./Blog";
 export { default as BlogDetails } from "./Blog/BlogDetails";
+export { default as TermsConditions } from "./TermsConditions";
+export { default as PrivacyPolicy } from "./PrivacyPolicy";

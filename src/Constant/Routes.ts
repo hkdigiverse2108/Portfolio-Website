@@ -10,6 +10,8 @@ export const ROUTES = {
   NOT_FOUND : "/404",
   PORTFOLIO : "/portfolio",
   PORTFOLIO_DETAIL : "/portfolio-detail/:id",
+  TERMS_CONDITION : "/terms-condition",
+  PRIVACY_POLICY : "/privacy-policy",
 
   
 }

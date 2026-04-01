@@ -41,4 +41,10 @@ export const KEYS = {
   SETTING: {
     GET: "GET_SETTING",
   },
+  TERMS_CONDITIONS: {
+    GET: "GET_TERMS_CONDITIONS",
+  },
+  PRIVACY_POLICY: {
+    GET: "GET_PRIVACY_POLICY",
+  },
 };
