@@ -31,21 +31,20 @@ export const navItems: MenuItem[] = [
       {
         label: "Our Services",
         link: ROUTES.SERVICE,
-        submenu: [
-          { label: "Service", link: ROUTES.SERVICE },
-          { label: "Service Details", link: ROUTES.SERVICE_DETAIL },
-        ],
+        // submenu: [
+        //   { label: "Service", link: ROUTES.SERVICE },
+        //   { label: "Service Details", link: ROUTES.SERVICE_DETAIL },
+        // ],
       },
       {
         label: "Our Portfolio",
         link: ROUTES.PORTFOLIO,
-        submenu: [
-          { label: "Portfolio", link: ROUTES.PORTFOLIO },
-          { label: "Portfolio Details", link: ROUTES.PORTFOLIO_DETAIL },
-        ],
+        // submenu: [
+        //   { label: "Portfolio", link: ROUTES.PORTFOLIO },
+        //   { label: "Portfolio Details", link: ROUTES.PORTFOLIO_DETAIL },
+        // ],
       },
-      { label: "Faq", link: ROUTES.FAQ },
-      { label: "404", link: ROUTES.NOT_FOUND },
+      // { label: "404", link: ROUTES.NOT_FOUND },
     ],
   },
   {
@@ -53,7 +52,6 @@ export const navItems: MenuItem[] = [
     link: ROUTES.BLOG,
     // submenu: [
     //     { label: "Blog Grid", link: ROUTES.BLOG },
-    //     { label: "Blog Classic", link: ROUTES.BLOG_CLASSIC },
     //     { label: "Blog Details", link: ROUTES.BLOG_DETAIL },
     // ],
   },

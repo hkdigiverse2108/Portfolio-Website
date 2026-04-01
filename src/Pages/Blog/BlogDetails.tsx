@@ -17,8 +17,8 @@ const BlogDetails = () => {
   if (blog?.date) {
     dateStr = blog.date.includes("T") ? new Date(blog.date).toLocaleDateString() : blog.date;
   }
-  const relatedBlogs = blogData?.data?.blog_data?.filter((blog) => blog._id !== id).slice(0, 3);
-
+  const relatedBlogs = blogData?.data?.blog_data?.filter((blog) => blog._id !== id).slice(0, 3) || [];
+  const tags = blog?.tags || [];
   const isLoading = blogDataLoading || blogDetailDataLoading;
 
   return (
@@ -36,7 +36,7 @@ const BlogDetails = () => {
                   </div>
                   <div className="news-content">
                     <ul className="news-meta">
-                      <li className="green">{blog?.tags?.[0] || "Blog"}</li>
+                      <li className="green">{blog?.serviceId?.name || "Blog"}</li>
                       <li className="date">
                         <span></span>
                         {dateStr}
@@ -96,6 +96,10 @@ const BlogDetails = () => {
                         </div>
                         <div className="content">
                           <h6>{blog.tagLine}</h6>
+                          <div className="info">
+                            <img src="/assets/img/service/4.png" alt="img" />
+                            <h5>Het Mangukiya</h5>
+                          </div>
                         </div>
                       </div>
                     )}
@@ -142,38 +146,44 @@ const BlogDetails = () => {
             </div>
             <div className="col-lg-4">
               <div className="main-sidebar">
-                <div className="single-sidebar-widget">
-                  <div className="wid-title">
-                    <h3>Recent Post</h3>
-                  </div>
-                  <div className="recent-post-area">
-                    {relatedBlogs?.map((blog: BlogBase, index: number) => (
-                      <div className="recent-item" key={index}>
-                        <div className="thumb">
-                          <img src={blog?.thumbnailImage} alt="img" />
-                        </div>
-                        <div className="content">
-                          <h6>
-                            <a href={ROUTES.BLOG_DETAIL.replace(":id", blog?._id)}>{blog?.title}</a>
-                          </h6>
-                          <span>{blog?.createdAt}</span>
-                        </div>
+                {relatedBlogs?.length > 0 && (
+                  <>
+                    <div className="single-sidebar-widget">
+                      <div className="wid-title">
+                        <h3>Recent Post</h3>
                       </div>
-                    ))}
-                  </div>
-                </div>
-                <div className="single-sidebar-widget">
-                  <div className="wid-title">
-                    <h3>Tags</h3>
-                  </div>
-                  <div className="news-widget-categories">
-                    <div className="tagcloud">
-                      {blog?.tags?.map((tag: string, index: number) => (
-                        <a key={index}>{tag}</a>
-                      ))}
+                      <div className="recent-post-area">
+                        {relatedBlogs?.map((blog: BlogBase, index: number) => (
+                          <div className="recent-item" key={index}>
+                            <div className="thumb">
+                              <img src={blog?.thumbnailImage} alt="img" />
+                            </div>
+                            <div className="content">
+                              <h6>
+                                <a href={ROUTES.BLOG_DETAIL.replace(":id", blog?._id)}>{blog?.title}</a>
+                              </h6>
+                              <span>{blog?.createdAt}</span>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </>
+                )}
+                {tags?.length > 0 && (
+                  <div className="single-sidebar-widget">
+                    <div className="wid-title">
+                      <h3>Tags</h3>
+                    </div>
+                    <div className="news-widget-categories">
+                      <div className="tagcloud">
+                        {blog?.tags?.map((tag: string, index: number) => (
+                          <a key={index}>{tag}</a>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
+                )}
               </div>
             </div>
           </div>

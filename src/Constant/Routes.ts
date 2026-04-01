@@ -4,14 +4,12 @@ export const ROUTES = {
   CONTACT : "/contact",
   PROJECT : "/project",
   SERVICE : "/service",
-  SERVICE_DETAIL : "/service-detail",
+  SERVICE_DETAIL : "/service-detail/:id",
   BLOG : "/blog",
-  BLOG_CLASSIC : "/blog-classic",
   BLOG_DETAIL : "/blog-detail/:id",
   NOT_FOUND : "/404",
-  FAQ : "/faq",
   PORTFOLIO : "/portfolio",
-  PORTFOLIO_DETAIL : "/portfolio-detail",
+  PORTFOLIO_DETAIL : "/portfolio-detail/:id",
 
   
 }

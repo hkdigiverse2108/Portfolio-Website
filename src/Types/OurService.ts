@@ -29,3 +29,7 @@ export interface OurServiceData extends PageStatus {
 export interface OurServiceApiResponse extends MessageStatus {
   data: OurServiceData;
 }
+
+export interface OurServiceDetailApiResponse extends MessageStatus {
+  data: OurServiceBase;
+}

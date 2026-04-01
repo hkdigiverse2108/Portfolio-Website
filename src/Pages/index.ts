@@ -1,10 +1,9 @@
 export { default as Home } from "./Home";
 export { default as About } from "./About";
 export { default as Contact } from "./Contact";
-export { default as Faq } from "./Faq";
 export { default as Portfolio } from "./Portfolio";
 export { default as PortfolioDetails } from "./Portfolio/PortfolioDetails";
-export { default as Service } from "./Service"; 
+export { default as Service } from "./Service";
 export { default as ServiceDetails } from "./Service/ServiceDetails";
 export { default as Blog } from "./Blog";
 export { default as BlogDetails } from "./Blog/BlogDetails";

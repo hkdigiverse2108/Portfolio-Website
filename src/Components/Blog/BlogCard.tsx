@@ -10,8 +10,8 @@ interface BlogCardProps {
 const BlogCard = ({ post, className = "", delay }: BlogCardProps) => {
   const title = post.title || "";
   const image = post.thumbnailImage || "";
-  const category = post.tags?.[0] || "Blog";
-  
+  const category = post.serviceId?.name || "Blog";
+
   let dateStr = "";
   if (post.date) {
     if (post.date.includes("T")) {
@@ -33,7 +33,10 @@ const BlogCard = ({ post, className = "", delay }: BlogCardProps) => {
         <div className="content">
           <ul className="news-meta">
             <li className="green">{category}</li>
-            <li className="date"><span></span>{dateStr}</li>
+            <li className="date">
+              <span></span>
+              {dateStr}
+            </li>
           </ul>
           <h4>
             <a href={link}>{title}</a>
@@ -42,7 +45,9 @@ const BlogCard = ({ post, className = "", delay }: BlogCardProps) => {
             <a href={link} className="icon">
               <i className="fa-solid fa-arrow-right"></i>
             </a>
-            <a href={link} className="link-btn">Read More</a>
+            <a href={link} className="link-btn">
+              Read More
+            </a>
           </div>
         </div>
       </div>

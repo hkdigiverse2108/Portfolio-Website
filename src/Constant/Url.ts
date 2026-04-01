@@ -10,9 +10,11 @@ export const URL_KEYS = {
   },
   OUR_SERVICE: {
     GET: "our-service/all",
+    GET_DETAILS: "our-service",
   },
   PORTFOLIO: {
     GET: "portfolio/all",
+    GET_DETAILS: "portfolio",
   },
   WORK_EXPERIENCE: {
     GET: "work-experience/all",

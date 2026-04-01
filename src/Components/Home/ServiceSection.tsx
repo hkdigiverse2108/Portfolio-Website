@@ -3,9 +3,12 @@ import type { OurServiceBase } from "../../Types";
 
 interface ServiceSectionProps {
     ourServiceData?: OurServiceBase[];
+    pagination?: React.ReactNode;
+    page?: number;
+    limit?: number;
 }
 
-const ServiceSection = ({ ourServiceData }: ServiceSectionProps) => {
+const ServiceSection = ({ ourServiceData, pagination, page = 1, limit = 10 }: ServiceSectionProps) => {
     return (
         <section className="service-section service-1 section-padding section-bg fix">
             <div className="random-shape float-bob-y">
@@ -21,19 +24,20 @@ const ServiceSection = ({ ourServiceData }: ServiceSectionProps) => {
                     {ourServiceData?.map((service, index) => (
                         <div key={service._id || index} className={`services-item ${index === ourServiceData.length - 1 ? 'mb-0' : ''} wow fadeInUp`} data-wow-delay={`.${(index + 1) * 2}s`}>
                             <div className="head">
-                                <span>{String(index + 1).padStart(2, '0')}</span>
-                                <h4><a href={ROUTES.SERVICE}>{service.title}</a></h4>
+                                <span>{String((page - 1) * limit + (index + 1)).padStart(2, '0')}</span>
+                                <h4><a href={ROUTES.SERVICE_DETAIL.replace(":id", service?._id || "")}>{service.title}</a></h4>
                             </div>
                             <div className="text">
                                 <p>{service.shortDescription}</p>
                             </div>
                             <div className="link-btn">
                                 <i className="fa-solid fa-arrow-right"></i>
-                                <a href={ROUTES.SERVICE}>Read More</a>
+                                <a href={ROUTES.SERVICE_DETAIL.replace(":id", service?._id || "")}>Read More</a>
                             </div>
                         </div>
                     ))}
                 </div>
+                {pagination}
             </div>
         </section>
     )

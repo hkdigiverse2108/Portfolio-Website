@@ -25,3 +25,7 @@ export interface PortfolioData extends PageStatus {
 export interface PortfolioApiResponse extends MessageStatus {
   data: PortfolioData;
 }
+
+export interface PortfolioDetailApiResponse extends MessageStatus {
+  data: PortfolioBase;
+}

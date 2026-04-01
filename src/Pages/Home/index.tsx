@@ -34,7 +34,7 @@ const Home = () => {
       <HeroSection data={heroSectionData?.data} socialMediaLinks={userData?.data?.socialMediaLinks} />
       <MarqueeSection data={userData?.data?.offers} />
       <AboutSection description={heroSectionData?.data?.description} workCountData={workCountData?.data?.workCount_data} />
-      <ServiceSection ourServiceData={ourServiceData?.data?.ourService_data} />
+      <ServiceSection ourServiceData={ourServiceData?.data?.ourService_data?.slice(0, 5)} />
       <ProjectSection portfolioData={portfolioData?.data?.portfolio_data} />
       <ExperienceSection workExperienceData={workExperienceData?.data?.workExperience_data} skillData={skillData?.data?.skill_data} />
       <AwardsSection awardsData={awardsData?.data?.awards_data} />

@@ -7,7 +7,7 @@ export interface ServiceBase {
 
 export interface BlogBase extends CommonDataType {
   thumbnailImage?: string;
-  serviceIds?: ServiceBase[];
+  serviceId?: ServiceBase;
   date?: string;
   title?: string;
   description?: string;
