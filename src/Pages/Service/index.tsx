@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import { useState } from "react";
 import { Queries } from "../../Api";
 import { BreadCrumb, PreLoader } from "../../Components/Common";
 import { AwardsSection, ServiceSection } from "../../Components/Home";
@@ -21,14 +19,6 @@ const Service = () => {
   };
 
   const isLoading = ourServiceLoading || awardsLoading;
-
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-      easing: "ease-in-out",
-    });
-  }, []);
 
   const pagination = totalPages > 1 && (
     <div className="page-nav-wrap text-center mt-5">

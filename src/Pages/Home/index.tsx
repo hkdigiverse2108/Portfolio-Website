@@ -1,6 +1,3 @@
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import { AboutSection, HeroSection, MarqueeSection, ProjectSection, ServiceSection, ExperienceSection, AwardsSection, TestimonialsSection, BlogSection } from "../../Components/Home";
 import { Queries } from "../../Api";
 import { PreLoader } from "../../Components/Common";
@@ -17,14 +14,6 @@ const Home = () => {
   const { data: testimonialDescData, isLoading: testimonialDescLoading } = Queries.useGetTestimonialDescription();
   const { data: testimonialData, isLoading: testimonialLoading } = Queries.useGetTestimonial();
   const { data: blogData, isLoading: blogLoading } = Queries.useGetBlog();
-
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-      easing: "ease-in-out",
-    });
-  }, []);
 
   const isLoading = heroSectionLoading || userLoading || workCountLoading || ourServiceLoading || portfolioLoading || workExperienceLoading || skillLoading || awardsLoading || testimonialDescLoading || testimonialLoading || blogLoading;
 

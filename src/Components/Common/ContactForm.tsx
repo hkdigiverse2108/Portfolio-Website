@@ -44,11 +44,11 @@ const ContactForm = ({ className = "" }: ContactFormProps) => {
 
   return (
     <div className={`contact-form-box ${className}`}>
-      <h3 className="wow fadeInUp">Get In Touch</h3>
+      <h3 data-aos="fade-up">Get In Touch</h3>
       <form onSubmit={formik.handleSubmit}>
         <div className="contact-box">
           <div className="row">
-            <div className="col-md-6 wow fadeInUp" data-wow-delay=".2s">
+            <div className="col-md-6" data-aos="fade-up" data-aos-delay="200">
               <input
                 type="text"
                 name="name"
@@ -59,7 +59,7 @@ const ContactForm = ({ className = "" }: ContactFormProps) => {
               />
               {formik.touched.name && formik.errors.name && <div className="text-danger mt-1 fs-6">{formik.errors.name}</div>}
             </div>
-            <div className="col-md-6 wow fadeInUp" data-wow-delay=".5s">
+            <div className="col-md-6" data-aos="fade-up" data-aos-delay="400">
               <input
                 type="tel"
                 name="phoneNo"
@@ -70,7 +70,7 @@ const ContactForm = ({ className = "" }: ContactFormProps) => {
               />
               {formik.touched.phoneNo && formik.errors.phoneNo && <div className="text-danger mt-1 fs-6">{formik.errors.phoneNo}</div>}
             </div>
-            <div className="col-12 wow fadeInUp" data-wow-delay=".8s">
+            <div className="col-12" data-aos="fade-up" data-aos-delay="600">
               <input
                 type="email"
                 name="email"
@@ -81,7 +81,7 @@ const ContactForm = ({ className = "" }: ContactFormProps) => {
               />
               {formik.touched.email && formik.errors.email && <div className="text-danger mt-1 fs-6">{formik.errors.email}</div>}
             </div>
-            <div className="col-12 wow fadeInUp" data-wow-delay="1.1s">
+            <div className="col-12" data-aos="fade-up" data-aos-delay="800">
               <textarea
                 name="message"
                 placeholder="Enter Your Message"
@@ -93,7 +93,7 @@ const ContactForm = ({ className = "" }: ContactFormProps) => {
               {formik.touched.message && formik.errors.message && <div className="text-danger mt-1 fs-6">{formik.errors.message}</div>}
               {statusMessage && <div className={`mt-3 fs-6 ${statusMessage.type === "success" ? "text-success" : "text-danger"}`}>{statusMessage.text}</div>}
             </div>
-            <div className="col-12 wow fadeInUp" data-wow-delay="1.4s">
+            <div className="col-12" data-aos="fade-up" data-aos-delay="1000">
               <button type="submit" className="theme-btn" disabled={isPending}>
                 {isPending ? "Sending..." : "Send Message"}
                 <i className="fa-solid fa-arrow-right"></i>

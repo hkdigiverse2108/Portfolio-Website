@@ -11,21 +11,21 @@ const BlogSection: React.FC<BlogSectionProps> = ({ data }) => {
     <section className="news-section news-1 section-padding section-bg fix">
       <div className="container">
         <div className="section-title text-center">
-          <span className="wow fadeInUp">
+          <span data-aos="fade-up">
             <img src="/assets/img/shape/star-2.png" alt="img" />
             My Blog
             <img src="/assets/img/shape/star-2.png" alt="img" />
           </span>
-          <h2 className="wow fadeInUp" data-wow-delay=".2s">
+          <h2 data-aos="fade-up" data-aos-delay="200">
             Latest <span>Blog</span>
           </h2>
         </div>
         <div className="row">
           {data?.map((post, index) => (
             <BlogCard 
-              key={post._id} 
+              key={post._id || index} 
               post={post}
-              delay={`.${2 + index * 2}s`}
+              delay={(index + 1) * 200}
             />
           ))}
         </div>

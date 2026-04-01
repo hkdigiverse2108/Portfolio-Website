@@ -20,11 +20,11 @@ const AboutSection = ({ description, workCountData }: AboutSectionProps) => {
       <div className="container">
         <div className="section-title-area">
           <div className="section-title">
-            <span className="wow fadeInUp">
+            <span data-aos="fade-up">
               <img src="/assets/img/shape/star-2.png" alt="img" />
               We Are We
             </span>
-            <h2 className="wow fadeInUp" data-wow-delay=".2s">
+            <h2 data-aos="fade-up" data-aos-delay="200">
               Solving Problems With <br /> lntuitive
               <span>Design</span>
             </h2>

@@ -21,16 +21,16 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ testimonialDe
         <div className="row g-4">
           <div className="col-lg-6">
             <div className="section-title">
-              <span className="wow fadeInUp">
+              <span data-aos="fade-up">
                 <img src="/assets/img/shape/star-2.png" alt="img" />
                 Testimonials
               </span>
               {/* <h2 className="wow fadeInUp" data-wow-delay=".2s">Our clients awesome <span>Testimonials</span></h2> */}
-              <h2 className="wow fadeInUp" data-wow-delay=".2s">
+              <h2 data-aos="fade-up" data-aos-delay="200">
                 {titleFirst} <span>{titleLast}</span>
               </h2>
             </div>
-            <div className="reviews wow fadeInUp" data-wow-delay=".4s">
+            <div className="reviews" data-aos="fade-up" data-aos-delay="400">
               <h2 className="count">{testimonialDescriptionData?.rating !== undefined ? <CountItem end={testimonialDescriptionData.rating} decimals={1} /> : "0"}</h2>
               <div className="item">
                 <span>{testimonialDescriptionData?.subTitle}</span>

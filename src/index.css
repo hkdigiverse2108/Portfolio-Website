@@ -104,3 +104,62 @@ a, button, [role="button"], .theme-btn {
 .portfolio-link-wrapper:hover .portfolio-overlay span {
     transform: translateY(0);
 }
+
+/* Custom AOS Animations Matching Minifolio */
+[data-aos="img-custom-anim-top"] {
+  transform: translateY(-5%);
+  clip-path: inset(0 0 100% 0);
+  opacity: 0;
+  transition-property: transform, opacity, clip-path;
+}
+[data-aos="img-custom-anim-top"].aos-animate {
+  transform: translateY(0);
+  clip-path: inset(0 0 0 0);
+  opacity: 1;
+}
+
+[data-aos="img-custom-anim-bottom"] {
+  transform: translateY(5%);
+  clip-path: inset(100% 0 0 0);
+  opacity: 0;
+  transition-property: transform, opacity, clip-path;
+}
+[data-aos="img-custom-anim-bottom"].aos-animate {
+  transform: translateY(0);
+  clip-path: inset(0 0 0 0);
+  opacity: 1;
+}
+
+[data-aos="img-custom-anim-left"] {
+  transform: translateX(-5%);
+  clip-path: inset(0 100% 0 0);
+  opacity: 0;
+  transition-property: transform, opacity, clip-path;
+}
+[data-aos="img-custom-anim-left"].aos-animate {
+  transform: translateX(0);
+  clip-path: inset(0 0 0 0);
+  opacity: 1;
+}
+
+[data-aos="img-custom-anim-right"] {
+  transform: translateX(5%);
+  clip-path: inset(0 0 0 100%);
+  opacity: 0;
+  transition-property: transform, opacity, clip-path;
+}
+[data-aos="img-custom-anim-right"].aos-animate {
+  transform: translateX(0);
+  clip-path: inset(0 0 0 0);
+  opacity: 1;
+}
+
+[data-aos="fade-up"] {
+  opacity: 0;
+  transform: translate3d(0, 30px, 0);
+  transition-property: transform, opacity;
+}
+[data-aos="fade-up"].aos-animate {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}

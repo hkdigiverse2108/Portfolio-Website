@@ -28,8 +28,8 @@ const Portfolio = () => {
                                 portfolioData.map((item, index) => {
                                     // Repeating column pattern for 6 items per page
                                     const colSchema = ["col-xl-7", "col-xl-5", "col-xl-5", "col-xl-7", "col-md-6", "col-md-6"];
-                                    const colClass = colSchema[index] || "col-md-6";
-                                    const delayValue = `.${((index % 6) + 1) * 2}s`;
+                                    const colClass = colSchema[index % 6] || "col-md-6";
+                                    const delayValue = ((index % 6) + 1) * 200;
                                     
                                     return (
                                         <PortfolioCard 
@@ -39,6 +39,7 @@ const Portfolio = () => {
                                             className="project-items-2"
                                             delay={delayValue}
                                             imageClass="images"
+                                            aosAnimation="img-custom-anim-top"
                                         />
                                     );
                                 })

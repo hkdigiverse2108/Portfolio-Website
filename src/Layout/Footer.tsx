@@ -35,10 +35,10 @@ const Footer = () => {
           <div className="row justify-content-center">
             <div className="col-lg-8">
               <div className="footer-item">
-                <a href={ROUTES.HOME} className="footer-logo wow fadeInUp" data-wow-delay=".3s">
+                <a href={ROUTES.HOME} className="footer-logo" data-aos="fade-up" data-aos-delay="300">
                   <img src="/assets/img/logo/Logo-black.svg" alt="img" />
                 </a>
-                <ul className="footer-list-items wow fadeInUp" data-wow-delay=".5s">
+                <ul className="footer-list-items" data-aos="fade-up" data-aos-delay="500">
                   <li>
                     <a href={ROUTES.ABOUT}>ABOUT ME</a>
                   </li>
@@ -55,7 +55,7 @@ const Footer = () => {
                     <a href={ROUTES.CONTACT}>CONTACT US</a>
                   </li>
                 </ul>
-                <ul className="social-icon wow fadeInUp" data-wow-delay=".3s">
+                <ul className="social-icon" data-aos="fade-up" data-aos-delay="300">
                   {socialLinks.map((social, index) => (
                     <li key={index}>
                       <a href={social.link} target="_blank" rel="noreferrer">
@@ -71,10 +71,10 @@ const Footer = () => {
         </div>
         <div className="footer-bottom">
           <div className="footer-bottom-wrapper">
-            <p className="wow fadeInUp" data-wow-delay=".3s">
+            <p data-aos="fade-up" data-aos-delay="300">
               Copyright © {new Date().getFullYear()} <span>HK DigiVerse LLP</span>
             </p>
-            <ul className="footer-list wow fadeInUp" data-wow-delay=".5s">
+            <ul className="footer-list" data-aos="fade-up" data-aos-delay="400">
               <li>
                 <a href={ROUTES.TERMS_CONDITION}>Terms & Conditions</a>
               </li>

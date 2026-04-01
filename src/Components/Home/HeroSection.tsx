@@ -73,16 +73,16 @@ const HeroSection = ({ data, socialMediaLinks }: { data?: HeroSectionBase; socia
         <div className="row g-4 justify-content-center">
           <div className="col-lg-10">
             <div className="hero-content">
-              <span className="text-2">
+              <span className="text-2" data-aos="fade-up">
                 <img src="/assets/img/shape/star-2.png" alt="img" />
                 Hey There!
               </span>
-              <h1>
+              <h1 data-aos="fade-up" data-aos-delay="200">
                 {/* I'm Rachel <span className="style-2">Davis</span> <br /> */}
                 {firstName} <span className="style-2">{lastName}</span> <br />
                 <strong className="type-text" ref={el}></strong>
               </h1>
-              <div className="hero-bottom">
+              <div className="hero-bottom" data-aos="fade-up" data-aos-delay="400">
                 {/* <p>We’re a team of strategic working globally with largest brands, We believe that progress only you to play things safe.</p> */}
                 <p>{data?.description}</p>
                 <div className="hero-btn-wrapper">

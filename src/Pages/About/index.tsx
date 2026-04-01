@@ -1,6 +1,3 @@
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import { AboutSection, ExperienceSection, MarqueeSection, TestimonialsSection } from "../../Components/Home"
 import { BreadCrumb, PreLoader } from "../../Components/Common"
 import { Queries } from "../../Api";
@@ -15,14 +12,6 @@ const About = () => {
   const { data: testimonialData, isLoading: testimonialLoading } = Queries.useGetTestimonial();
 
   const isLoading = heroSectionLoading || userLoading || workCountLoading || workExperienceLoading || skillLoading || testimonialDescLoading || testimonialLoading;
-
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-      easing: "ease-in-out",
-    });
-  }, []);
 
   return (
     <>

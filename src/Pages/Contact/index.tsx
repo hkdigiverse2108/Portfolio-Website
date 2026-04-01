@@ -23,20 +23,20 @@ const Contact = () => {
             <div className="col-lg-6">
               <div className="contact-wrapper-2">
                 <div className="section-title">
-                  <span className="style-2 border-0 p-0 wow fadeInUp">
+                  <span className="style-2 border-0 p-0" data-aos="fade-up">
                     <img src="/assets/img/shape/star-2.png" alt="img" />
                     Contact Me
                   </span>
-                  <h2 className="wow fadeInUp" data-wow-delay=".2s">
+                  <h2 data-aos="fade-up" data-aos-delay="200">
                     Have a Project in Mind? Let’s Talk!
                   </h2>
-                  <p className="mt-3 mt-mb-0">
+                  <p className="mt-3 mt-mb-0" data-aos="fade-up" data-aos-delay="300">
                     Are you looking to create a seamless and engaging user <br />
                     experience? here to help!
                   </p>
                 </div>
                 <div className="contact-item-wrapper">
-                  <div className="contact-item wow fadeInUp" data-wow-delay=".2s">
+                  <div className="contact-item" data-aos="fade-up" data-aos-delay="200">
                     <div className="icon">
                       <i className="fa-solid fa-phone"></i>
                     </div>
@@ -45,7 +45,7 @@ const Contact = () => {
                       <h6>{setting?.bookMeeting?.phoneNo ? `+${setting.bookMeeting.phoneNo.countryCode} ${setting.bookMeeting.phoneNo.number}` : "+888 (555) 546-33"}</h6>
                     </div>
                   </div>
-                  <div className="contact-item wow fadeInUp" data-wow-delay=".4s">
+                  <div className="contact-item" data-aos="fade-up" data-aos-delay="400">
                     <div className="icon">
                       <i className="fa-solid fa-envelope"></i>
                     </div>
@@ -54,7 +54,7 @@ const Contact = () => {
                       <h6>{setting?.bookMeeting?.email || "xiomi@gmail.com"}</h6>
                     </div>
                   </div>
-                  <div className="contact-item wow fadeInUp" data-wow-delay=".6s">
+                  <div className="contact-item" data-aos="fade-up" data-aos-delay="600">
                     <div className="icon">
                       <i className="fa-solid fa-location-dot"></i>
                     </div>
@@ -65,39 +65,19 @@ const Contact = () => {
                   </div>
                 </div>
                 <div className="social">
-                  <h6>Social: </h6>
+                  <h6 data-aos="fade-up">Social: </h6>
                   <ul className="social-list">
                     {socialMediaLinks?.map((item, index) => {
                       if (!item.isActive) return null;
 
                       return (
-                        <li key={index} className="wow fadeInUp" data-wow-delay={`.${(index + 1) * 2}s`}>
+                        <li key={index} data-aos="fade-up" data-aos-delay={(index + 1) * 200}>
                           <a href={item.link} target="_blank" rel="noreferrer">
                             <i className={item.icon}></i>
                           </a>
                         </li>
                       );
                     })}
-                    {/* <li className="wow fadeInUp" data-wow-delay=".2s">
-                      <a href="#">
-                        <i className="fa-brands fa-facebook-f"></i>
-                      </a>
-                    </li>
-                    <li className="wow fadeInUp" data-wow-delay=".4s">
-                      <a href="#">
-                        <i className="fa-brands fa-twitter"></i>
-                      </a>
-                    </li>
-                    <li className="wow fadeInUp" data-wow-delay=".6s">
-                      <a href="#">
-                        <i className="fa-brands fa-instagram"></i>
-                      </a>
-                    </li>
-                    <li className="wow fadeInUp" data-wow-delay=".8s">
-                      <a href="#">
-                        <i className="fa-brands fa-linkedin-in"></i>
-                      </a>
-                    </li> */}
                   </ul>
                 </div>
               </div>

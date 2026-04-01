@@ -17,12 +17,19 @@ const ServiceSection = ({ ourServiceData, pagination, page = 1, limit = 10 }: Se
             <div className="container">
                 <h2 className="sub-title">OUR SERVICE</h2>
                 <div className="section-title text-center">
-                    <span className="wow fadeInUp"><img src="/assets/img/shape/star-2.png" alt="img" />Our Service<img src="/assets/img/shape/star-2.png" alt="img" /></span>
-                    <h2 className="wow fadeInUp" data-wow-delay=".2s">The Ease-<span>Service</span> Process</h2>
+                    <span data-aos="fade-up">
+                        <img src="/assets/img/shape/star-2.png" alt="img" />
+                        Our Service
+                        <img src="/assets/img/shape/star-2.png" alt="img" />
+                    </span>
+                    <h2 data-aos="fade-up" data-aos-delay="200">The Ease-<span>Service</span> Process</h2>
                 </div>
                 <div className="service-wrapper">
                     {ourServiceData?.map((service, index) => (
-                        <div key={service._id || index} className={`services-item ${index === ourServiceData.length - 1 ? 'mb-0' : ''} wow fadeInUp`} data-wow-delay={`.${(index + 1) * 2}s`}>
+                        <div key={service._id || index} 
+                             className={`services-item ${index === ourServiceData.length - 1 ? 'mb-0' : ''}`} 
+                             data-aos="fade-up" 
+                             data-aos-delay={(index + 1) * 200}>
                             <div className="head">
                                 <span>{String((page - 1) * limit + (index + 1)).padStart(2, '0')}</span>
                                 <h4><a href={ROUTES.SERVICE_DETAIL.replace(":id", service?._id || "")}>{service.title}</a></h4>

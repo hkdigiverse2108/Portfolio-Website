@@ -4,7 +4,7 @@ import { ROUTES } from "../../Constant";
 interface BlogCardProps {
   post: BlogBase;
   className?: string;
-  delay?: string;
+  delay?: string | number;
 }
 
 const BlogCard = ({ post, className = "", delay }: BlogCardProps) => {
@@ -22,11 +22,14 @@ const BlogCard = ({ post, className = "", delay }: BlogCardProps) => {
   }
 
   const link = post._id ? ROUTES.BLOG_DETAIL.replace(":id", post._id) : ROUTES.BLOG;
-  const animationDelay = delay || "";
 
   return (
     <div className="col-lg-4 col-md-6">
-      <div className={`news-item wow fadeInUp ${className}`} data-wow-delay={animationDelay}>
+      <div 
+        className={`news-item ${className}`} 
+        data-aos="fade-up" 
+        data-aos-delay={delay}
+      >
         <div className="thumb">
           <img src={image} alt="img" />
         </div>
