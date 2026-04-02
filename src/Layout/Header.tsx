@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
-import { navItems } from "../Data";
-import { ROUTES } from "../Constant";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Queries } from "../Api";
+import { ROUTES } from "../Constant";
+import { navItems } from "../Data";
 
 const Header = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -43,6 +43,14 @@ const Header = () => {
     setActiveSubMenu(activeSubMenu === index ? null : index);
   };
 
+  // const logoTitle = userData?.logoTitle;
+  // const strings = !logoTitle
+  //   ? ""
+  //   : logoTitle
+  //       .split(" ")
+  //       .map((word, index) => (index % 2 === 0 ? `<span class="logo-title">${word}</span>` : word))
+  //       .join(" ");
+
   return (
     <>
       <header className={`header-1 ${isSticky ? "sticky" : ""}`} id="header-sticky">
@@ -50,12 +58,14 @@ const Header = () => {
           <div className="mega-menu-wrapper">
             <div className="header-main">
               <div className="logo">
-                <a href={ROUTES.HOME} className="header-logo">
-                  <img src="/assets/img/logo/Logo-black.svg" alt="logo-img" />
+                <a href={ROUTES.HOME} className="header-logo d-flex align-items-center gap-3">
+                  <img src={userData?.profileImage} alt="logo-img" className="logo-img" />
+                  <h3 className=" logo-title">{userData?.logoTitle}</h3>
                 </a>
                 <div className="logo-2">
-                  <a href={ROUTES.HOME}>
-                    <img src="/assets/img/logo/Logo-black.svg" alt="" />
+                  <a href={ROUTES.HOME} className="header-logo d-flex align-items-center gap-3">
+                    <img src={userData?.profileImage} alt="logo-img" className="logo-img" />
+                    <h3 className=" logo-title">{userData?.logoTitle}</h3>
                   </a>
                 </div>
               </div>
@@ -116,8 +126,12 @@ const Header = () => {
             <div className="offcanvas__content">
               <div className="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
                 <div className="offcanvas__logo">
-                  <a href={ROUTES.HOME}>
+                  {/* <a href={ROUTES.HOME}>
                     <img src="/assets/img/logo/Logo-black.svg" alt="logo-img" />
+                  </a> */}
+                  <a href={ROUTES.HOME} className="header-logo d-flex align-items-center gap-2 gap-md-3">
+                    <img src={userData?.profileImage} alt="logo-img" className="logo-img" />
+                    <h3 className="logo-title">{userData?.logoTitle}</h3>
                   </a>
                 </div>
                 <div className="offcanvas__close" onClick={closeSidebar}>

@@ -22,6 +22,8 @@ export interface UserBase extends CommonDataType {
   otp?: number;
   otpExpireTime?: string;
   password?: string;
+  logoTitle?: string;
+  profileImage?: string;
 }
 
 export interface UserApiResponse extends MessageStatus {

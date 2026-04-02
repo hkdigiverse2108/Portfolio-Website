@@ -15,13 +15,31 @@ const HeroSection = ({ data, socialMediaLinks }: { data?: HeroSectionBase; socia
   // console.log("title", data?.title);
   // console.log("firstName", firstName, "lastName", lastName);
 
+  // const strings = useMemo(() => {
+  //   return (
+  //     data?.subTitles?.map((item) => {
+  //       const word = item.split(" ");
+  //       const firstWord = word.shift() || "";
+  //       const restOfWords = word.join(" ") || "";
+  //       return `<span class="highlight">${firstWord}</span> ${restOfWords}`;
+  //     }) || []
+  //   );
+  // }, [data?.subTitles]);
+
   const strings = useMemo(() => {
     return (
       data?.subTitles?.map((item) => {
-        const word = item.split(" ");
-        const firstWord = word.shift() || "";
-        const restOfWords = word.join(" ") || "";
-        return `<span class="highlight">${firstWord}</span> ${restOfWords}`;
+        const words = item.split(" ");
+
+        const formatted = words.map((word, index) => {
+          // even index (0,2,4...) → highlight
+          if (index % 2 === 0) {
+            return `<span class="highlight">${word}</span>`;
+          }
+          return word;
+        });
+
+        return formatted.join(" ");
       }) || []
     );
   }, [data?.subTitles]);

@@ -36,8 +36,12 @@ const Footer = () => {
           <div className="row justify-content-center">
             <div className="col-lg-8">
               <div className="footer-item">
-                <a href={ROUTES.HOME} className="footer-logo" data-aos="fade-up" data-aos-delay="300">
+                {/* <a href={ROUTES.HOME} className="footer-logo" data-aos="fade-up" data-aos-delay="300">
                   <img src="/assets/img/logo/Logo-black.svg" alt="img" />
+                </a> */}
+                <a href={ROUTES.HOME} className="header-logo d-flex align-items-center gap-3">
+                  <img src={userData?.profileImage} alt="logo-img" className="logo-img" />
+                  <h3 className=" logo-title">{userData?.logoTitle}</h3>
                 </a>
                 <ul className="footer-list-items" data-aos="fade-up" data-aos-delay="500">
                   <li>
