@@ -77,7 +77,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ testimonialDe
                   <SwiperSlide key={index}>
                     <div className="testimonial-box-items">
                       <div className="client-info">
-                        <img src={item.image} alt="img" />
+                        <img src={item.image ?? "/assets/img/testimonials/1.png"} alt="img" />
                         <div className="client-content">
                           <h5>{item.name}</h5>
                           <p>{item.designation}</p>

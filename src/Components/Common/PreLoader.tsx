@@ -21,7 +21,7 @@ const PreLoader = ({ isLoading = true }: { isLoading?: boolean }) => {
         <div className="animation-preloader">
             <div className="spinner">
             </div>
-            <div className="txt-loading">
+            {/* <div className="txt-loading">
                 <span data-text-preloader="M" className="letters-loading">
                     M
                 </span>
@@ -49,7 +49,7 @@ const PreLoader = ({ isLoading = true }: { isLoading?: boolean }) => {
                 <span data-text-preloader="O" className="letters-loading">
                     O
                 </span>
-            </div>
+            </div> */}
             <p className="text-center">Loading</p>
         </div>
         <div className="loader">

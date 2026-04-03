@@ -11,28 +11,16 @@ interface PortfolioCardProps {
   aosAnimation?: string;
 }
 
-const PortfolioCard = ({ 
-  portfolio, 
-  className = "project-items", 
-  wrapperClass = "col-xl-6 col-lg-6 col-md-6", 
-  delay, 
-  imageClass = "image", 
-  animationClass = "", 
-  aosAnimation = "fade-up" 
-}: PortfolioCardProps) => {
+const PortfolioCard = ({ portfolio, className = "project-items", wrapperClass = "col-xl-6 col-lg-6 col-md-6", delay, imageClass = "image", animationClass = "", aosAnimation = "fade-up" }: PortfolioCardProps) => {
   const { title, projectName, thumbnailImage, _id } = portfolio;
 
   const link = ROUTES.PORTFOLIO_DETAIL.replace(":id", _id);
 
   return (
     <div className={wrapperClass}>
-      <div 
-        className={`${className} ${animationClass}`} 
-        data-aos={aosAnimation} 
-        data-aos-delay={delay}
-      >
+      <div className={`${className} ${animationClass}`} data-aos={aosAnimation} data-aos-delay={delay}>
         <div className={imageClass}>
-          <img src={thumbnailImage || ""} alt={title || "img"} />
+          <img src={thumbnailImage || ""} alt={title || "img"} style={{ width: "100%", height: "100%", objectFit: "cover"  }} />
         </div>
         <div className="content">
           <div className="text">

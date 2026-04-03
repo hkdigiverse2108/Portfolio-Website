@@ -8,6 +8,8 @@ import type { OurServiceBase } from "../../Types";
 
 const ServiceDetails = () => {
   const navigate = useNavigate();
+  const { data: userRes } = Queries.useGetUser();
+  const userData = userRes?.data;
 
   const { id } = useParams();
   const { data: serviceDetailData, isLoading: detailLoading } = Queries.useGetServiceDetails(id);
@@ -79,8 +81,8 @@ const ServiceDetails = () => {
                         <div className="content">
                           <h6>{service.tagLine}</h6>
                           <div className="info">
-                            <img src="/assets/img/service/4.png" alt="img" />
-                            <h5>Het Mangukiya</h5>
+                            <img src={userData?.profileImage || "/assets/img/service/4.png"} alt="img" className="logo-img" />
+                            <h5>{userData?.firstName + " " + userData?.lastName}</h5>
                           </div>
                         </div>
                       </div>

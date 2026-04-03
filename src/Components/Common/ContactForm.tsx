@@ -12,7 +12,7 @@ const ContactForm = ({ className = "" }: ContactFormProps) => {
 
   const { mutate: addContact, isPending } = Mutations.useAddContact({
     onSuccess: () => {
-      setStatusMessage({ type: "success", text: "Message sent successfully!" });
+      setStatusMessage({ type: "success", text: "Thank You for Connect With Us! Our Team Will Contact Soon." });
       formik.resetForm();
       setTimeout(() => setStatusMessage(null), 5000);
     },
@@ -49,47 +49,19 @@ const ContactForm = ({ className = "" }: ContactFormProps) => {
         <div className="contact-box">
           <div className="row">
             <div className="col-md-6" data-aos="fade-up" data-aos-delay="200">
-              <input
-                type="text"
-                name="name"
-                placeholder="Enter Your Name"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.name}
-              />
+              <input type="text" name="name" placeholder="Enter Your Name" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.name} />
               {formik.touched.name && formik.errors.name && <div className="text-danger mt-1 fs-6">{formik.errors.name}</div>}
             </div>
             <div className="col-md-6" data-aos="fade-up" data-aos-delay="400">
-              <input
-                type="tel"
-                name="phoneNo"
-                placeholder="Enter Your Number"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.phoneNo}
-              />
+              <input type="tel" name="phoneNo" placeholder="Enter Your Number" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.phoneNo} />
               {formik.touched.phoneNo && formik.errors.phoneNo && <div className="text-danger mt-1 fs-6">{formik.errors.phoneNo}</div>}
             </div>
             <div className="col-12" data-aos="fade-up" data-aos-delay="600">
-              <input
-                type="email"
-                name="email"
-                placeholder="Enter Your Email"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.email}
-              />
+              <input type="email" name="email" placeholder="Enter Your Email" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.email} />
               {formik.touched.email && formik.errors.email && <div className="text-danger mt-1 fs-6">{formik.errors.email}</div>}
             </div>
             <div className="col-12" data-aos="fade-up" data-aos-delay="800">
-              <textarea
-                name="message"
-                placeholder="Enter Your Message"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.message}
-                style={{ color: "var(--white, #fff)" }}
-              ></textarea>
+              <textarea name="message" placeholder="Enter Your Message" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.message} style={{ color: "var(--white, #fff)" }}></textarea>
               {formik.touched.message && formik.errors.message && <div className="text-danger mt-1 fs-6">{formik.errors.message}</div>}
               {statusMessage && <div className={`mt-3 fs-6 ${statusMessage.type === "success" ? "text-success" : "text-danger"}`}>{statusMessage.text}</div>}
             </div>

@@ -1592,6 +1592,33 @@ span {
   align-items: center;
   gap: 24px;
 }
+.awards-wrapper .awards-item {
+  padding: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.awards-wrapper .awards-item .small-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+
+  /* mix-blend-mode: multiply; */
+  /* background: transparent; */
+}
+
+.awards-wrapper .awards-item .main-image {
+  max-width: 100px;
+  flex-shrink: 0;
+}
+
+.awards-wrapper .awards-item .big-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
 @media (max-width: 1199px) {
   .awards-wrapper .awards-item .content {
     flex-wrap: wrap;
@@ -1745,6 +1772,13 @@ span {
   .client-wrapper .client-items .client-item:not(:last-child)::before {
     display: none;
   }
+}
+.client-wrapper .client-items .client-item .icon img {
+  min-width: 49px;
+  min-height: 48px;
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: cover;
 }
 .client-wrapper .client-items .client-item .number {
   color: var(--theme);

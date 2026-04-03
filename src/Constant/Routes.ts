@@ -12,6 +12,4 @@ export const ROUTES = {
   PORTFOLIO_DETAIL : "/portfolio-detail/:id",
   TERMS_CONDITION : "/terms-condition",
   PRIVACY_POLICY : "/privacy-policy",
-
-  
 }

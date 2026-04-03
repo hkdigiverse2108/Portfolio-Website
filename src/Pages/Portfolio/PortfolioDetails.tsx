@@ -22,7 +22,9 @@ const PortfolioDetails = () => {
                 <div className="project-details-images">
                   {portfolioData.link ? (
                     <a href={portfolioData.link} target="_blank" rel="noopener noreferrer" className="portfolio-link-wrapper">
-                      <img src={portfolioData?.thumbnailImage} alt="img" />
+                      <div className="thumbnail-wrapper">
+                        <img src={portfolioData?.thumbnailImage} alt="img" />
+                      </div>
                       <div className="portfolio-overlay">
                         <div className="icon">
                           <i className="fa-solid fa-link"></i>
@@ -37,15 +39,16 @@ const PortfolioDetails = () => {
               </div>
             </div>
             <div className="row g-5">
-              <div className="col-lg-8">
+              <div className="col-xl-7 col-xxl-8">
                 <div className="project-details-content">
                   <span>{portfolioData.subTitle}</span>
                   <h2>{portfolioData.title}</h2>
                   <div
                     className="dynamic-blog-content mt-3"
-                    dangerouslySetInnerHTML={{ __html: portfolioData?.description || "" }}
+                    dangerouslySetInnerHTML={{
+                      __html: (portfolioData?.description || "").replace(/&nbsp;/g, " "),
+                    }}
                   ></div>
-
                   <div className="row g-4">
                     {portfolioData.images &&
                       portfolioData.images.length > 0 &&
@@ -83,7 +86,7 @@ const PortfolioDetails = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-lg-4">
+              <div className="col-xl-5 col-xxl-4">
                 <div className="main-sidebar">
                   <div className="single-sidebar-widget">
                     <div className="wid-title">

@@ -10,6 +10,8 @@ const BlogDetails = () => {
   const { id } = useParams();
   const { data: blogData, isLoading: blogDataLoading } = Queries.useGetBlog({ page: 1, limit: 9, activeFilter: true });
   const { data: blogDetailData, isLoading: blogDetailDataLoading } = Queries.useGetBlogDetails(id);
+  const { data: userRes } = Queries.useGetUser();
+  const userData = userRes?.data;
 
   const blog = blogDetailData?.data;
 
@@ -43,10 +45,7 @@ const BlogDetails = () => {
                       </li>
                     </ul>
                     <h3 className="ext">{blog?.title}</h3>
-                    <div
-                      className="dynamic-blog-content mt-3"
-                      dangerouslySetInnerHTML={{ __html: blog?.description || "" }}
-                    ></div>
+                    <div className="dynamic-blog-content mt-3" dangerouslySetInnerHTML={{ __html: blog?.description || "" }}></div>
                     {blog?.tagLine && (
                       <div className="highlight-text">
                         <div className="qoute-shape">
@@ -55,8 +54,8 @@ const BlogDetails = () => {
                         <div className="content">
                           <h6>{blog.tagLine}</h6>
                           <div className="info">
-                            <img src="/assets/img/service/4.png" alt="img" />
-                            <h5>Het Mangukiya</h5>
+                            <img src={userData?.profileImage || "/assets/img/service/4.png"} alt="img" className="logo-img" />
+                            <h5>{userData?.firstName + " " + userData?.lastName}</h5>
                           </div>
                         </div>
                       </div>

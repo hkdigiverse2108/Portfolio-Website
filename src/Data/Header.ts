@@ -25,38 +25,46 @@ export const navItems: MenuItem[] = [
     link: ROUTES.ABOUT,
   },
   {
-    label: "Pages",
+    label: "Services",
     link: ROUTES.SERVICE,
-    submenu: [
-      {
-        label: "Our Services",
-        link: ROUTES.SERVICE,
-        // submenu: [
-        //   { label: "Service", link: ROUTES.SERVICE },
-        //   { label: "Service Details", link: ROUTES.SERVICE_DETAIL },
-        // ],
-      },
-      {
-        label: "Our Portfolio",
-        link: ROUTES.PORTFOLIO,
-        // submenu: [
-        //   { label: "Portfolio", link: ROUTES.PORTFOLIO },
-        //   { label: "Portfolio Details", link: ROUTES.PORTFOLIO_DETAIL },
-        // ],
-      },
-      // { label: "404", link: ROUTES.NOT_FOUND },
-    ],
   },
   {
-    label: "Blog",
-    link: ROUTES.BLOG,
-    // submenu: [
-    //     { label: "Blog Grid", link: ROUTES.BLOG },
-    //     { label: "Blog Details", link: ROUTES.BLOG_DETAIL },
-    // ],
+    label: "Portfolio",
+    link: ROUTES.PORTFOLIO,
   },
+  // {
+  //   label: "Pages",
+  //   link: ROUTES.SERVICE,
+  //   submenu: [
+  //     {
+  //       label: "Our Services",
+  //       link: ROUTES.SERVICE,
+  //       // submenu: [
+  //       //   { label: "Service", link: ROUTES.SERVICE },
+  //       //   { label: "Service Details", link: ROUTES.SERVICE_DETAIL },
+  //       // ],
+  //     },
+  //     {
+  //       label: "Our Portfolio",
+  //       link: ROUTES.PORTFOLIO,
+  //       // submenu: [
+  //       //   { label: "Portfolio", link: ROUTES.PORTFOLIO },
+  //       //   { label: "Portfolio Details", link: ROUTES.PORTFOLIO_DETAIL },
+  //       // ],
+  //     },
+  //     // { label: "404", link: ROUTES.NOT_FOUND },
+  //   ],
+  // },
+  // {
+  //   label: "Blog",
+  //   link: ROUTES.BLOG,
+  //   // submenu: [
+  //   //     { label: "Blog Grid", link: ROUTES.BLOG },
+  //   //     { label: "Blog Details", link: ROUTES.BLOG_DETAIL },
+  //   // ],
+  // },
   {
-    label: "Contact Me",
+    label: "Contact Us",
     link: ROUTES.CONTACT,
   },
 ];
