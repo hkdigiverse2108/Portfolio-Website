@@ -5,9 +5,12 @@ import "aos/dist/aos.css";
 import Footer from "./Footer";
 import Header from "./Header";
 import { VideoModal, ScrollToTop, BackToTopBtn, CustomCursor } from "../Components/Common";
+import { Queries } from "../Api";
 
 const Layout = () => {
   const { pathname } = useLocation();
+  const { data: userRes } = Queries.useGetUser();
+  const userData = userRes?.data;
 
   useEffect(() => {
     AOS.init({
@@ -20,6 +23,20 @@ const Layout = () => {
   useEffect(() => {
     AOS.refresh();
   }, [pathname]);
+
+  useEffect(() => {
+    if (userData) {
+      if (userData?.profileImage) {
+        const link = document.querySelector("link[rel~='icon']") as HTMLLinkElement;
+        if (link) {
+          link.href = userData.profileImage;
+        }
+      }
+      // Update Document Title dynamic from logoTitle or name
+      const title = userData?.logoTitle || `${userData?.firstName} ${userData?.lastName}` || "Portfolio";
+      document.title = title;
+    }
+  }, [userData]);
 
   return (
     <>
