@@ -47,4 +47,10 @@ export const URL_KEYS = {
   PRIVACY_POLICY: {
     GET: "privacy-policy/get",
   },
+  SERVICE: {
+    GET: "service/all",
+  },
+  BUSINESS_CATEGORY: {
+    GET: "business-category/all",
+  },
 };

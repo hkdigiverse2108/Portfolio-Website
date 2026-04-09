@@ -6,4 +6,5 @@ export { default as PageNotFound } from "./PageNotFound";
 export { default as VideoModal } from "./VideoModal";
 export { default as ScrollToTop } from "./ScrollToTop";
 export { CountItem } from "./CountItem";
+export { CustomDropdown } from "./CustomDropdown";
 export { default as ContactForm } from "./ContactForm";

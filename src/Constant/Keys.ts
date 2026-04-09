@@ -47,4 +47,10 @@ export const KEYS = {
   PRIVACY_POLICY: {
     GET: "GET_PRIVACY_POLICY",
   },
+  SERVICE: {
+    GET: "GET_SERVICE",
+  },
+  BUSINESS_CATEGORY: {
+    GET: "GET_BUSINESS_CATEGORY",
+  },
 };

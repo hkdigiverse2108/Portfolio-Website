@@ -1609,7 +1609,11 @@ span {
 
 .awards-wrapper .awards-item .main-image {
   max-width: 100px;
+  max-height: 100px;
+  object-fit: cover;
+  overflow: hidden;
   flex-shrink: 0;
+  border-radius: 10px;
 }
 
 .awards-wrapper .awards-item .big-image {
@@ -1659,19 +1663,28 @@ span {
 .experience-wrapper {
   margin-top: 30px;
 }
-.experience-wrapper .experience-items {
+/* .experience-wrapper .experience-items {
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: var(--border);
   padding: 20px 0;
   transition: all 0.4s ease-in-out;
+} */
+
+.experience-wrapper .experience-items {
+  display: grid;
+  grid-template-columns: 120px 1fr 200px; /* left | center | right */
+  align-items: center;
+  border-bottom: var(--border);
+  padding: 20px 0;
 }
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .experience-wrapper .experience-items {
-    gap: 20px;
-    flex-direction: column;
-    align-items: start;
+    display: grid;
+    grid-template-columns: 1fr; /* single column */
+    gap: 10px;
+    text-align: center;
   }
 }
 .experience-wrapper .experience-items span {
@@ -1680,23 +1693,33 @@ span {
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
+  text-align: left;
 }
 .experience-wrapper .experience-items h4 {
   color: var(--white);
   cursor: pointer;
+  text-align: center;
+}
+@media (max-width: 991px) {
+  .experience-wrapper .experience-items span {
+    text-align: center;
+  }
 }
 @media (max-width: 991px) {
   .experience-wrapper .experience-items h4 {
     font-size: 20px;
+    text-align: center;
   }
 }
 .experience-wrapper .experience-items h6 {
   color: var(--white);
   cursor: pointer;
+  text-align: right;
 }
 @media (max-width: 991px) {
   .experience-wrapper .experience-items h6 {
     font-size: 16px;
+    text-align: center;
   }
 }
 .experience-wrapper .experience-items:hover {

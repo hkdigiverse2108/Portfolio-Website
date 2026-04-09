@@ -1,6 +1,6 @@
 import { KEYS } from "../Constant";
 import { URL_KEYS } from "../Constant/Url";
-import type { AppQueryOptions, HeroSectionApiResponse, UserApiResponse, WorkCountApiResponse, OurServiceApiResponse, OurServiceDetailApiResponse, PortfolioApiResponse, PortfolioDetailApiResponse, WorkExperienceApiResponse, SkillApiResponse, AwardsApiResponse, TestimonialDescriptionApiResponse, TestimonialApiResponse, BlogApiResponse, BlogDetailApiResponse, SettingApiResponse, TermsConditionsApiResponse, PrivacyPolicyApiResponse } from "../Types";
+import type { AppQueryOptions, HeroSectionApiResponse, UserApiResponse, WorkCountApiResponse, OurServiceApiResponse, OurServiceDetailApiResponse, PortfolioApiResponse, PortfolioDetailApiResponse, WorkExperienceApiResponse, SkillApiResponse, AwardsApiResponse, TestimonialDescriptionApiResponse, TestimonialApiResponse, BlogApiResponse, BlogDetailApiResponse, SettingApiResponse, TermsConditionsApiResponse, PrivacyPolicyApiResponse, ServiceApiResponse, BusinessCategoryApiResponse } from "../Types";
 import { Get } from "./Methods";
 import { useQueries } from "./ReactQuery";
 import { buildQueryParams } from "../Utils/common";
@@ -24,7 +24,7 @@ export const Queries = {
     useQueries<OurServiceDetailApiResponse>([KEYS.OUR_SERVICE.GET_DETAILS, id], () => Get(`${URL_KEYS.OUR_SERVICE.GET_DETAILS}/${id}`), { enabled: !!id, ...options }),
 
   // ************ Portfolio ***********
-  useGetPortfolio: (params?: { page?: number; limit?: number; activeFilter?: boolean }, options?: AppQueryOptions<PortfolioApiResponse>) => {
+  useGetPortfolio: (params?: { page?: number; limit?: number; activeFilter?: boolean; serviceFilter?: string, businessCategoryFilter?: string }, options?: AppQueryOptions<PortfolioApiResponse>) => {
     const url = `${URL_KEYS.PORTFOLIO.GET}${buildQueryParams(params)}`;
     return useQueries<PortfolioApiResponse>([KEYS.PORTFOLIO.GET, params], () => Get(url), options);
   },
@@ -62,5 +62,11 @@ export const Queries = {
 
   // ************ Privacy Policy ***********
   useGetPrivacyPolicy: (options?: AppQueryOptions<PrivacyPolicyApiResponse>) => useQueries<PrivacyPolicyApiResponse>([KEYS.PRIVACY_POLICY.GET], () => Get(URL_KEYS.PRIVACY_POLICY.GET), options),
+
+  // ************ Service ***********
+  useGetService: (options?: AppQueryOptions<ServiceApiResponse>) => useQueries<ServiceApiResponse>([KEYS.SERVICE.GET], () => Get(URL_KEYS.SERVICE.GET), options),
+
+  // ************ Business Category ***********
+  useGetBusinessCategory: (options?: AppQueryOptions<BusinessCategoryApiResponse>) => useQueries<BusinessCategoryApiResponse>([KEYS.BUSINESS_CATEGORY.GET], () => Get(URL_KEYS.BUSINESS_CATEGORY.GET), options),
 };
 

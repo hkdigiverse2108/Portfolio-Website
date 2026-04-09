@@ -1,9 +1,5 @@
 import type { CommonDataType, MessageStatus, PageStatus } from "./Common";
-
-export interface ServiceBase {
-  _id: string;
-  name: string;
-}
+import type { ServiceBase } from "./Service";
 
 export interface BlogBase extends CommonDataType {
   thumbnailImage?: string;
