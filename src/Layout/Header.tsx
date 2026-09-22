@@ -105,7 +105,7 @@ const Header = () => {
               </div>
               <div className="header-right d-flex justify-content-end align-items-center">
                 <NavLink to={ROUTES.BOOK_A_DEMO} className="theme-btn">
-                  Book A Demo
+                  Book A Workshop
                   <i className="fa-sharp fa-regular fa-arrow-right"></i>
                 </NavLink>
                 <div className="header__hamburger d-xl-none my-auto" onClick={toggleSidebar}>
