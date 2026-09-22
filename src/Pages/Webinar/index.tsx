@@ -153,7 +153,7 @@ const Webinar: React.FC = () => {
         amount: orderData.amount,
         currency: orderData.currency || "INR",
         name: "Het Mangukiya",
-        description: "Live Startup Growth Webinar Registration",
+        description: "Live Startup Growth Workshop Registration",
         image: data?.mentorSection?.image || "https://uxmagic.blob.core.windows.net/public/project-documents/6aae59e24f608cb6cbb37c74/6aae59fa4f608cb6cbb37d45/1789811337923-1c941d46-image.png",
         order_id: orderData.orderId,
         prefill: {
@@ -230,7 +230,7 @@ const Webinar: React.FC = () => {
           <div style={{ display: "flex", justifyContent: "center" }}>
             <div className="webinar-top-badge">
               <span className="webinar-pulse-dot"></span>
-              <span>{data?.hero?.badge || "LIVE STARTUP GROWTH WEBINAR"}</span>
+              <span>{data?.hero?.badge || "LIVE STARTUP GROWTH WORKSHOP"}</span>
             </div>
           </div>
 

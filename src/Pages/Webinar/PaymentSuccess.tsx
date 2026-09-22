@@ -106,7 +106,7 @@ const PaymentSuccess: React.FC = () => {
               lineHeight: 1.6,
             }}
           >
-            તમે <strong>Het Mangukiya</strong> ના Live Startup Growth Webinar માટે સફળતાપૂર્વક રજીસ્ટર થઈ ગયા છો. સત્રમાં હાજરી નોંધાવવા માટે નીચેનો પાસ સાચવી રાખો.
+            તમે <strong>Het Mangukiya</strong> ના Live Startup Growth Workshop માટે સફળતાપૂર્વક રજીસ્ટર થઈ ગયા છો. સત્રમાં હાજરી નોંધાવવા માટે નીચેનો પાસ સાચવી રાખો.
           </p>
 
           {/* ========================================================= */}
@@ -116,7 +116,7 @@ const PaymentSuccess: React.FC = () => {
             <div className="pass-header-row">
               <div>
                 <span className="pass-super-tag">OFFICIAL EVENT ENTRY PASS</span>
-                <h3 className="pass-event-title">Het Mangukiya &bull; Live Startup Webinar</h3>
+                <h3 className="pass-event-title">Het Mangukiya &bull; Live Startup Workshop</h3>
               </div>
               <div className="pass-status-pill">
                 <i className="fa-solid fa-circle-check"></i> CONFIRMED

@@ -690,6 +690,76 @@
   overflow: hidden;
 }
 
+/* ======================================================== */
+/* PRICING BOX STYLES                                       */
+/* ======================================================== */
+.webinar-pricing-box {
+  max-width: 580px;
+  margin: 2rem auto 0;
+  background: #090909;
+  border: 1px solid #B7FF2A;
+  border-radius: 1.25rem;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 16px 40px rgba(183, 255, 42, 0.15);
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .webinar-pricing-box {
+    padding: 2.5rem;
+  }
+}
+
+.webinar-pricing-badge {
+  display: inline-block;
+  background: rgba(183, 255, 42, 0.12);
+  border: 1px solid rgba(183, 255, 42, 0.35);
+  color: #B7FF2A;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.35rem 1rem;
+  border-radius: 9999px;
+  margin-bottom: 1.25rem;
+}
+
+.webinar-price-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.webinar-price-final {
+  font-size: clamp(2.8rem, 6vw, 4rem);
+  font-weight: 800;
+  color: #B7FF2A;
+  line-height: 1;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.webinar-price-original {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-weight: 600;
+  color: #555560;
+  text-decoration: line-through;
+  line-height: 1;
+}
+
+.webinar-price-discount {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #FF5C5C;
+  background: rgba(255, 92, 92, 0.12);
+  border: 1px solid rgba(255, 92, 92, 0.25);
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  letter-spacing: 0.04em;
+}
+
 /* Registration Form Card */
 .webinar-reg-card {
   max-width: 580px;
