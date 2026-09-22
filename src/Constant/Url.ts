@@ -53,4 +53,11 @@ export const URL_KEYS = {
   BUSINESS_CATEGORY: {
     GET: "business-category/all",
   },
+  WEBINAR: {
+    GET: "webinar/get",
+    REGISTER: "webinar/register",
+    CREATE_ORDER: "webinar/create-order",
+    VERIFY_PAYMENT: "webinar/verify-payment",
+    PAYMENT_FAILED: "webinar/payment-failed",
+  },
 };

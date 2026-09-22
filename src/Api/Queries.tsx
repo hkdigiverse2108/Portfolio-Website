@@ -1,6 +1,6 @@
 import { KEYS } from "../Constant";
 import { URL_KEYS } from "../Constant/Url";
-import type { AppQueryOptions, HeroSectionApiResponse, UserApiResponse, WorkCountApiResponse, OurServiceApiResponse, OurServiceDetailApiResponse, PortfolioApiResponse, PortfolioDetailApiResponse, WorkExperienceApiResponse, SkillApiResponse, AwardsApiResponse, TestimonialDescriptionApiResponse, TestimonialApiResponse, BlogApiResponse, BlogDetailApiResponse, SettingApiResponse, TermsConditionsApiResponse, PrivacyPolicyApiResponse, ServiceApiResponse, BusinessCategoryApiResponse } from "../Types";
+import type { AppQueryOptions, HeroSectionApiResponse, UserApiResponse, WorkCountApiResponse, OurServiceApiResponse, OurServiceDetailApiResponse, PortfolioApiResponse, PortfolioDetailApiResponse, WorkExperienceApiResponse, SkillApiResponse, AwardsApiResponse, TestimonialDescriptionApiResponse, TestimonialApiResponse, BlogApiResponse, BlogDetailApiResponse, SettingApiResponse, TermsConditionsApiResponse, PrivacyPolicyApiResponse, ServiceApiResponse, BusinessCategoryApiResponse, WebinarApiResponse } from "../Types";
 import { Get } from "./Methods";
 import { useQueries } from "./ReactQuery";
 import { buildQueryParams } from "../Utils/common";
@@ -68,5 +68,9 @@ export const Queries = {
 
   // ************ Business Category ***********
   useGetBusinessCategory: (options?: AppQueryOptions<BusinessCategoryApiResponse>) => useQueries<BusinessCategoryApiResponse>([KEYS.BUSINESS_CATEGORY.GET], () => Get(URL_KEYS.BUSINESS_CATEGORY.GET), options),
+
+  // ************ Webinar / Book A Demo ***********
+  useGetWebinar: (options?: AppQueryOptions<WebinarApiResponse>) => useQueries<WebinarApiResponse>([KEYS.WEBINAR.GET], () => Get(URL_KEYS.WEBINAR.GET), options),
 };
+
 

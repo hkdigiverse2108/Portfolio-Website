@@ -9,3 +9,7 @@ export { default as Blog } from "./Blog";
 export { default as BlogDetails } from "./Blog/BlogDetails";
 export { default as TermsConditions } from "./TermsConditions";
 export { default as PrivacyPolicy } from "./PrivacyPolicy";
+export { default as Webinar, default as BookDemo } from "./Webinar";
+export { default as PaymentSuccess } from "./Webinar/PaymentSuccess";
+export { default as PaymentFailed } from "./Webinar/PaymentFailed";
+

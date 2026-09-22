@@ -12,4 +12,8 @@ export const ROUTES = {
   PORTFOLIO_DETAIL : "/portfolio-detail/:id",
   TERMS_CONDITION : "/terms-condition",
   PRIVACY_POLICY : "/privacy-policy",
-}
+  BOOK_A_DEMO: "/book-a-demo",
+  WEBINAR: "/webinar",
+  PAYMENT_SUCCESS: "/book-a-demo/success",
+  PAYMENT_FAILED: "/book-a-demo/failed",
+};

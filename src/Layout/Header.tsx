@@ -104,10 +104,10 @@ const Header = () => {
                 </div>
               </div>
               <div className="header-right d-flex justify-content-end align-items-center">
-                <a href={settingData?.bookMeeting?.link || ""} target="_blank" rel="noreferrer" className="theme-btn">
-                  Book A Meeting
+                <NavLink to={ROUTES.BOOK_A_DEMO} className="theme-btn">
+                  Book A Demo
                   <i className="fa-sharp fa-regular fa-arrow-right"></i>
-                </a>
+                </NavLink>
                 <div className="header__hamburger d-xl-none my-auto" onClick={toggleSidebar}>
                   <div className="sidebar__toggle">
                     <i className="fas fa-bars"></i>
