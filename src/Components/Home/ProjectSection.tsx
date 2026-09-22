@@ -18,7 +18,7 @@ const ProjectSection = ({ portfolioData }: ProjectSectionProps) => {
               Project
             </span>
             <h2 data-aos="fade-up" data-aos-delay="200">
-              My Featured <span>Protfoilo</span>
+              My Featured <span>Portfolio</span>
             </h2>
           </div>
           <a href={ROUTES.PORTFOLIO} className="theme-btn" data-aos="fade-up" data-aos-delay="400">

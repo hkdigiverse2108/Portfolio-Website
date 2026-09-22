@@ -1269,6 +1269,8 @@ span {
   align-items: center;
   justify-content: center;
   transition: all 0.4s ease-in-out;
+  color: var(--theme);
+  font-size: 1rem;
 }
 .contact-1 .social .social-list li a:hover {
   background: var(--theme);
