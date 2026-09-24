@@ -33,12 +33,12 @@ const ROUTE_PAGE_TITLES: Record<string, { title: string; desc: string }> = {
     desc: "Have a project in mind or looking for performance marketing? Let's talk.",
   },
   "/webinar": {
-    title: "Exclusive Workshop & Webinar | Het Mangukiya",
-    desc: "Book your seat for practical, high-impact marketing and growth workshops.",
+    title: "Startup Brand Growth Workshop in Surat By Het Mangukiya",
+    desc: "Join Het Mangukiya’s Startup Brand Growth Workshop in Surat on 24 Oct 2026. Learn how to build, brand, market and grow your startup with practical digital strategies.",
   },
   "/book-a-demo": {
-    title: "Book A Workshop | Het Mangukiya",
-    desc: "Reserve your spot for live business growth and digital scaling workshops.",
+    title: "Startup Brand Growth Workshop in Surat By Het Mangukiya",
+    desc: "Join Het Mangukiya’s Startup Brand Growth Workshop in Surat on 24 Oct 2026. Learn how to build, brand, market and grow your startup with practical digital strategies.",
   },
   "/privacy-policy": {
     title: "Privacy Policy | Het Mangukiya",

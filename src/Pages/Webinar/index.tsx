@@ -92,6 +92,50 @@ const Webinar: React.FC = () => {
     }
   }, [validDates, selectedDate]);
 
+  // Set Primary SEO, Open Graph & Twitter Meta Tags for Book a Demo / Webinar
+  useEffect(() => {
+    const prevTitle = document.title;
+    document.title = "Startup Brand Growth Workshop in Surat By Het Mangukiya";
+
+    const metaTagsConfig = [
+      { name: "description", content: "Join Het Mangukiya’s Startup Brand Growth Workshop in Surat on 24 Oct 2026. Learn how to build, brand, market and grow your startup with practical digital strategies." },
+      { property: "og:type", content: "event" },
+      { property: "og:title", content: "Startup Brand Growth Workshop in Surat By Het Mangukiya" },
+      { property: "og:description", content: "Join Het Mangukiya’s Startup Brand Growth Workshop in Surat on 24 Oct 2026. Learn how to build, brand, market and grow your startup with practical digital strategies." },
+      { property: "og:url", content: "https://hetmangukiya.in/book-a-demo" },
+      { property: "og:image", content: "https://api.hetmangukiya.in/public/images/1790244443589_IMG_7234.JPG" },
+      { property: "og:image:alt", content: "Startup Brand Growth Workshop in Surat by Het Mangukiya" },
+      { property: "og:site_name", content: "Het Mangukiya" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Startup Brand Growth Workshop in Surat By Het Mangukiya" },
+      { name: "twitter:description", content: "Join Het Mangukiya’s Startup Brand Growth Workshop in Surat on 24 Oct 2026. Learn how to build, brand, market and grow your startup with practical digital strategies." },
+      { name: "twitter:image", content: "https://api.hetmangukiya.in/public/images/1790244443589_IMG_7234.JPG" },
+      { name: "twitter:image:alt", content: "Startup Brand Growth Workshop in Surat by Het Mangukiya" },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
+    ];
+
+    metaTagsConfig.forEach(({ name, property, content }) => {
+      let el: HTMLMetaElement | null = null;
+      if (property) {
+        el = document.querySelector(`meta[property="${property}"]`);
+      } else if (name) {
+        el = document.querySelector(`meta[name="${name}"]`);
+      }
+
+      if (!el) {
+        el = document.createElement("meta");
+        if (property) el.setAttribute("property", property);
+        if (name) el.setAttribute("name", name);
+        document.head.appendChild(el);
+      }
+      el.setAttribute("content", content);
+    });
+
+    return () => {
+      document.title = prevTitle;
+    };
+  }, []);
+
   const presentsImages = data?.presents?.images || [];
 
   const scrollToRegister = (e: React.MouseEvent) => {
