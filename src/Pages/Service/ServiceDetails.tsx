@@ -36,7 +36,12 @@ const ServiceDetails = () => {
                   )}
                   <div className="post-content">
                     <h2 className="mb-3">{service?.title}</h2>
-                    <div className="dynamic-blog-content" dangerouslySetInnerHTML={{ __html: service?.description || "" }} />
+                    <div
+                      className="dynamic-blog-content"
+                      dangerouslySetInnerHTML={{
+                        __html: (service?.description || "").replace(/&nbsp;/g, " "),
+                      }}
+                    />
                     <div className="row g-4 mt-4 mb-4">
                       {service?.images &&
                         service.images.length > 0 &&
@@ -89,10 +94,15 @@ const ServiceDetails = () => {
                     )}
 
                     {service?.whyChoose && (
-                      <>
+                      <div className="why-choose-wrapper mt-4">
                         <h3 className="mb-3">{service.whyChoose.title}</h3>
-                        <p>{service.whyChoose.description}</p>
-                      </>
+                        <div
+                          className="dynamic-blog-content"
+                          dangerouslySetInnerHTML={{
+                            __html: (service.whyChoose.description || "").replace(/&nbsp;/g, " "),
+                          }}
+                        />
+                      </div>
                     )}
 
                     <div className="post-list mt-3">

@@ -45,7 +45,12 @@ const BlogDetails = () => {
                       </li>
                     </ul>
                     <h3 className="ext">{blog?.title}</h3>
-                    <div className="dynamic-blog-content mt-3" dangerouslySetInnerHTML={{ __html: blog?.description || "" }}></div>
+                    <div
+                      className="dynamic-blog-content mt-3"
+                      dangerouslySetInnerHTML={{
+                        __html: (blog?.description || "").replace(/&nbsp;/g, " "),
+                      }}
+                    />
                     {blog?.tagLine && (
                       <div className="highlight-text">
                         <div className="qoute-shape">
