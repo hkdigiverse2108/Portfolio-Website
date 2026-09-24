@@ -213,7 +213,8 @@ const Webinar: React.FC = () => {
       razorpayInstance.open();
     } catch (err: any) {
       console.error("Payment error:", err);
-      alert(err?.message || "ચુકવણી પ્રક્રિયા શરૂ કરવામાં સમસ્યા આવી છે. કૃપા કરીને ફરી પ્રયાસ કરો.");
+      const message = err?.response?.data?.message || err?.message || "ચુકવણી પ્રક્રિયા શરૂ કરવામાં સમસ્યા આવી છે. કૃપા કરીને ફરી પ્રયાસ કરો.";
+      alert(message);
     } finally {
       setIsProcessing(false);
     }

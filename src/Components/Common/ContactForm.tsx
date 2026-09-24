@@ -7,6 +7,24 @@ interface ContactFormProps {
   className?: string; // e.g. "style-2"
 }
 
+const COUNTRY_CODES = [
+  { code: "+91", label: "+91 (IN)" },
+  { code: "+1", label: "+1 (US/CA)" },
+  { code: "+44", label: "+44 (UK)" },
+  { code: "+971", label: "+971 (UAE)" },
+  { code: "+61", label: "+61 (AU)" },
+  { code: "+65", label: "+65 (SG)" },
+  { code: "+49", label: "+49 (DE)" },
+  { code: "+33", label: "+33 (FR)" },
+  { code: "+966", label: "+966 (SA)" },
+  { code: "+974", label: "+974 (QA)" },
+  { code: "+965", label: "+965 (KW)" },
+  { code: "+968", label: "+968 (OM)" },
+  { code: "+973", label: "+973 (BH)" },
+  { code: "+27", label: "+27 (ZA)" },
+  { code: "+64", label: "+64 (NZ)" },
+];
+
 const ContactForm = ({ className = "" }: ContactFormProps) => {
   const [statusMessage, setStatusMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
 
@@ -24,26 +42,35 @@ const ContactForm = ({ className = "" }: ContactFormProps) => {
   const formik = useFormik({
     initialValues: {
       name: "",
+      countryCode: "+91",
       phoneNo: "",
       email: "",
       message: "",
     },
     validationSchema: Yup.object({
       name: Yup.string().required("Name is required"),
+      countryCode: Yup.string().required(),
       phoneNo: Yup.string()
         .required("Phone number is required")
         .matches(/^[0-9]+$/, "Phone number must be digits")
-        .min(10, "Phone number must be at least 10 digits"),
+        .min(7, "Phone number must be at least 7 digits"),
       email: Yup.string().email("Invalid email format").required("Email is required"),
       message: Yup.string().required("Message is required"),
     }),
     onSubmit: (values) => {
-      addContact(values);
+      // Pass full contact data with countryCode
+      const payload: any = {
+        name: values.name,
+        phoneNo: `${values.countryCode}${values.phoneNo}`,
+        email: values.email,
+        message: values.message,
+      };
+      addContact(payload);
     },
   });
 
   return (
-    <div className={`contact-form-box ${className}`}>
+    <div className={`contact-form-box ${className}`} id="contact-form-container">
       <h3 data-aos="fade-up">Get In Touch</h3>
       <form onSubmit={formik.handleSubmit}>
         <div className="contact-box">
@@ -53,7 +80,30 @@ const ContactForm = ({ className = "" }: ContactFormProps) => {
               {formik.touched.name && formik.errors.name && <div className="text-danger mt-1 fs-6">{formik.errors.name}</div>}
             </div>
             <div className="col-md-6" data-aos="fade-up" data-aos-delay="400">
-              <input type="tel" name="phoneNo" placeholder="Enter Your Number" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.phoneNo} />
+              <div className="contact-phone-input-group">
+                <select
+                  name="countryCode"
+                  aria-label="Select Country Code"
+                  className="country-code-select"
+                  value={formik.values.countryCode}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                >
+                  {COUNTRY_CODES.map((item) => (
+                    <option key={item.code} value={item.code}>
+                      {item.label}
+                    </option>
+                  ))}
+                </select>
+                <input
+                  type="tel"
+                  name="phoneNo"
+                  placeholder="Enter Your Number"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.phoneNo}
+                />
+              </div>
               {formik.touched.phoneNo && formik.errors.phoneNo && <div className="text-danger mt-1 fs-6">{formik.errors.phoneNo}</div>}
             </div>
             <div className="col-12" data-aos="fade-up" data-aos-delay="600">

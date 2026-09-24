@@ -77,7 +77,8 @@ button,
 .portfolio-overlay .icon {
   width: 60px;
   height: 60px;
-  background: var(--theme); /* Primary color */
+  background: var(--theme);
+  /* Primary color */
   color: #000;
   border-radius: 50%;
   display: flex;
@@ -115,6 +116,7 @@ button,
   opacity: 0;
   transition-property: transform, opacity, clip-path;
 }
+
 [data-aos="img-custom-anim-top"].aos-animate {
   transform: translateY(0);
   clip-path: inset(0 0 0 0);
@@ -127,6 +129,7 @@ button,
   opacity: 0;
   transition-property: transform, opacity, clip-path;
 }
+
 [data-aos="img-custom-anim-bottom"].aos-animate {
   transform: translateY(0);
   clip-path: inset(0 0 0 0);
@@ -139,6 +142,7 @@ button,
   opacity: 0;
   transition-property: transform, opacity, clip-path;
 }
+
 [data-aos="img-custom-anim-left"].aos-animate {
   transform: translateX(0);
   clip-path: inset(0 0 0 0);
@@ -151,6 +155,7 @@ button,
   opacity: 0;
   transition-property: transform, opacity, clip-path;
 }
+
 [data-aos="img-custom-anim-right"].aos-animate {
   transform: translateX(0);
   clip-path: inset(0 0 0 0);
@@ -162,6 +167,7 @@ button,
   transform: translate3d(0, 30px, 0);
   transition-property: transform, opacity;
 }
+
 [data-aos="fade-up"].aos-animate {
   opacity: 1;
   transform: translate3d(0, 0, 0);
@@ -269,7 +275,8 @@ button,
 /* Fix for Portfolio Details Sidebar text wrapping */
 .project-info .item {
   display: flex;
-  align-items: flex-start !important; /* Align to top in case of multiline text */
+  align-items: flex-start !important;
+  /* Align to top in case of multiline text */
   gap: 10px;
 }
 
@@ -291,10 +298,13 @@ button,
 }
 
 .logo-img {
-  width: 50px !important; /* control size */
+  width: 50px !important;
+  /* control size */
   height: 50px !important;
-  object-fit: cover !important; /* prevents stretching */
-  border-radius: 50% !important; /* optional (nice UI) */
+  object-fit: cover !important;
+  /* prevents stretching */
+  border-radius: 50% !important;
+  /* optional (nice UI) */
 }
 
 .header-logo h3 {
@@ -302,11 +312,13 @@ button,
   margin: 0;
   white-space: nowrap;
 }
+
 @media (max-width: 576px) {
   .header-logo h3 {
     font-size: 25px !important;
   }
 }
+
 .logo-title {
   color: var(--theme) !important;
   font-size: 35px !important;
@@ -317,14 +329,16 @@ button,
 
 .thumbnail-wrapper {
   width: 100%;
-  aspect-ratio: 16 / 9; /* 🔥 This enforces 16:9 */
+  aspect-ratio: 16 / 9;
+  /* 🔥 This enforces 16:9 */
   overflow: hidden;
 }
 
 .thumbnail-wrapper img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* keeps image nicely cropped */
+  object-fit: cover;
+  /* keeps image nicely cropped */
 }
 
 /* .filter-wrapper {
@@ -338,7 +352,8 @@ button,
 }
 .filter-wrapper .wid-title:not(.filter-wrapper .wid-title:last-child) {
   margin-bottom: 24px;
-} */ /* 🔹 FILTER WRAPPER */
+} */
+/* 🔹 FILTER WRAPPER */
 .filter-wrapper {
   width: 100%;
 }
@@ -346,7 +361,8 @@ button,
 /* 🔹 BOX */
 .filter-wrapper .search-widget {
   display: flex;
-  justify-content: end; /* ✅ CENTER */
+  justify-content: end;
+  /* ✅ CENTER */
 }
 
 /* 🔹 FORM (NOT FULL, NOT HALF FIXED) */
@@ -356,7 +372,8 @@ button,
   border-radius: 12px;
   background: #111; */
   width: 100%;
-  max-width: 600px; /* ✅ CONTROL WIDTH */
+  max-width: 600px;
+  /* ✅ CONTROL WIDTH */
 }
 
 /* 🔹 ROW */
@@ -376,6 +393,7 @@ button,
   outline: none;
   cursor: pointer;
 }
+
 /* HOVER / FOCUS */
 .filter-wrapper select:focus {
   border-color: var(--theme);
@@ -429,8 +447,10 @@ button,
   background-color: var(--bg);
   border: 1px solid #2a2a2a;
   border-radius: 10px;
-  max-height: 220px; /* 🔥 limit height */
-  overflow-y: auto; /* 🔥 scroll */
+  max-height: 220px;
+  /* 🔥 limit height */
+  overflow-y: auto;
+  /* 🔥 scroll */
   z-index: 999;
 }
 
@@ -477,4 +497,508 @@ button,
 
 .clear-btn:hover {
   color: #fff;
+}
+
+/* ==========================================================================
+   Floating WhatsApp Button (Left Side)
+   ========================================================================== */
+.whatsapp-float-btn {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  width: 55px;
+  height: 55px;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: #ffffff !important;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+  z-index: 9999;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-decoration: none;
+}
+
+.whatsapp-float-btn:hover {
+  transform: scale(1.1) translateY(-3px);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.65);
+  color: #ffffff !important;
+}
+
+.whatsapp-float-btn .whatsapp-tooltip {
+  position: absolute;
+  left: 65px;
+  background: #111827;
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.whatsapp-float-btn:hover .whatsapp-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+  .whatsapp-float-btn {
+    bottom: 20px;
+    left: 20px;
+    width: 48px;
+    height: 48px;
+    font-size: 26px;
+  }
+}
+
+/* ==========================================================================
+   Hero Section Social Icons (Replacing Text Names)
+   ========================================================================== */
+.hero-1 .hero-info {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 14px !important;
+}
+
+.hero-1 .hero-info a {
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: var(--white, #fff) !important;
+  font-size: 16px !important;
+  transition: all 0.3s ease !important;
+  transform: none !important;
+  writing-mode: horizontal-tb !important;
+}
+
+.hero-1 .hero-info a:hover,
+.hero-1 .hero-info a.active {
+  background: var(--theme, #bff747) !important;
+  border-color: var(--theme, #bff747) !important;
+  color: #0d0f12 !important;
+  transform: translateY(-3px) scale(1.08) !important;
+  box-shadow: 0 6px 18px rgba(191, 247, 71, 0.35) !important;
+}
+
+@media (max-width: 991px) {
+  .hero-1 .hero-info {
+    position: static !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    margin-bottom: 24px !important;
+  }
+}
+
+/* ==========================================================================
+   Brands I Have Worked With Section
+   ========================================================================== */
+.brands-section {
+  padding: 90px 0 60px;
+  background: #0d0f12;
+  position: relative;
+}
+
+.brands-title {
+  color: var(--theme, #bff747);
+  font-size: 2.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+@media (max-width: 768px) {
+  .brands-title {
+    font-size: 2rem;
+  }
+}
+
+.brands-tabs-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 50px;
+}
+
+.brands-tab-btn {
+  padding: 10px 28px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.brands-tab-btn.active {
+  background-color: var(--theme, #bff747);
+  color: #0d0f12;
+  box-shadow: 0 4px 14px rgba(191, 247, 71, 0.4);
+}
+
+.brands-tab-btn.inactive {
+  background-color: #11151c;
+  color: #cbd5e1;
+  border-color: #1e293b;
+}
+
+.brands-tab-btn.inactive:hover {
+  background-color: #1e2430;
+  color: #ffffff;
+}
+
+.brands-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 28px 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 15px;
+}
+
+@media (max-width: 900px) {
+  .brands-grid {
+    gap: 22px 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .brands-tabs-wrapper {
+    margin-bottom: 35px;
+  }
+
+  .brands-grid {
+    gap: 16px 20px;
+    padding: 5px 10px;
+  }
+}
+
+.brand-card {
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  min-width: 140px;
+  max-width: 240px;
+  height: 90px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.brand-card:hover {
+  transform: translateY(-4px) scale(1.05);
+}
+
+.brand-card img {
+  max-height: 72px;
+  max-width: 190px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 6px;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.brand-card:hover img {
+  filter: drop-shadow(0 4px 14px rgba(191, 247, 71, 0.35));
+}
+
+@media (max-width: 600px) {
+  .brand-card {
+    min-width: 110px;
+    max-width: 160px;
+    height: 65px;
+    padding: 6px 10px;
+  }
+
+  .brand-card img {
+    max-height: 50px;
+    max-width: 135px;
+  }
+}
+
+.brand-fallback-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   Podcast / Guest Showcase Section (Marquee / Rolling Photos)
+   ========================================================================== */
+.podcast-show-section {
+  padding: 60px 0 90px;
+  background: #0d0f12;
+  overflow: hidden;
+  position: relative;
+}
+
+.podcast-show-header {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 40px;
+  padding: 0 15px;
+}
+
+.podcast-tagline {
+  color: var(--theme, #bff747);
+  font-size: 2.4rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.podcast-subtitle {
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.podcast-desc {
+  color: #94a3b8;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .podcast-tagline {
+    font-size: 1.8rem;
+  }
+
+  .podcast-subtitle {
+    font-size: 1.3rem;
+  }
+
+  .podcast-desc {
+    font-size: 0.95rem;
+  }
+}
+
+.marquee-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-row {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  width: 100%;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: scrollMarquee 35s linear infinite;
+}
+
+.marquee-track.reverse {
+  animation: scrollMarqueeReverse 35s linear infinite;
+}
+
+/* Pause on hover as explicitly requested by user */
+.marquee-row:hover .marquee-track {
+  animation-play-state: paused !important;
+}
+
+@keyframes scrollMarquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollMarqueeReverse {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.brands-status-message {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 40px 20px;
+  color: #94a3b8;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px dashed rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+}
+
+.guest-card {
+  flex-shrink: 0;
+  width: 220px;
+  height: 220px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  background: #1e293b;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+}
+
+.guest-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 28px rgba(191, 247, 71, 0.25);
+  border-color: rgba(191, 247, 71, 0.5);
+}
+
+.guest-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.guest-info-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 12px 10px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.guest-card:hover .guest-info-overlay {
+  opacity: 1;
+}
+
+@media (max-width: 991px) {
+  .guest-card {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .brands-section {
+    padding: 60px 0 40px;
+  }
+  .podcast-show-section {
+    padding: 40px 0 60px;
+  }
+  .guest-card {
+    width: 150px;
+    height: 150px;
+    border-radius: 12px;
+  }
+  .marquee-track {
+    gap: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .guest-card {
+    width: 125px;
+    height: 125px;
+    border-radius: 10px;
+  }
+  .marquee-track {
+    gap: 10px;
+  }
+  .brand-card {
+    min-height: 80px;
+    padding: 14px 10px;
+  }
+  .brand-card img {
+    max-height: 38px;
+  }
+}
+
+/* ==========================================================================
+   Contact Form Phone & Country Code Picker
+   ========================================================================== */
+.contact-phone-input-group {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.country-code-select {
+  width: 110px !important;
+  flex-shrink: 0 !important;
+  background-color: var(--bg, #111) !important;
+  color: var(--header, #fff) !important;
+  border: 1px solid #2a2a2a !important;
+  border-radius: 8px !important;
+  padding: 14px 10px !important;
+  font-size: 14px !important;
+  outline: none !important;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.country-code-select:focus {
+  border-color: var(--theme, #bff747) !important;
+}
+
+.country-code-select option {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+}
+
+.contact-phone-input-group input {
+  flex-grow: 1;
+}
+
+.clickable-contact-item {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease;
+}
+
+.clickable-contact-item:hover {
+  transform: translateX(4px);
+}
+
+.clickable-contact-item:hover .icon {
+  background: var(--theme, #bff747) !important;
+  color: #0d0f12 !important;
 }

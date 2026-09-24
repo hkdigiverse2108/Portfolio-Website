@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import Typed from "typed.js";
 import { openVideoModal } from "../../Store/Slice/videoSlice";
 import type { HeroSectionBase, SocialMediaLink } from "../../Types";
-import { splitLastWord } from "../../Utils";
+import { splitLastWord, getSocialIconClass } from "../../Utils";
 
 const HeroSection = ({ data, socialMediaLinks }: { data?: HeroSectionBase; socialMediaLinks?: SocialMediaLink[] }) => {
   const el = useRef(null);
@@ -76,16 +76,18 @@ const HeroSection = ({ data, socialMediaLinks }: { data?: HeroSectionBase; socia
       </div>
       <div className="hero-info">
         {activeLinks?.map((item, index) => (
-          <a href={item.link} target="_blank" className={index === 0 ? "active" : ""}>
-            {item.title}
+          <a
+            key={index}
+            href={item.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={index === 0 ? "active" : ""}
+            title={item.title}
+            aria-label={item.title}
+          >
+            <i className={getSocialIconClass(item.icon, item.title)}></i>
           </a>
         ))}
-        {/* <a href="#" className="active">
-          Facebook
-        </a>
-        <a href="#">Twitter</a>
-        <a href="#">Linked in</a>
-        <a href="#">Dribbble</a> */}
       </div>
       <div className="container">
         <div className="row g-4 justify-content-center">

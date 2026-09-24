@@ -1,4 +1,4 @@
-import { AboutSection, HeroSection, MarqueeSection, ProjectSection, ServiceSection, ExperienceSection, AwardsSection, TestimonialsSection, BlogSection } from "../../Components/Home";
+import { AboutSection, HeroSection, MarqueeSection, ProjectSection, ServiceSection, ExperienceSection, AwardsSection, TestimonialsSection, BrandsSection, PodcastShowSection, BlogSection } from "../../Components/Home";
 import { Queries } from "../../Api";
 import { PreLoader } from "../../Components/Common";
 
@@ -28,6 +28,8 @@ const Home = () => {
       <ExperienceSection workExperienceData={workExperienceData?.data?.workExperience_data} skillData={skillData?.data?.skill_data} />
       <AwardsSection awardsData={awardsData?.data?.awards_data} />
       <TestimonialsSection testimonialDescriptionData={testimonialDescData?.data} testimonialData={testimonialData?.data?.testimonial_data} />
+      <BrandsSection />
+      <PodcastShowSection />
       <BlogSection data={blogData?.data?.blog_data?.slice(0, 3)} />
     </>
   );

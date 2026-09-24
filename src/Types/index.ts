@@ -17,4 +17,7 @@ export * from "./TermsConditions"
 export * from "./PrivacyPolicy"
 export * from "./Service"
 export * from "./BusinessCategory"
-export * from "./Webinar"
+export * from "./Webinar";
+export * from "./ClientLogo";
+export * from "./PodcastShow";
+export * from "./Brand";

@@ -6,4 +6,6 @@ export { default as ProjectSection } from "./ProjectSection";
 export { default as ExperienceSection } from "./ExperienceSection";
 export { default as AwardsSection } from "./AwardsSection";
 export { default as TestimonialsSection } from "./TestimonialsSection";
+export { default as BrandsSection } from "./BrandsSection";
+export { default as PodcastShowSection } from "./PodcastShowSection";
 export { default as BlogSection } from "./BlogSection";

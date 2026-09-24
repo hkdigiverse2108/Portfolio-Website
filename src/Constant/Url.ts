@@ -60,4 +60,13 @@ export const URL_KEYS = {
     VERIFY_PAYMENT: "webinar/verify-payment",
     PAYMENT_FAILED: "webinar/payment-failed",
   },
+  CLIENT_LOGO: {
+    GET: "client-logo/all",
+  },
+  PODCAST_SHOW: {
+    GET: "podcast-show/get",
+  },
+  BRAND: {
+    GET: "brand/all",
+  },
 };

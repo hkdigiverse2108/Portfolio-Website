@@ -1,15 +1,35 @@
+import { useEffect } from "react";
 import { BreadCrumb, ContactForm, PreLoader } from "../../Components/Common";
 import { Queries } from "../../Api";
+import { getSocialIconClass } from "../../Utils";
 
 const Contact = () => {
   const { data: userData, isLoading: userLoading } = Queries.useGetUser();
-
   const { data: settingData, isLoading: settingLoading } = Queries.useGetSetting();
 
   const setting = settingData?.data;
   const socialMediaLinks = userData?.data?.socialMediaLinks;
 
   const isLoading = userLoading || settingLoading;
+
+  useEffect(() => {
+    if (window.location.hash === "#get-in-touch") {
+      setTimeout(() => {
+        const el = document.getElementById("get-in-touch");
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 400);
+    }
+  }, []);
+
+  const phoneStr = setting?.bookMeeting?.phoneNo
+    ? `+${setting.bookMeeting.phoneNo.countryCode} ${setting.bookMeeting.phoneNo.number}`
+    : "+91 97143 97143";
+  const telHref = `tel:${phoneStr.replace(/[^0-9+]/g, "")}`;
+  const emailStr = setting?.bookMeeting?.email || "info@hetmangukiya.com";
+  const addressStr = setting?.bookMeeting?.address || "HK DigiVerse LLP, Surat, Gujarat, India";
+  const mapHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(addressStr)}`;
 
   return (
     <>
@@ -36,33 +56,33 @@ const Contact = () => {
                   </p>
                 </div>
                 <div className="contact-item-wrapper">
-                  <div className="contact-item" data-aos="fade-up" data-aos-delay="200">
+                  <a href={telHref} className="contact-item clickable-contact-item" data-aos="fade-up" data-aos-delay="200" title="Click to call">
                     <div className="icon">
                       <i className="fa-solid fa-phone"></i>
                     </div>
                     <div className="content">
                       <span>Call Now</span>
-                      <h6>{setting?.bookMeeting?.phoneNo ? `+${setting.bookMeeting.phoneNo.countryCode} ${setting.bookMeeting.phoneNo.number}` : "+888 (555) 546-33"}</h6>
+                      <h6>{phoneStr}</h6>
                     </div>
-                  </div>
-                  <div className="contact-item" data-aos="fade-up" data-aos-delay="400">
+                  </a>
+                  <a href={`mailto:${emailStr}`} className="contact-item clickable-contact-item" data-aos="fade-up" data-aos-delay="400" title="Click to email">
                     <div className="icon">
                       <i className="fa-solid fa-envelope"></i>
                     </div>
                     <div className="content">
                       <span>Email</span>
-                      <h6>{setting?.bookMeeting?.email || "xiomi@gmail.com"}</h6>
+                      <h6>{emailStr}</h6>
                     </div>
-                  </div>
-                  <div className="contact-item" data-aos="fade-up" data-aos-delay="600">
+                  </a>
+                  <a href={mapHref} target="_blank" rel="noreferrer" className="contact-item clickable-contact-item" data-aos="fade-up" data-aos-delay="600" title="View on Google Maps">
                     <div className="icon">
                       <i className="fa-solid fa-location-dot"></i>
                     </div>
                     <div className="content">
                       <span>Address</span>
-                      <h6>{setting?.bookMeeting?.address || "66 Broklyant,Road 1240 Canada"}</h6>
+                      <h6>{addressStr}</h6>
                     </div>
-                  </div>
+                  </a>
                 </div>
                 <div className="social">
                   <h6 data-aos="fade-up">Social: </h6>
@@ -72,8 +92,8 @@ const Contact = () => {
 
                       return (
                         <li key={index} data-aos="fade-up" data-aos-delay={(index + 1) * 200}>
-                          <a href={item.link} target="_blank" rel="noreferrer">
-                            <i className={item.icon}></i>
+                          <a href={item.link} target="_blank" rel="noreferrer" title={item.title}>
+                            <i className={getSocialIconClass(item.icon, item.title)}></i>
                           </a>
                         </li>
                       );
@@ -91,7 +111,7 @@ const Contact = () => {
         </div>
       </section>
 
-      <section className="contact-from-section section-bg pt-0 section-padding fix">
+      <section id="get-in-touch" className="contact-from-section section-bg pt-0 section-padding fix">
         <div className="container">
           <ContactForm />
         </div>

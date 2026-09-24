@@ -8,3 +8,4 @@ export { default as ScrollToTop } from "./ScrollToTop";
 export { CountItem } from "./CountItem";
 export { CustomDropdown } from "./CustomDropdown";
 export { default as ContactForm } from "./ContactForm";
+export { default as WhatsAppButton } from "./WhatsAppButton";

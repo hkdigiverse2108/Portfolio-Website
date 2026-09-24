@@ -1,6 +1,6 @@
 import { KEYS } from "../Constant";
 import { URL_KEYS } from "../Constant/Url";
-import type { AppQueryOptions, HeroSectionApiResponse, UserApiResponse, WorkCountApiResponse, OurServiceApiResponse, OurServiceDetailApiResponse, PortfolioApiResponse, PortfolioDetailApiResponse, WorkExperienceApiResponse, SkillApiResponse, AwardsApiResponse, TestimonialDescriptionApiResponse, TestimonialApiResponse, BlogApiResponse, BlogDetailApiResponse, SettingApiResponse, TermsConditionsApiResponse, PrivacyPolicyApiResponse, ServiceApiResponse, BusinessCategoryApiResponse, WebinarApiResponse } from "../Types";
+import type { AppQueryOptions, HeroSectionApiResponse, UserApiResponse, WorkCountApiResponse, OurServiceApiResponse, OurServiceDetailApiResponse, PortfolioApiResponse, PortfolioDetailApiResponse, WorkExperienceApiResponse, SkillApiResponse, AwardsApiResponse, TestimonialDescriptionApiResponse, TestimonialApiResponse, BlogApiResponse, BlogDetailApiResponse, SettingApiResponse, TermsConditionsApiResponse, PrivacyPolicyApiResponse, ServiceApiResponse, BusinessCategoryApiResponse, WebinarApiResponse, ClientLogoApiResponse, PodcastShowApiResponse, BrandApiResponse } from "../Types";
 import { Get } from "./Methods";
 import { useQueries } from "./ReactQuery";
 import { buildQueryParams } from "../Utils/common";
@@ -71,6 +71,22 @@ export const Queries = {
 
   // ************ Webinar / Book A Demo ***********
   useGetWebinar: (options?: AppQueryOptions<WebinarApiResponse>) => useQueries<WebinarApiResponse>([KEYS.WEBINAR.GET], () => Get(URL_KEYS.WEBINAR.GET), options),
+
+  // ************ Client Logo ***********
+  useGetClientLogo: (params?: { page?: number; limit?: number; activeFilter?: boolean; category?: string }, options?: AppQueryOptions<ClientLogoApiResponse>) => {
+    const url = `${URL_KEYS.CLIENT_LOGO.GET}${buildQueryParams(params)}`;
+    return useQueries<ClientLogoApiResponse>([KEYS.CLIENT_LOGO.GET, params], () => Get(url), options);
+  },
+
+  // ************ Podcast Showcase ***********
+  useGetPodcastShow: (options?: AppQueryOptions<PodcastShowApiResponse>) =>
+    useQueries<PodcastShowApiResponse>([KEYS.PODCAST_SHOW.GET], () => Get(URL_KEYS.PODCAST_SHOW.GET), options),
+
+  // ************ Brand (B2C & B2B) ***********
+  useGetBrand: (params?: { page?: number; limit?: number; activeFilter?: boolean; category?: string; categoryFilter?: string }, options?: AppQueryOptions<BrandApiResponse>) => {
+    const url = `${URL_KEYS.BRAND.GET}${buildQueryParams(params)}`;
+    return useQueries<BrandApiResponse>([KEYS.BRAND.GET, params], () => Get(url), options);
+  },
 };
 
 

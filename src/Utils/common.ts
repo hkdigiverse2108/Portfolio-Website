@@ -17,3 +17,22 @@ export const buildQueryParams = (params?: Record<string, string | number | boole
     const queryString = queryParams.toString();
     return queryString ? `?${queryString}` : "";
 };
+
+export const getSocialIconClass = (icon?: string, title?: string): string => {
+  if (icon && icon.includes("fa-")) {
+    return icon.startsWith("fa-brands") || icon.startsWith("fa-solid") || icon.startsWith("fa-regular") || icon.startsWith("fas ") || icon.startsWith("fab ")
+      ? icon
+      : `fa-brands ${icon}`;
+  }
+  const key = (title || icon || "").toLowerCase();
+  if (key.includes("facebook")) return "fa-brands fa-facebook-f";
+  if (key.includes("insta")) return "fa-brands fa-instagram";
+  if (key.includes("what") || key.includes("wa")) return "fa-brands fa-whatsapp";
+  if (key.includes("link")) return "fa-brands fa-linkedin";
+  if (key.includes("twit") || key.includes("x")) return "fa-brands fa-x-twitter";
+  if (key.includes("you") || key.includes("yt")) return "fa-brands fa-youtube";
+  if (key.includes("teleg")) return "fa-brands fa-telegram";
+  if (key.includes("github")) return "fa-brands fa-github";
+  if (key.includes("drib")) return "fa-brands fa-dribbble";
+  return "fa-solid fa-share-nodes";
+};
