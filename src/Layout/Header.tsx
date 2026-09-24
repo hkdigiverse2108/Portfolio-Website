@@ -58,15 +58,22 @@ const Header = () => {
           <div className="mega-menu-wrapper">
             <div className="header-main">
               <div className="logo">
-                <a href={ROUTES.HOME} className="header-logo d-flex align-items-center gap-3">
-                  <img src={userData?.profileImage} alt="logo-img" className="logo-img" />
-                  <h3 className=" logo-title">{userData?.logoTitle}</h3>
-                </a>
-                <div className="logo-2">
-                  <a href={ROUTES.HOME} className="header-logo d-flex align-items-center gap-3">
+                <div className="header-logo-wrapper d-flex align-items-center gap-2 gap-sm-3">
+                  <a href={ROUTES.HOME} className="header-logo d-flex align-items-center">
                     <img src={userData?.profileImage} alt="logo-img" className="logo-img" />
-                    <h3 className=" logo-title">{userData?.logoTitle}</h3>
                   </a>
+                  <div className="logo-text-details d-flex flex-column align-items-start">
+                    <a href={ROUTES.HOME} className="header-logo-text d-flex align-items-center text-decoration-none">
+                      <h3 className="logo-title mb-0">{userData?.logoTitle}</h3>
+                    </a>
+                    <NavLink
+                      to={ROUTES.BOOK_A_DEMO}
+                      className="mobile-under-logo-btn d-xl-none"
+                    >
+                      <span>Book A Workshop</span>
+                      <i className="fa-sharp fa-regular fa-arrow-right"></i>
+                    </NavLink>
+                  </div>
                 </div>
               </div>
               <div className="mean__menu-wrapper d-none d-xl-block">
@@ -104,7 +111,7 @@ const Header = () => {
                 </div>
               </div>
               <div className="header-right d-flex justify-content-end align-items-center">
-                <NavLink to={ROUTES.BOOK_A_DEMO} className="theme-btn">
+                <NavLink to={ROUTES.BOOK_A_DEMO} className="theme-btn d-none d-xl-inline-flex">
                   Book A Workshop
                   <i className="fa-sharp fa-regular fa-arrow-right"></i>
                 </NavLink>
@@ -140,7 +147,15 @@ const Header = () => {
                   </button>
                 </div>
               </div>
-              <p className="text d-none d-xl-block">Nullam dignissim, ante scelerisque the is euismod fermentum odio sem semper the is erat, a feugiat leo urna eget eros. Duis Aenean a imperdiet risus.</p>
+              <div className="offcanvas-workshop-action mb-4">
+                <NavLink
+                  to={ROUTES.BOOK_A_DEMO}
+                  onClick={closeSidebar}
+                  className="theme-btn w-100 d-flex align-items-center justify-content-center gap-2 py-2"
+                >
+                  Book A Workshop <i className="fa-sharp fa-regular fa-arrow-right"></i>
+                </NavLink>
+              </div>
 
               <div className="mobile-menu fix mb-3">
                 <div className="mean-container">

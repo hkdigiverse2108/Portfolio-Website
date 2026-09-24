@@ -74,7 +74,7 @@ const HeroSection = ({ data, socialMediaLinks }: { data?: HeroSectionBase; socia
       <div className="arrow-up">
         <img src="/assets/img/hero/arrow.png" alt="img" />
       </div>
-      <div className="hero-info">
+      <div className="hero-info d-none d-xl-flex">
         {activeLinks?.map((item, index) => (
           <a
             key={index}
@@ -118,6 +118,23 @@ const HeroSection = ({ data, socialMediaLinks }: { data?: HeroSectionBase; socia
                     <span className="text">{data?.linkTitle || ""}</span>
                   </a>
                 </div>
+                {activeLinks && activeLinks.length > 0 && (
+                  <div className="hero-mobile-social d-xl-none" data-aos="fade-up" data-aos-delay="500">
+                    {activeLinks.map((item, index) => (
+                      <a
+                        key={index}
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={index === 0 ? "active" : ""}
+                        title={item.title}
+                        aria-label={item.title}
+                      >
+                        <i className={getSocialIconClass(item.icon, item.title)}></i>
+                      </a>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           </div>
