@@ -165,7 +165,7 @@ const Webinar: React.FC = () => {
       const chosenDate = selectedDate || (validDates.length > 0 ? validDates[0] : undefined);
       const orderRes = await createOrderMutation.mutateAsync({
         fullName: formData.fullName,
-        email: formData.email,
+        email: formData.email ? formData.email.trim() : undefined,
         phoneNo: formData.phoneNo,
         startupName: formData.startupName,
         webinarDate: chosenDate,
@@ -186,7 +186,7 @@ const Webinar: React.FC = () => {
           razorpayPaymentId: "pay_simulated_" + Date.now(),
         });
         navigate(
-          `${ROUTES.PAYMENT_SUCCESS}?registrationId=${verifyRes.data.registrationId || orderData.registrationId}&paymentId=${verifyRes.data.paymentId}&orderId=${verifyRes.data.orderId}&name=${encodeURIComponent(formData.fullName)}&email=${encodeURIComponent(formData.email)}&phone=${encodeURIComponent(formData.phoneNo)}&amount=${orderData.displayAmount || 99}&date=${encodeURIComponent(chosenDate || "")}`
+          `${ROUTES.PAYMENT_SUCCESS}?registrationId=${verifyRes.data.registrationId || orderData.registrationId}&paymentId=${verifyRes.data.paymentId}&orderId=${verifyRes.data.orderId}&name=${encodeURIComponent(formData.fullName)}&email=${encodeURIComponent(formData.email || "")}&phone=${encodeURIComponent(formData.phoneNo)}&amount=${orderData.displayAmount || 99}&date=${encodeURIComponent(chosenDate || "")}`
         );
         return;
       }
@@ -202,7 +202,7 @@ const Webinar: React.FC = () => {
         order_id: orderData.orderId,
         prefill: {
           name: formData.fullName,
-          email: formData.email,
+          ...(formData.email?.trim() ? { email: formData.email.trim() } : {}),
           contact: formData.phoneNo,
         },
         theme: {
@@ -218,7 +218,7 @@ const Webinar: React.FC = () => {
             });
 
             navigate(
-              `${ROUTES.PAYMENT_SUCCESS}?registrationId=${verifyRes?.data?.registrationId || orderData.registrationId}&paymentId=${response.razorpay_payment_id}&orderId=${response.razorpay_order_id || orderData.orderId}&name=${encodeURIComponent(formData.fullName)}&email=${encodeURIComponent(formData.email)}&phone=${encodeURIComponent(formData.phoneNo)}&amount=${verifyRes?.data?.amount || orderData.displayAmount || 99}&date=${encodeURIComponent(chosenDate || "")}`
+              `${ROUTES.PAYMENT_SUCCESS}?registrationId=${verifyRes?.data?.registrationId || orderData.registrationId}&paymentId=${response.razorpay_payment_id}&orderId=${response.razorpay_order_id || orderData.orderId}&name=${encodeURIComponent(formData.fullName)}&email=${encodeURIComponent(formData.email || "")}&phone=${encodeURIComponent(formData.phoneNo)}&amount=${verifyRes?.data?.amount || orderData.displayAmount || 99}&date=${encodeURIComponent(chosenDate || "")}`
             );
           } catch (vErr: any) {
             navigate(
@@ -647,15 +647,16 @@ const Webinar: React.FC = () => {
               </div>
 
               <div className="webinar-form-group">
-                <label htmlFor="email">Email Address *</label>
+                <label htmlFor="email">
+                  Email Address <span style={{ opacity: 0.65, fontSize: "0.85em", fontWeight: 400 }}>(ઓપ્શનલ)</span>
+                </label>
                 <input
                   type="email"
                   id="email"
                   name="email"
-                  required
                   value={formData.email}
                   onChange={handleInputChange}
-                  placeholder="you@example.com"
+                  placeholder="you@example.com (જો હોય તો)"
                   className="webinar-form-input"
                 />
               </div>

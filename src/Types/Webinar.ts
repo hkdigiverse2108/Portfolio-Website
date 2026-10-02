@@ -107,7 +107,7 @@ export interface WebinarApiResponse extends MessageStatus {
 
 export interface WebinarRegistrationPayload {
   fullName: string;
-  email: string;
+  email?: string;
   phoneNo: string;
   startupName?: string;
   amount?: number;
@@ -129,7 +129,7 @@ export interface CreateRazorpayOrderResponse extends MessageStatus {
     currency: string;
     razorpayKeyId: string;
     fullName: string;
-    email: string;
+    email?: string;
     phoneNo: string;
     webinarDate?: string;
   };
@@ -150,7 +150,7 @@ export interface VerifyRazorpayPaymentResponse extends MessageStatus {
     orderId: string;
     amount: number;
     fullName: string;
-    email: string;
+    email?: string;
     phoneNo: string;
     startupName?: string;
     createdAt?: string;
