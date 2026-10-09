@@ -1,57 +1,194 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://hetmangukiya.com/</loc>
-    <lastmod>2026-09-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://hetmangukiya.com/about</loc>
-    <lastmod>2026-09-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://hetmangukiya.com/services</loc>
-    <lastmod>2026-09-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://hetmangukiya.com/portfolio</loc>
-    <lastmod>2026-09-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://hetmangukiya.com/blog</loc>
-    <lastmod>2026-09-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://hetmangukiya.com/webinar</loc>
-    <lastmod>2026-09-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://hetmangukiya.com/contact</loc>
-    <lastmod>2026-09-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://hetmangukiya.com/privacy-policy</loc>
-    <lastmod>2026-09-23</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://hetmangukiya.com/terms-conditions</loc>
-    <lastmod>2026-09-23</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
+<!-- Homepage -->
+<url>
+<loc>https://hetmangukiya.in/</loc>
+<lastmod>2026-10-09</lastmod>
+<changefreq>weekly</changefreq>
+<priority>1.0</priority>
+</url>
+<!-- Main Pages -->
+<url>
+<loc>https://hetmangukiya.in/about</loc>
+<lastmod>2026-10-09</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://hetmangukiya.in/service</loc>
+<lastmod>2026-10-09</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://hetmangukiya.in/portfolio</loc>
+<lastmod>2026-10-09</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://hetmangukiya.in/contact</loc>
+<lastmod>2026-10-09</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://hetmangukiya.in/book-a-demo</loc>
+<lastmod>2026-10-09</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<!-- Service Detail Pages -->
+<url>
+<loc>https://hetmangukiya.in/service-detail/6ab4f6c535ff62d7c485c466</loc>
+<lastmod>2026-10-09</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://hetmangukiya.in/service-detail/6ab4f6de35ff62d7c485c476</loc>
+<lastmod>2026-10-09</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://hetmangukiya.in/service-detail/6ab4f6e835ff62d7c485c47a</loc>
+<lastmod>2026-10-09</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://hetmangukiya.in/service-detail/6ab4f70235ff62d7c485c48b</loc>
+<lastmod>2026-10-09</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://hetmangukiya.in/service-detail/6ab4f70c35ff62d7c485c490</loc>
+<lastmod>2026-10-09</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://hetmangukiya.in/service-detail/6ab4f71d35ff62d7c485c495</loc>
+<lastmod>2026-10-09</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://hetmangukiya.in/service-detail/6ab4f72d35ff62d7c485c49a</loc>
+<lastmod>2026-10-09</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://hetmangukiya.in/service-detail/6ab4f73835ff62d7c485c49f</loc>
+<lastmod>2026-10-09</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://hetmangukiya.in/service-detail/6ab4f74735ff62d7c485c4a4</loc>
+<lastmod>2026-10-09</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://hetmangukiya.in/service-detail/6ab4f75035ff62d7c485c4a9</loc>
+<lastmod>2026-10-09</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://hetmangukiya.in/service-detail/6ab4f75c35ff62d7c485c4ae</loc>
+<lastmod>2026-10-09</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://hetmangukiya.in/service-detail/6ab4f76935ff62d7c485c4b6</loc>
+<lastmod>2026-10-09</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://hetmangukiya.in/service-detail/6ab4f77935ff62d7c485c4d4</loc>
+<lastmod>2026-10-09</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://hetmangukiya.in/service-detail/6ab4f79135ff62d7c485c4d9</loc>
+<lastmod>2026-10-09</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://hetmangukiya.in/service-detail/6ab4f7a535ff62d7c485c4de</loc>
+<lastmod>2026-10-09</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://hetmangukiya.in/service-detail/6ab4f7ae35ff62d7c485c4e3</loc>
+<lastmod>2026-10-09</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://hetmangukiya.in/service-detail/6ab4f7b835ff62d7c485c4e8</loc>
+<lastmod>2026-10-09</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://hetmangukiya.in/service-detail/6ab4f7f535ff62d7c485c4ed</loc>
+<lastmod>2026-10-09</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://hetmangukiya.in/service-detail/6ab4f8a235ff62d7c485c520</loc>
+<lastmod>2026-10-09</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://hetmangukiya.in/service-detail/6ab4f8ab35ff62d7c485c525</loc>
+<lastmod>2026-10-09</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://hetmangukiya.in/service-detail/6ab4f8b335ff62d7c485c52b</loc>
+<lastmod>2026-10-09</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://hetmangukiya.in/service-detail/6ab4f8bb35ff62d7c485c530</loc>
+<lastmod>2026-10-09</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<!-- Blog -->
+<url>
+<loc>https://hetmangukiya.in/blog</loc>
+<lastmod>2026-10-09</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<!-- Legal Pages -->
+<url>
+<loc>https://hetmangukiya.in/terms-condition</loc>
+<lastmod>2026-10-09</lastmod>
+<changefreq>yearly</changefreq>
+<priority>0.3</priority>
+</url>
+<url>
+<loc>https://hetmangukiya.in/privacy-policy</loc>
+<lastmod>2026-10-09</lastmod>
+<changefreq>yearly</changefreq>
+<priority>0.3</priority>
+</url>
 </urlset>

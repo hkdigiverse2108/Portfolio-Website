@@ -20,6 +20,10 @@ const ROUTE_PAGE_TITLES: Record<string, { title: string; desc: string }> = {
     title: "Services | High-Impact Digital Marketing & Brand Strategy",
     desc: "Explore performance marketing, social media marketing, personal branding, and growth consulting services.",
   },
+  "/services": {
+    title: "Services | High-Impact Digital Marketing & Brand Strategy",
+    desc: "Explore performance marketing, social media marketing, personal branding, and growth consulting services.",
+  },
   "/portfolio": {
     title: "Portfolio & Case Studies | Het Mangukiya",
     desc: "Explore successful campaigns, brand collaborations, and proven marketing case studies.",
@@ -43,6 +47,10 @@ const ROUTE_PAGE_TITLES: Record<string, { title: string; desc: string }> = {
   "/privacy-policy": {
     title: "Privacy Policy | Het Mangukiya",
     desc: "Privacy policy and data protection terms for Het Mangukiya portfolio.",
+  },
+  "/terms-condition": {
+    title: "Terms & Conditions | Het Mangukiya",
+    desc: "Terms of service and conditions for Het Mangukiya website and programs.",
   },
   "/terms-conditions": {
     title: "Terms & Conditions | Het Mangukiya",
@@ -79,21 +87,51 @@ const Layout = () => {
     const cleanPath = pathname.toLowerCase().replace(/\/$/, "") || "/";
     const routeInfo = ROUTE_PAGE_TITLES[cleanPath];
 
-    if (routeInfo) {
-      document.title = routeInfo.title;
-      const metaDesc = document.querySelector('meta[name="description"]');
-      if (metaDesc) {
-        metaDesc.setAttribute("content", routeInfo.desc);
-      } else {
-        const meta = document.createElement("meta");
-        meta.name = "description";
-        meta.content = routeInfo.desc;
-        document.head.appendChild(meta);
+    if (cleanPath !== "/book-a-demo" && cleanPath !== "/webinar") {
+      const pageTitle = routeInfo ? routeInfo.title : (() => {
+        const segment = cleanPath.split("/")[1];
+        return segment ? `${segment.charAt(0).toUpperCase() + segment.slice(1)} | ${baseBrand}` : baseBrand;
+      })();
+      document.title = pageTitle;
+
+      const pageDesc = routeInfo?.desc;
+      if (pageDesc) {
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) {
+          metaDesc.setAttribute("content", pageDesc);
+        } else {
+          const meta = document.createElement("meta");
+          meta.name = "description";
+          meta.content = pageDesc;
+          document.head.appendChild(meta);
+        }
+
+        const ogDesc = document.querySelector('meta[property="og:description"]');
+        if (ogDesc) ogDesc.setAttribute("content", pageDesc);
+
+        const twitterDesc = document.querySelector('meta[name="twitter:description"]');
+        if (twitterDesc) twitterDesc.setAttribute("content", pageDesc);
       }
-    } else {
-      const segment = cleanPath.split("/")[1];
-      const fallbackTitle = segment ? `${segment.charAt(0).toUpperCase() + segment.slice(1)} | ${baseBrand}` : baseBrand;
-      document.title = fallbackTitle;
+
+      const ogTitle = document.querySelector('meta[property="og:title"]');
+      if (ogTitle) ogTitle.setAttribute("content", pageTitle);
+
+      const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+      if (twitterTitle) twitterTitle.setAttribute("content", pageTitle);
+
+      const pageUrl = `https://hetmangukiya.in${cleanPath === "/" ? "" : cleanPath}`;
+      const ogUrl = document.querySelector('meta[property="og:url"]');
+      if (ogUrl) ogUrl.setAttribute("content", pageUrl);
+
+      let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
+      if (canonical) {
+        canonical.setAttribute("href", pageUrl);
+      } else {
+        canonical = document.createElement("link");
+        canonical.rel = "canonical";
+        canonical.href = pageUrl;
+        document.head.appendChild(canonical);
+      }
     }
   }, [pathname, userData]);
 

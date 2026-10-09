@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Queries } from "../../Api";
 import { BreadCrumb, PreLoader } from "../../Components/Common";
@@ -18,6 +19,39 @@ const ServiceDetails = () => {
   const service = serviceDetailData?.data;
   const allServices = allServicesData?.data?.ourService_data.filter((item: OurServiceBase) => item._id !== id).slice(0, 7) || [];
   const isLoading = detailLoading || servicesLoading;
+
+  useEffect(() => {
+    if (service?.title) {
+      document.title = `${service.title} | Het Mangukiya`;
+      const desc = service.shortDescription || service.tagLine || "Professional digital marketing and growth services by Het Mangukiya.";
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.setAttribute("content", desc);
+
+      const ogTitle = document.querySelector('meta[property="og:title"]');
+      if (ogTitle) ogTitle.setAttribute("content", `${service.title} | Het Mangukiya`);
+      const ogDesc = document.querySelector('meta[property="og:description"]');
+      if (ogDesc) ogDesc.setAttribute("content", desc);
+
+      const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+      if (twitterTitle) twitterTitle.setAttribute("content", `${service.title} | Het Mangukiya`);
+      const twitterDesc = document.querySelector('meta[name="twitter:description"]');
+      if (twitterDesc) twitterDesc.setAttribute("content", desc);
+
+      const pageUrl = `https://hetmangukiya.in/service-detail/${id}`;
+      const ogUrl = document.querySelector('meta[property="og:url"]');
+      if (ogUrl) ogUrl.setAttribute("content", pageUrl);
+
+      let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
+      if (canonical) {
+        canonical.setAttribute("href", pageUrl);
+      } else {
+        canonical = document.createElement("link");
+        canonical.rel = "canonical";
+        canonical.href = pageUrl;
+        document.head.appendChild(canonical);
+      }
+    }
+  }, [service, id]);
 
   return (
     <>

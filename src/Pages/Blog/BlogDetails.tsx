@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { BreadCrumb, PreLoader, ContactForm } from "../../Components/Common";
 import { Queries } from "../../Api";
@@ -22,6 +23,39 @@ const BlogDetails = () => {
   const relatedBlogs = blogData?.data?.blog_data?.filter((blog) => blog._id !== id).slice(0, 3) || [];
   const tags = blog?.tags || [];
   const isLoading = blogDataLoading || blogDetailDataLoading;
+
+  useEffect(() => {
+    if (blog?.title) {
+      document.title = `${blog.title} | Het Mangukiya`;
+      const desc = blog.tagLine || (blog.description ? blog.description.replace(/<[^>]+>/g, "").slice(0, 160) : "") || "Insights and growth strategies by Het Mangukiya.";
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.setAttribute("content", desc);
+
+      const ogTitle = document.querySelector('meta[property="og:title"]');
+      if (ogTitle) ogTitle.setAttribute("content", `${blog.title} | Het Mangukiya`);
+      const ogDesc = document.querySelector('meta[property="og:description"]');
+      if (ogDesc) ogDesc.setAttribute("content", desc);
+
+      const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+      if (twitterTitle) twitterTitle.setAttribute("content", `${blog.title} | Het Mangukiya`);
+      const twitterDesc = document.querySelector('meta[name="twitter:description"]');
+      if (twitterDesc) twitterDesc.setAttribute("content", desc);
+
+      const pageUrl = `https://hetmangukiya.in/blog-detail/${id}`;
+      const ogUrl = document.querySelector('meta[property="og:url"]');
+      if (ogUrl) ogUrl.setAttribute("content", pageUrl);
+
+      let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
+      if (canonical) {
+        canonical.setAttribute("href", pageUrl);
+      } else {
+        canonical = document.createElement("link");
+        canonical.rel = "canonical";
+        canonical.href = pageUrl;
+        document.head.appendChild(canonical);
+      }
+    }
+  }, [blog, id]);
 
   return (
     <>
