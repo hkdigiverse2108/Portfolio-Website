@@ -123,6 +123,16 @@ const Layout = () => {
       const ogUrl = document.querySelector('meta[property="og:url"]');
       if (ogUrl) ogUrl.setAttribute("content", pageUrl);
 
+      let robotsMeta = document.querySelector('meta[name="robots"]') as HTMLMetaElement;
+      if (robotsMeta) {
+        robotsMeta.setAttribute("content", "noindex");
+      } else {
+        const meta = document.createElement("meta");
+        meta.name = "robots";
+        meta.content = "noindex";
+        document.head.appendChild(meta);
+      }
+
       let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
       if (canonical) {
         canonical.setAttribute("href", pageUrl);

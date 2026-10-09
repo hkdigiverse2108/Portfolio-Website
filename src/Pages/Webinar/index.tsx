@@ -111,7 +111,7 @@ const Webinar: React.FC = () => {
       { name: "twitter:description", content: "Join Het Mangukiya’s Startup Brand Growth Workshop in Surat on 24 Oct 2026. Learn how to build, brand, market and grow your startup with practical digital strategies." },
       { name: "twitter:image", content: "https://api.hetmangukiya.in/public/images/1790244443589_IMG_7234.JPG" },
       { name: "twitter:image:alt", content: "Startup Brand Growth Workshop in Surat by Het Mangukiya" },
-      { name: "robots", content: "index, follow, max-image-preview:large" },
+      { name: "robots", content: "noindex" },
     ];
 
     metaTagsConfig.forEach(({ name, property, content }) => {
