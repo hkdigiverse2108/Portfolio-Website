@@ -1,4 +1,4 @@
-import { ROUTES } from "../../Constant";
+import { ROUTES, getServiceSeoByIdOrSlug } from "../../Constant";
 import type { OurServiceBase } from "../../Types";
 
 interface ServiceSectionProps {
@@ -25,24 +25,28 @@ const ServiceSection = ({ ourServiceData, pagination, page = 1, limit = 10 }: Se
                     <h2 data-aos="fade-up" data-aos-delay="200">The Ease-<span>Service</span> Process</h2>
                 </div>
                 <div className="service-wrapper">
-                    {ourServiceData?.map((service, index) => (
-                        <div key={service._id || index} 
-                             className={`services-item ${index === ourServiceData.length - 1 ? 'mb-0' : ''}`} 
-                             data-aos="fade-up" 
-                             data-aos-delay={(index + 1) * 200}>
-                            <div className="head">
-                                <span>{String((page - 1) * limit + (index + 1)).padStart(2, '0')}</span>
-                                <h4><a href={ROUTES.SERVICE_DETAIL.replace(":id", service?._id || "")}>{service.title}</a></h4>
+                    {ourServiceData?.map((service, index) => {
+                        const serviceSlug = getServiceSeoByIdOrSlug(service?._id)?.slug || service?._id || "";
+                        const serviceUrl = ROUTES.SERVICE_DETAIL.replace(":id", serviceSlug);
+                        return (
+                            <div key={service._id || index} 
+                                 className={`services-item ${index === ourServiceData.length - 1 ? 'mb-0' : ''}`} 
+                                 data-aos="fade-up" 
+                                 data-aos-delay={(index + 1) * 200}>
+                                <div className="head">
+                                    <span>{String((page - 1) * limit + (index + 1)).padStart(2, '0')}</span>
+                                    <h4><a href={serviceUrl}>{service.title}</a></h4>
+                                </div>
+                                <div className="text">
+                                    <p>{service.shortDescription}</p>
+                                </div>
+                                <div className="link-btn">
+                                    <i className="fa-solid fa-arrow-right"></i>
+                                    <a href={serviceUrl}>Read More</a>
+                                </div>
                             </div>
-                            <div className="text">
-                                <p>{service.shortDescription}</p>
-                            </div>
-                            <div className="link-btn">
-                                <i className="fa-solid fa-arrow-right"></i>
-                                <a href={ROUTES.SERVICE_DETAIL.replace(":id", service?._id || "")}>Read More</a>
-                            </div>
-                        </div>
-                    ))}
+                        );
+                    })}
                 </div>
                 {pagination}
             </div>

@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Queries } from "../../Api";
 import { BreadCrumb, PreLoader } from "../../Components/Common";
-import { ROUTES } from "../../Constant";
+import { ROUTES, getServiceSeoByIdOrSlug, resolveServiceId } from "../../Constant";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import type { OurServiceBase } from "../../Types";
@@ -13,31 +13,42 @@ const ServiceDetails = () => {
   const userData = userRes?.data;
 
   const { id } = useParams();
-  const { data: serviceDetailData, isLoading: detailLoading } = Queries.useGetServiceDetails(id);
+  const serviceId = resolveServiceId(id);
+  const seoData = getServiceSeoByIdOrSlug(id);
+
+  const { data: serviceDetailData, isLoading: detailLoading } = Queries.useGetServiceDetails(serviceId);
   const { data: allServicesData, isLoading: servicesLoading } = Queries.useGetOurService();
 
   const service = serviceDetailData?.data;
-  const allServices = allServicesData?.data?.ourService_data.filter((item: OurServiceBase) => item._id !== id).slice(0, 7) || [];
+  const allServices = allServicesData?.data?.ourService_data.filter((item: OurServiceBase) => item._id !== serviceId).slice(0, 7) || [];
   const isLoading = detailLoading || servicesLoading;
 
   useEffect(() => {
-    if (service?.title) {
-      document.title = `${service.title} | Het Mangukiya`;
-      const desc = service.shortDescription || service.tagLine || "Professional digital marketing and growth services by Het Mangukiya.";
+    if (service?.title || seoData) {
+      const pageTitle = seoData?.metaTitle || `${service?.title || "Service"} | Het Mangukiya`;
+      document.title = pageTitle;
+
+      const desc =
+        seoData?.metaDescription ||
+        service?.shortDescription ||
+        service?.tagLine ||
+        "Professional digital marketing and growth services by Het Mangukiya.";
+
       const metaDesc = document.querySelector('meta[name="description"]');
       if (metaDesc) metaDesc.setAttribute("content", desc);
 
       const ogTitle = document.querySelector('meta[property="og:title"]');
-      if (ogTitle) ogTitle.setAttribute("content", `${service.title} | Het Mangukiya`);
+      if (ogTitle) ogTitle.setAttribute("content", pageTitle);
       const ogDesc = document.querySelector('meta[property="og:description"]');
       if (ogDesc) ogDesc.setAttribute("content", desc);
 
       const twitterTitle = document.querySelector('meta[name="twitter:title"]');
-      if (twitterTitle) twitterTitle.setAttribute("content", `${service.title} | Het Mangukiya`);
+      if (twitterTitle) twitterTitle.setAttribute("content", pageTitle);
       const twitterDesc = document.querySelector('meta[name="twitter:description"]');
       if (twitterDesc) twitterDesc.setAttribute("content", desc);
 
-      const pageUrl = `https://hetmangukiya.in/service-detail/${id}`;
+      const canonicalParam = seoData?.slug || id || serviceId;
+      const pageUrl = `https://hetmangukiya.in/service-detail/${canonicalParam}`;
       const ogUrl = document.querySelector('meta[property="og:url"]');
       if (ogUrl) ogUrl.setAttribute("content", pageUrl);
 
@@ -51,12 +62,12 @@ const ServiceDetails = () => {
         document.head.appendChild(canonical);
       }
     }
-  }, [service, id]);
+  }, [service, id, serviceId, seoData]);
 
   return (
     <>
       <PreLoader isLoading={isLoading} />
-      <BreadCrumb title={"Service Details"} pageName="Service Details" />
+      <BreadCrumb title={seoData?.h1 || service?.title || "Service Details"} pageName={service?.title || "Service Details"} />
       <section className="service-details-section section-padding section-bg">
         <div className="container">
           <div className="row g-5">
@@ -69,7 +80,9 @@ const ServiceDetails = () => {
                     </div>
                   )}
                   <div className="post-content">
-                    <h2 className="mb-3">{service?.title}</h2>
+                    <h1 className="mb-3" style={{ fontSize: "2rem", fontWeight: 700 }}>
+                      {seoData?.h1 || service?.title}
+                    </h1>
                     <div
                       className="dynamic-blog-content"
                       dangerouslySetInnerHTML={{
@@ -164,12 +177,15 @@ const ServiceDetails = () => {
                     </div>
                     <div className="service-list">
                       <ul>
-                        {allServices?.map((item: OurServiceBase, idx: number) => (
-                          <li key={item._id || idx} onClick={() => navigate(ROUTES.SERVICE_DETAIL.replace(":id", item._id))}>
-                            <a href={ROUTES.SERVICE_DETAIL.replace(":id", item._id)}>{item.title}</a>
-                            <img src="/assets/img/icon/43.svg" alt="icon" />
-                          </li>
-                        ))}
+                        {allServices?.map((item: OurServiceBase, idx: number) => {
+                          const itemSlug = getServiceSeoByIdOrSlug(item._id)?.slug || item._id;
+                          return (
+                            <li key={item._id || idx} onClick={() => navigate(ROUTES.SERVICE_DETAIL.replace(":id", itemSlug))}>
+                              <a href={ROUTES.SERVICE_DETAIL.replace(":id", itemSlug)}>{item.title}</a>
+                              <img src="/assets/img/icon/43.svg" alt="icon" />
+                            </li>
+                          );
+                        })}
                       </ul>
                     </div>
                   </div>

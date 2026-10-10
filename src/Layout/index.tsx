@@ -13,48 +13,48 @@ const ROUTE_PAGE_TITLES: Record<string, { title: string; desc: string }> = {
     desc: "Het Mangukiya - Proven track record delivering 10x ROI for top brands across Gujarat & India.",
   },
   "/about": {
-    title: "About Me | Het Mangukiya - Growth Marketer & Consultant",
-    desc: "Discover the journey, vision, and milestones of Het Mangukiya in scaling businesses.",
+    title: "About Het Mangukiya | Our Vision & Expertise",
+    desc: "Learn about Het Mangukiya, our expertise, approach and commitment to helping businesses grow through technology and digital innovation.",
   },
   "/service": {
-    title: "Services | High-Impact Digital Marketing & Brand Strategy",
-    desc: "Explore performance marketing, social media marketing, personal branding, and growth consulting services.",
+    title: "Technology & Digital Marketing Services | Het Mangukiya",
+    desc: "Explore IT consulting, software development, AI automation, digital marketing and creative services designed to support your business goals.",
   },
   "/services": {
-    title: "Services | High-Impact Digital Marketing & Brand Strategy",
-    desc: "Explore performance marketing, social media marketing, personal branding, and growth consulting services.",
+    title: "Technology & Digital Marketing Services | Het Mangukiya",
+    desc: "Explore IT consulting, software development, AI automation, digital marketing and creative services designed to support your business goals.",
   },
   "/portfolio": {
-    title: "Portfolio & Case Studies | Het Mangukiya",
-    desc: "Explore successful campaigns, brand collaborations, and proven marketing case studies.",
+    title: "Portfolio & Projects | Het Mangukiya",
+    desc: "Explore projects and creative work by Het Mangukiya across technology, software development, digital marketing and business solutions.",
   },
   "/blog": {
-    title: "Marketing Insights & Blog | Het Mangukiya",
-    desc: "Read the latest insights on digital marketing trends, growth strategies, and brand building.",
+    title: "Technology & Digital Marketing Blog | Het Mangukiya",
+    desc: "Read insights on technology, AI, software development, SEO, digital marketing and business growth to make informed decisions for your business.",
   },
   "/contact": {
-    title: "Contact Het Mangukiya | Get In Touch For Brand Growth",
-    desc: "Have a project in mind or looking for performance marketing? Let's talk.",
+    title: "Contact Het Mangukiya | Business Enquiries",
+    desc: "Get in touch with Het Mangukiya to discuss your business requirements, technology needs, digital marketing goals and potential collaborations.",
   },
   "/webinar": {
     title: "Startup Brand Growth Workshop in Surat By Het Mangukiya",
     desc: "Join Het Mangukiya’s Startup Brand Growth Workshop in Surat on 24 Oct 2026. Learn how to build, brand, market and grow your startup with practical digital strategies.",
   },
   "/book-a-demo": {
-    title: "Startup Brand Growth Workshop in Surat By Het Mangukiya",
-    desc: "Join Het Mangukiya’s Startup Brand Growth Workshop in Surat on 24 Oct 2026. Learn how to build, brand, market and grow your startup with practical digital strategies.",
+    title: "Book a Demo | Het Mangukiya Business Solutions",
+    desc: "Book a demo with Het Mangukiya to explore our business solutions, understand their features and discuss the right approach for your organisation.",
   },
   "/privacy-policy": {
     title: "Privacy Policy | Het Mangukiya",
-    desc: "Privacy policy and data protection terms for Het Mangukiya portfolio.",
+    desc: "Learn how Het Mangukiya collects, uses, stores and protects personal information when you visit our website or interact with our services.",
   },
   "/terms-condition": {
-    title: "Terms & Conditions | Het Mangukiya",
-    desc: "Terms of service and conditions for Het Mangukiya website and programs.",
+    title: "Terms and Conditions | Het Mangukiya",
+    desc: "Read the terms and conditions governing your use of the Het Mangukiya website, services and related digital resources.",
   },
   "/terms-conditions": {
-    title: "Terms & Conditions | Het Mangukiya",
-    desc: "Terms of service and conditions for Het Mangukiya website and programs.",
+    title: "Terms and Conditions | Het Mangukiya",
+    desc: "Read the terms and conditions governing your use of the Het Mangukiya website, services and related digital resources.",
   },
 };
 
