@@ -33,9 +33,6 @@ Version: 1.0.0
 21. Team
 22. Testimonial
 --------------------------------------------------------------
-*/
-@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;600;700&amp;display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&amp;display=swap");
 :root {
   --body: #060606;
   --black: #000;
@@ -5394,11 +5391,11 @@ span {
 }
 .preloader.loaded .animation-preloader {
   opacity: 0;
-  transition: 0.3s ease-out;
+  transition: 0.15s ease-out;
 }
 .preloader.loaded .loader-section .bg {
   width: 0;
-  transition: all 0.7s cubic-bezier(0.1, 0.1, 0.1, 1) 0.3s;
+  transition: all 0.3s cubic-bezier(0.1, 0.1, 0.1, 1) 0.05s;
 }
 
 .search-wrap {

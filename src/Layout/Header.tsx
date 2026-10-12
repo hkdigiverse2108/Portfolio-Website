@@ -60,7 +60,7 @@ const Header = () => {
               <div className="logo">
                 <div className="header-logo-wrapper d-flex align-items-center gap-2 gap-sm-3">
                   <a href={ROUTES.HOME} className="header-logo d-flex align-items-center">
-                    <img src={userData?.profileImage} alt="logo-img" className="logo-img" />
+                    <img src={userData?.profileImage} alt="logo-img" className="logo-img" width="50" height="50" />
                   </a>
                   <div className="logo-text-details d-flex flex-column align-items-start">
                     <a href={ROUTES.HOME} className="header-logo-text d-flex align-items-center text-decoration-none">

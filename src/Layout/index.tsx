@@ -1,10 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, Suspense } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Footer from "./Footer";
 import Header from "./Header";
-import { VideoModal, ScrollToTop, BackToTopBtn, CustomCursor, WhatsAppButton } from "../Components/Common";
+import { VideoModal, ScrollToTop, BackToTopBtn, CustomCursor, WhatsAppButton, PreLoader } from "../Components/Common";
 import { Queries } from "../Api";
 
 const ROUTE_PAGE_TITLES: Record<string, { title: string; desc: string }> = {
@@ -123,16 +123,6 @@ const Layout = () => {
       const ogUrl = document.querySelector('meta[property="og:url"]');
       if (ogUrl) ogUrl.setAttribute("content", pageUrl);
 
-      let robotsMeta = document.querySelector('meta[name="robots"]') as HTMLMetaElement;
-      if (robotsMeta) {
-        robotsMeta.setAttribute("content", "noindex");
-      } else {
-        const meta = document.createElement("meta");
-        meta.name = "robots";
-        meta.content = "noindex";
-        document.head.appendChild(meta);
-      }
-
       let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
       if (canonical) {
         canonical.setAttribute("href", pageUrl);
@@ -150,7 +140,9 @@ const Layout = () => {
       <CustomCursor />
       <Header />
       <main className="">
-        <Outlet />
+        <Suspense fallback={<PreLoader isLoading={true} />}>
+          <Outlet />
+        </Suspense>
       </main>
       <Footer />
       <VideoModal />

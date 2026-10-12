@@ -25,18 +25,38 @@
     <meta name="twitter:image" content="https://api.hetmangukiya.in/public/images/1790244443589_IMG_7234.JPG" />
     <meta name="twitter:image:alt" content="Het Mangukiya - Performance Marketer &amp; Growth Strategist" />
 
-    <!-- SEO / Robots -->
-    <meta name="robots" content="noindex" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CKWZF5HPJP"></script>
+    <!-- Performance Preconnect & DNS-Prefetch -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://api.hetmangukiya.in" />
+    <link rel="dns-prefetch" href="https://api.hetmangukiya.in" />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+
+    <!-- Google Fonts with display=swap to avoid invisible text -->
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet" />
+
+    <!-- Non-render-blocking FontAwesome CDN -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /></noscript>
+    <!-- Google tag (gtag.js) - non-blocking execution -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-CKWZF5HPJP');
+
+      function loadAnalytics() {
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-CKWZF5HPJP';
+        document.head.appendChild(s);
+      }
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(loadAnalytics);
+      } else {
+        window.addEventListener('load', loadAnalytics);
+      }
     </script>
   </head>
   <body class="body-color">

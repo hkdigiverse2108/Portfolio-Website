@@ -9,7 +9,7 @@ const PreLoader = ({ isLoading = true }: { isLoading?: boolean }) => {
       setIsLoaded(true);
       const timer = setTimeout(() => {
         setIsRemoved(true);
-      }, 1000); // 1s matches the 0.3s + 0.7s transition in CSS
+      }, 350);
       return () => clearTimeout(timer);
     }
   }, [isLoading]);

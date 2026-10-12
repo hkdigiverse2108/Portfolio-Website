@@ -1,6 +1,21 @@
+import { lazy } from "react";
 import { PageNotFound } from "../Components/Common";
 import { ROUTES } from "../Constant";
-import { About, Blog, BlogDetails, Contact, Home, PaymentFailed, PaymentSuccess, Portfolio, PortfolioDetails, PrivacyPolicy, Service, ServiceDetails, TermsConditions, Webinar } from "../Pages";
+import Home from "../Pages/Home";
+
+const About = lazy(() => import("../Pages/About"));
+const Contact = lazy(() => import("../Pages/Contact"));
+const Portfolio = lazy(() => import("../Pages/Portfolio"));
+const PortfolioDetails = lazy(() => import("../Pages/Portfolio/PortfolioDetails"));
+const Service = lazy(() => import("../Pages/Service"));
+const ServiceDetails = lazy(() => import("../Pages/Service/ServiceDetails"));
+const Blog = lazy(() => import("../Pages/Blog"));
+const BlogDetails = lazy(() => import("../Pages/Blog/BlogDetails"));
+const TermsConditions = lazy(() => import("../Pages/TermsConditions"));
+const PrivacyPolicy = lazy(() => import("../Pages/PrivacyPolicy"));
+const Webinar = lazy(() => import("../Pages/Webinar"));
+const PaymentSuccess = lazy(() => import("../Pages/Webinar/PaymentSuccess"));
+const PaymentFailed = lazy(() => import("../Pages/Webinar/PaymentFailed"));
 
 export const PageRoutes = [
   { path: ROUTES.HOME, element: <Home /> },
