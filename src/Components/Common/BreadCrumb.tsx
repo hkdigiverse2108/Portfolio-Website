@@ -3,9 +3,11 @@ import { ROUTES } from '../../Constant';
 interface BreadCrumbProps {
   title: string;
   pageName: string;
+  parentName?: string;
+  parentLink?: string;
 }
 
-const BreadCrumb = ({ title, pageName }: BreadCrumbProps) => {
+const BreadCrumb = ({ title, pageName, parentName, parentLink }: BreadCrumbProps) => {
   return (
     <section 
       className="breadcrumb-wrapper fix bg-cover" 
@@ -25,6 +27,16 @@ const BreadCrumb = ({ title, pageName }: BreadCrumbProps) => {
               <li>
                 <a href={ROUTES.HOME}>Home</a>
               </li>
+              {parentName && parentLink && (
+                <>
+                  <li>
+                    <i className="fa-solid fa-angle-right"></i>
+                  </li>
+                  <li>
+                    <a href={parentLink}>{parentName}</a>
+                  </li>
+                </>
+              )}
               <li>
                 <i className="fa-solid fa-angle-right"></i>
               </li>

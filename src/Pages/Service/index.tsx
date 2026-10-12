@@ -48,7 +48,7 @@ const Service = () => {
     <>
       <PreLoader isLoading={isLoading} />
 
-      <BreadCrumb title="Service" pageName="Service" />
+      <BreadCrumb title="Services" pageName="Services" />
       <ServiceSection ourServiceData={ourServiceData} pagination={pagination} page={page} limit={10} />
       <AwardsSection awardsData={awardsData?.data?.awards_data} />
     </>

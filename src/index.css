@@ -1131,3 +1131,447 @@ button,
   background: var(--theme, #bff747) !important;
   color: #0d0f12 !important;
 }
+
+/* ==========================================================================
+   Service Floating Call Button (Left Side, Stacks above WhatsApp)
+   ========================================================================== */
+.service-float-call-btn {
+  position: fixed;
+  bottom: 95px;
+  left: 30px;
+  width: 55px;
+  height: 55px;
+  background: linear-gradient(135deg, #bff747, #98dd1c);
+  color: #060606 !important;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: 0 8px 25px rgba(191, 247, 71, 0.45);
+  z-index: 9999;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-decoration: none;
+  animation: callFloatPulse 2.5s infinite;
+}
+
+@keyframes callFloatPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(191, 247, 71, 0.6), 0 8px 25px rgba(191, 247, 71, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 16px rgba(191, 247, 71, 0), 0 8px 25px rgba(191, 247, 71, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(191, 247, 71, 0), 0 8px 25px rgba(191, 247, 71, 0.4);
+  }
+}
+
+.service-float-call-btn:hover {
+  transform: scale(1.1) translateY(-3px);
+  background: linear-gradient(135deg, #d4ff6e, #bff747);
+  box-shadow: 0 12px 30px rgba(191, 247, 71, 0.7);
+  color: #060606 !important;
+}
+
+.service-float-call-btn .service-call-tooltip {
+  position: absolute;
+  left: 65px;
+  background: #111827;
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(191, 247, 71, 0.3);
+}
+
+.service-float-call-btn:hover .service-call-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+  .service-float-call-btn {
+    bottom: 78px;
+    left: 20px;
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+  }
+  .service-float-call-btn .service-call-tooltip {
+    left: 58px;
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+}
+
+/* ==========================================================================
+   Service Detail Page: Quick Actions, Sidebar Call Widget & CTA Banner
+   ========================================================================== */
+.service-quick-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 20px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.service-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.service-call-btn {
+  background: var(--theme);
+  color: var(--bg-2) !important;
+  border: 1.5px solid var(--theme);
+  box-shadow: 0 4px 18px rgba(191, 247, 71, 0.3);
+}
+
+.service-call-btn:hover {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #060606 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(191, 247, 71, 0.5);
+}
+
+.service-call-btn i {
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+.service-call-btn:hover i {
+  transform: rotate(15deg) scale(1.1);
+}
+
+.service-consult-btn {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+.service-consult-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--theme);
+  color: var(--theme) !important;
+  transform: translateY(-2px);
+}
+
+/* Sidebar Call Widget */
+.service-call-widget {
+  background: linear-gradient(165deg, rgba(23, 25, 20, 0.95), rgba(10, 12, 8, 0.98)) !important;
+  border: 1px solid rgba(191, 247, 71, 0.25) !important;
+  border-radius: 18px;
+  padding: 32px 26px !important;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(191, 247, 71, 0.2);
+  margin-top: 30px;
+}
+
+.service-call-widget::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle, rgba(191, 247, 71, 0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.call-widget-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.call-widget-icon-wrap {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.call-widget-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--theme), #98dd1c);
+  color: #060606;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: 0 6px 20px rgba(191, 247, 71, 0.4);
+}
+
+.call-widget-icon-wrap .pulse-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid rgba(191, 247, 71, 0.4);
+  animation: widgetPulse 2s cubic-bezier(0.25, 0, 0, 1) infinite;
+  pointer-events: none;
+}
+
+@keyframes widgetPulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+}
+
+.call-widget-badge {
+  display: inline-block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  color: var(--theme);
+  background: rgba(191, 247, 71, 0.1);
+  padding: 4px 12px;
+  border-radius: 50px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(191, 247, 71, 0.2);
+}
+
+.call-widget-title {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.call-widget-desc {
+  font-size: 13px;
+  color: #a3a3a3;
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
+
+.call-widget-phone-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 17px;
+  font-weight: 700;
+  color: #ffffff !important;
+  text-decoration: none;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.call-widget-phone-link i {
+  color: var(--theme);
+  font-size: 14px;
+}
+
+.call-widget-phone-link:hover {
+  color: var(--theme) !important;
+  border-color: rgba(191, 247, 71, 0.3);
+  background: rgba(191, 247, 71, 0.06);
+}
+
+.call-widget-cta-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 24px;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 100px;
+  background: var(--theme);
+  color: var(--bg-2) !important;
+  box-shadow: 0 4px 18px rgba(191, 247, 71, 0.35);
+  transition: all 0.3s ease;
+}
+
+.call-widget-cta-btn:hover {
+  background: #ffffff;
+  color: #060606 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+}
+
+/* Bottom CTA Banner */
+.service-bottom-call-banner {
+  background: linear-gradient(135deg, rgba(23, 25, 20, 0.95), rgba(15, 17, 12, 0.98));
+  border: 1px solid rgba(191, 247, 71, 0.25);
+  border-radius: 18px;
+  padding: 30px 32px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-bottom-call-banner::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, var(--theme), #22c55e);
+}
+
+.service-bottom-call-banner h4 {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.service-bottom-call-banner p {
+  color: #b0b0b0;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.service-banner-call-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 100px;
+  text-decoration: none;
+  background: var(--theme);
+  color: var(--bg-2) !important;
+  box-shadow: 0 4px 18px rgba(191, 247, 71, 0.35);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.service-banner-call-btn:hover {
+  background: #ffffff;
+  color: #060606 !important;
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+/* Mobile-S (320px) */
+@media (max-width: 360px) {
+  .service-quick-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+  .service-action-btn {
+    width: 100%;
+    padding: 11px 16px;
+    font-size: 13px;
+  }
+  .call-widget-phone-link {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+  .call-widget-title {
+    font-size: 17px;
+  }
+  .service-bottom-call-banner {
+    padding: 20px 18px;
+  }
+  .service-bottom-call-banner h4 {
+    font-size: 17px;
+  }
+  .service-banner-call-btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 13px;
+    padding: 12px 18px;
+  }
+}
+
+/* Mobile-M (375px) & Mobile-L (425px) */
+@media (min-width: 361px) and (max-width: 575px) {
+  .service-quick-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+  .service-action-btn {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+  .service-bottom-call-banner {
+    padding: 22px 20px;
+  }
+  .service-bottom-call-banner h4 {
+    font-size: 18px;
+  }
+  .service-banner-call-btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 14px;
+    padding: 12px 22px;
+  }
+}
+
+/* Tablet (768px) */
+@media (max-width: 991px) {
+  .service-bottom-call-banner {
+    margin-top: 30px;
+  }
+}
+
+/* 4K and Ultra-wide (min-width: 2000px) */
+@media (min-width: 2000px) {
+  .service-action-btn {
+    font-size: 17px;
+    padding: 16px 32px;
+  }
+  .call-widget-title {
+    font-size: 24px;
+  }
+  .call-widget-phone-link {
+    font-size: 20px;
+  }
+  .call-widget-cta-btn {
+    font-size: 17px;
+    padding: 16px 28px;
+  }
+  .service-bottom-call-banner h4 {
+    font-size: 26px;
+  }
+}

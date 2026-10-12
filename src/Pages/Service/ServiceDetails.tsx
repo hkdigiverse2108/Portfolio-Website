@@ -11,6 +11,8 @@ const ServiceDetails = () => {
   const navigate = useNavigate();
   const { data: userRes } = Queries.useGetUser();
   const userData = userRes?.data;
+  const { data: settingRes } = Queries.useGetSetting();
+  const settingData = settingRes?.data;
 
   const { id } = useParams();
   const serviceId = resolveServiceId(id);
@@ -23,9 +25,15 @@ const ServiceDetails = () => {
   const allServices = allServicesData?.data?.ourService_data.filter((item: OurServiceBase) => item._id !== serviceId).slice(0, 7) || [];
   const isLoading = detailLoading || servicesLoading;
 
+  const phoneStr = settingData?.bookMeeting?.phoneNo
+    ? `+${settingData.bookMeeting.phoneNo.countryCode} ${settingData.bookMeeting.phoneNo.number}`
+    : "+91 97143 97143";
+  const telHref = `tel:${phoneStr.replace(/[^0-9+]/g, "")}`;
+  const consultationLink = settingData?.bookMeeting?.link || ROUTES.CONTACT;
+
   useEffect(() => {
     if (service?.title || seoData) {
-      const pageTitle = seoData?.metaTitle || `${service?.title || "Service"} | Het Mangukiya`;
+      const pageTitle = seoData?.metaTitle || `${service?.title || "Services"} | Het Mangukiya`;
       document.title = pageTitle;
 
       const desc =
@@ -48,7 +56,7 @@ const ServiceDetails = () => {
       if (twitterDesc) twitterDesc.setAttribute("content", desc);
 
       const canonicalParam = seoData?.slug || id || serviceId;
-      const pageUrl = `https://hetmangukiya.in/service-detail/${canonicalParam}`;
+      const pageUrl = `https://hetmangukiya.in/services/${canonicalParam}`;
       const ogUrl = document.querySelector('meta[property="og:url"]');
       if (ogUrl) ogUrl.setAttribute("content", pageUrl);
 
@@ -67,7 +75,12 @@ const ServiceDetails = () => {
   return (
     <>
       <PreLoader isLoading={isLoading} />
-      <BreadCrumb title={seoData?.h1 || service?.title || "Service Details"} pageName={service?.title || "Service Details"} />
+      <BreadCrumb 
+        title={seoData?.h1 || service?.title || "Services"} 
+        pageName={service?.title || "Services"} 
+        parentName="Services"
+        parentLink={ROUTES.SERVICE}
+      />
       <section className="service-details-section section-padding section-bg">
         <div className="container">
           <div className="row g-5">
@@ -83,6 +96,25 @@ const ServiceDetails = () => {
                     <h1 className="mb-3" style={{ fontSize: "2rem", fontWeight: 700 }}>
                       {seoData?.h1 || service?.title}
                     </h1>
+
+                    {/* Quick Action Buttons */}
+                    <div className="service-quick-actions">
+                      <a href={telHref} className="service-action-btn service-call-btn" id="service-header-call-btn">
+                        <i className="fa-solid fa-phone"></i>
+                        <span>Call Now</span>
+                      </a>
+                      <a
+                        href={consultationLink}
+                        target={consultationLink.startsWith("http") ? "_blank" : undefined}
+                        rel="noreferrer"
+                        className="service-action-btn service-consult-btn"
+                        id="service-header-consult-btn"
+                      >
+                        <i className="fa-regular fa-calendar-check"></i>
+                        <span>Book Consultation</span>
+                      </a>
+                    </div>
+
                     <div
                       className="dynamic-blog-content"
                       dangerouslySetInnerHTML={{
@@ -164,6 +196,22 @@ const ServiceDetails = () => {
                         </div>
                       ))}
                     </div>
+
+                    {/* Bottom CTA Banner */}
+                    <div className="service-bottom-call-banner mt-5">
+                      <div className="row align-items-center g-3">
+                        <div className="col-md-7 col-12">
+                          <h4>Looking to get started with {service?.title || "our services"}?</h4>
+                          <p>Speak directly with Het Mangukiya for tailored business and growth solutions.</p>
+                        </div>
+                        <div className="col-md-5 col-12 text-md-end text-start">
+                          <a href={telHref} className="theme-btn service-banner-call-btn" id="service-bottom-call-btn">
+                            <i className="fa-solid fa-phone"></i> Call Now
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+
                   </div>
                 </div>
               </div>
@@ -190,11 +238,49 @@ const ServiceDetails = () => {
                     </div>
                   </div>
                 )}
+
+                {/* Sidebar Call Widget */}
+                <div className="single-sidebar-widget service-call-widget">
+                  <div className="call-widget-inner">
+                    <div className="call-widget-icon-wrap">
+                      <div className="call-widget-icon">
+                        <i className="fa-solid fa-phone-volume"></i>
+                      </div>
+                      <span className="pulse-ring"></span>
+                    </div>
+                    <div className="call-widget-content">
+                      <span className="call-widget-badge">Direct Consultation</span>
+                      <h4 className="call-widget-title">Have Questions? Call Now</h4>
+                      <p className="call-widget-desc">Speak directly with Het Mangukiya for tailored business and growth solutions.</p>
+                      <a href={telHref} className="call-widget-phone-link" id="service-sidebar-phone-link">
+                        <i className="fa-solid fa-phone"></i>
+                        <span>{phoneStr}</span>
+                      </a>
+                      <a href={telHref} className="theme-btn call-widget-cta-btn" id="service-sidebar-call-btn">
+                        <i className="fa-solid fa-phone"></i>
+                        <span>Call Now</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Floating Call Now Button (Stacks cleanly above WhatsApp button) */}
+      <a
+        href={telHref}
+        className="service-float-call-btn"
+        id="service-float-call-btn"
+        aria-label={`Call now: ${phoneStr}`}
+        title={`Call Now: ${phoneStr}`}
+      >
+        <i className="fa-solid fa-phone"></i>
+        <span className="service-call-tooltip">Call Now: {phoneStr}</span>
+      </a>
     </>
   );
 };
