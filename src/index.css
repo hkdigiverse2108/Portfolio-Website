@@ -1575,3 +1575,13 @@ button,
     font-size: 26px;
   }
 }
+
+/* Clickable full service box */
+.service-wrapper .services-item {
+  cursor: pointer !important;
+  transition: all 0.3s ease-in-out;
+}
+
+.service-wrapper .services-item:hover {
+  border-color: var(--theme, #bff747) !important;
+}

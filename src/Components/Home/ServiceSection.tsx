@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { ROUTES, getServiceSeoByIdOrSlug } from "../../Constant";
 import type { OurServiceBase } from "../../Types";
 
@@ -9,6 +10,8 @@ interface ServiceSectionProps {
 }
 
 const ServiceSection = ({ ourServiceData, pagination, page = 1, limit = 10 }: ServiceSectionProps) => {
+    const navigate = useNavigate();
+
     return (
         <section className="service-section service-1 section-padding section-bg fix">
             <div className="random-shape float-bob-y">
@@ -32,17 +35,19 @@ const ServiceSection = ({ ourServiceData, pagination, page = 1, limit = 10 }: Se
                             <div key={service._id || index} 
                                  className={`services-item ${index === ourServiceData.length - 1 ? 'mb-0' : ''}`} 
                                  data-aos="fade-up" 
-                                 data-aos-delay={(index + 1) * 200}>
+                                 data-aos-delay={(index + 1) * 200}
+                                 onClick={() => navigate(serviceUrl)}
+                                 style={{ cursor: "pointer" }}>
                                 <div className="head">
                                     <span>{String((page - 1) * limit + (index + 1)).padStart(2, '0')}</span>
-                                    <h4><a href={serviceUrl}>{service.title}</a></h4>
+                                    <h4><a href={serviceUrl} onClick={(e) => { e.preventDefault(); navigate(serviceUrl); }}>{service.title}</a></h4>
                                 </div>
                                 <div className="text">
                                     <p>{service.shortDescription}</p>
                                 </div>
                                 <div className="link-btn">
                                     <i className="fa-solid fa-arrow-right"></i>
-                                    <a href={serviceUrl}>Read More</a>
+                                    <a href={serviceUrl} onClick={(e) => { e.preventDefault(); navigate(serviceUrl); }}>Read More</a>
                                 </div>
                             </div>
                         );
